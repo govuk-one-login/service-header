@@ -1,20 +1,24 @@
 $govuk-new-link-styles: true;
-// dependencies from GOVUK frontend
-@import "base";
-@import "core/all";
-@import "utilities/all";
-@import "objects/all";
-@import "overrides/all";
 
-.x-service-header {
+// dependencies from GOVUK frontend
+// if this is throwing errors, check that you have govuk-frontend installed and that the load paths are correct
+
+@import "base";
+@import "objects/width-container";
+@import "objects/grid";
+
+// end dependencies from GOVUK frontend
+
+// start One Login header styles
+.one-login-header {
   @include govuk-font($size: 16);
   color: govuk-colour("white");
   background: govuk-colour("black");
+  border-bottom: govuk-spacing(2) solid govuk-colour("blue");
   position: relative;
-  margin-bottom: 10px;
 }
 
-.x-service-header__container {
+.one-login-header__container {
   display: flex;
   position: relative;
   justify-content: space-between;
@@ -22,7 +26,7 @@ $govuk-new-link-styles: true;
   flex-wrap: wrap;
 }
 
-.x-service-header__logo {
+.one-login-header__logo {
   min-width: max-content;
   padding-top: govuk-spacing(2);
   padding-bottom: govuk-spacing(2);
@@ -35,8 +39,8 @@ $govuk-new-link-styles: true;
 
 $govuk-header-link-underline-thickness: 3px;
 
-.x-service-header__link,
-.x-service-nav__link {
+.one-login-header__link,
+.one-login-nav__link {
   &:link,
   &:visited {
     @include govuk-typography-common;
@@ -58,7 +62,7 @@ $govuk-header-link-underline-thickness: 3px;
   }
 }
 
-.x-service-header__logotype {
+.one-login-header__logotype {
   display: inline-block;
 
   // Add a gap after the logo in case it's followed by a product name. This
@@ -79,7 +83,7 @@ $govuk-header-link-underline-thickness: 3px;
   }
 }
 
-.x-service-header__logotype-crown {
+.one-login-header__logotype-crown {
   position: relative;
   top: -1px;
   margin-right: 1px;
@@ -87,14 +91,14 @@ $govuk-header-link-underline-thickness: 3px;
   vertical-align: top;
 }
 
-.x-service-header__logotype-crown-fallback-image {
+.one-login-header__logotype-crown-fallback-image {
   width: 36px;
   height: 32px;
   border: 0;
   vertical-align: bottom;
 }
 
-.x-service-header__link--homepage {
+.one-login-header__link--homepage {
   // Font size needs to be set on the link so that the box sizing is correct
   // in Firefox
   @include govuk-font($size: false, $weight: bold);
@@ -135,7 +139,7 @@ $govuk-header-link-underline-thickness: 3px;
   }
 }
 
-.x-service-nav__button {
+.cross-service-header__button {
   display: none;
 
   .js-enabled & {
@@ -145,31 +149,34 @@ $govuk-header-link-underline-thickness: 3px;
     @include govuk-media-query ($from: tablet) {
       display: none;
     }
+
   }
 
   @include govuk-font($size: 16, $weight: bold);
+  position: relative;
   align-items: center;
   cursor: pointer;
   min-width: 240px;
   min-width: max-content;
   border: 0;
   margin: 0;
-  padding: govuk-spacing(3) govuk-spacing(2);
+  padding: govuk-spacing(3) 0 govuk-spacing(3) govuk-spacing(4);
   background: none;
-  color: govuk-colour("white");
 
-  &:after {
+  &:before {
     content: "";
+    position: absolute;
+    left: 0;
+    top: 30%;
     box-sizing: border-box;
     display: inline-block;
-    position: relative;
     width: 0.75rem;
     height: 0.75rem;
     transform: rotate(135deg);
     border-top: 0.15rem solid;
     border-right: 0.15rem solid;
-    margin-right: govuk-spacing(2);
-    margin-bottom: 0.2rem;
+    // margin-right: govuk-spacing(2);
+    // margin-bottom: 0.2rem;
   }
 
   &:focus {
@@ -183,6 +190,22 @@ $govuk-header-link-underline-thickness: 3px;
     }
   }
 
+  &.cross-service-header__button--service-header {
+    color: govuk-colour("black");
+
+    &:focus:not(:focus-visible) {
+      color: govuk-colour("black");
+    }
+  }
+
+  &.cross-service-header__button--one-login {
+    color: govuk-colour("white");
+
+    &:focus:not(:focus-visible) {
+      color: govuk-colour("white");
+    }
+  }
+
   &:focus-visible {
     background: $govuk-focus-colour;
     color: $govuk-focus-text-colour;
@@ -191,83 +214,72 @@ $govuk-header-link-underline-thickness: 3px;
     &:hover {
       color: $govuk-focus-text-colour;
 
-      &:before {
-        background-color: $govuk-focus-text-colour;
-      }
+      // &:before {
+      //   background-color: $govuk-focus-text-colour;
+      // }
     }
   }
 
-  &.x-service-nav__button--open {
-    &:after {
+  &.cross-service-header__button--open {
+    &:before {
       transform: rotate(-45deg);
       margin-top: 0.4rem;
     }
   }
+
 }
 
-.x-service-nav__button-content,
-.x-service-nav__link-content,
-.x-service-nav__button-icon {
-  margin-right: govuk-spacing(2);
+.cross-service-header__button-icon {
+  margin-left: govuk-spacing(2);
 }
 
-.x-service-nav__button-icon {
-  &.x-service-nav__button-icon--focus {
+.cross-service-header__button-icon {
+  &.cross-service-header__button-icon--focus {
     display: none;
   }
 
   // apply focus style on :focus for browsers which support :focus but not :focus-visible
-  .x-service-nav__button:focus & {
-    &.x-service-nav__button-icon--default {
+  .cross-service-header__button:focus & {
+    &.cross-service-header__button-icon--default {
       display: none;
     }
 
-    &.x-service-nav__button-icon--focus {
+    &.cross-service-header__button-icon--focus {
       display: inline;
     }
   }
 
   // overwrite previous styles for browsers which support :focus-visible
-  .x-service-nav__button:focus:not(:focus-visible) & {
-    &.x-service-nav__button-icon--default {
+  .cross-service-header__button:focus:not(:focus-visible) & {
+    &.cross-service-header__button-icon--default {
       display: inline;
     }
 
-    &.x-service-nav__button-icon--focus {
+    &.cross-service-header__button-icon--focus {
       display: none;
     }
   }
 
   // apply focus style on :focus-visible for browsers which support :focus-visible
-  .x-service-nav__button:focus-visible & {
-    &.x-service-nav__button-icon--default {
+  .cross-service-header__button:focus-visible & {
+    &.cross-service-header__button-icon--default {
       display: none;
     }
 
-    &.x-service-nav__button-icon--focus {
+    &.cross-service-header__button-icon--focus {
       display: inline;
     }
   }
 }
 
-.x-service-nav__button-content {
-  .x-service-nav__button-content--hidden-mobile {
-    display: inline;
-
-    @include govuk-media-query ($until: tablet) {
-      display: none;
-    }
-  }
-}
-
-.x-service-nav {
+.one-login-nav {
   display: inline-block;
   overflow: hidden;
 
   .js-enabled & {
     display: none;
 
-    &.x-service-nav--open {
+    &.one-login-nav--open {
       display: block;
     }
 
@@ -281,19 +293,20 @@ $govuk-header-link-underline-thickness: 3px;
   }
 }
 
-.x-service-nav__list {
-  padding: govuk-spacing(2) 0;
+.one-login-nav__list {
   margin: 0;
+  padding: 0;
   list-style: none;
   @include govuk-media-query ($from: tablet) {
+    padding: govuk-spacing(2) 0;
     display: flex;
     align-items: center;
   } 
 }
 
-.x-service-nav__list-item {
+.one-login-nav__list-item {
   display: inline-block;
-  padding: govuk-spacing(2) 0 govuk-spacing(2) govuk-spacing(6);
+  padding: govuk-spacing(2) 0;
 
   &:not(:last-child) {
     margin-right: govuk-spacing(4);
@@ -301,10 +314,10 @@ $govuk-header-link-underline-thickness: 3px;
 
   @include govuk-media-query ($from: tablet) {
     border-left: 1px solid $govuk-border-colour;
-  }
+    padding: govuk-spacing(2) 0 govuk-spacing(2) govuk-spacing(6);
+}
 
   @include govuk-media-query ($until: tablet) {
-    padding: govuk-spacing(2) govuk-spacing(1);
     width: 100%;
 
     &:not(:last-child) {
@@ -313,28 +326,110 @@ $govuk-header-link-underline-thickness: 3px;
   }
 }
 
-.x-service-nav__link {
+.one-login-nav__link {
   font-weight: bold;
 
-  &.x-service-nav__link--one-login {
+  &.one-login-nav__link--one-login {
     @include govuk-media-query ($from: tablet) {
       display: flex;
       justify-content: center;
       &:focus {
-        .x-service-nav__button-icon {
+        .cross-service-header__button-icon {
           display: none;
         }
 
-        .x-service-nav__button-icon--focus {
+        .cross-service-header__button-icon--focus {
           display: inline;
         }
       }
     } 
 
     @include govuk-media-query ($until: tablet) {
-      .x-service-nav__button-icon {
+      .cross-service-header__button-icon {
         display: none;
       }
     } 
   }
 }
+
+// end One Login header styles
+
+// start service navigation styles
+
+.service-header {
+  @include govuk-font($size: 16, $weight: bold);
+  background-color: govuk-colour('light-grey');
+  border-bottom: 1px solid govuk-colour('mid-grey');
+}
+
+.service-header__heading {
+  @include govuk-font($size: 19, $weight: bold);
+  margin: 0;
+  padding-top: govuk-spacing(4);
+}
+
+.service-header__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @include govuk-media-query ($from: tablet) {
+    text-align: right;
+  }
+}
+
+.service-header__list-item {
+  padding: govuk-spacing(1) 0;
+  margin-bottom: govuk-spacing(3);
+
+  &.service-header__list-item--active {
+    padding-left: govuk-spacing(3);
+    border-left: govuk-spacing(1) solid govuk-colour("blue");
+  }
+
+  @include govuk-media-query ($from: tablet) {
+    display: inline-block;
+    padding: govuk-spacing(4) 0 govuk-spacing(3);
+    margin-left: govuk-spacing(6);
+    margin-bottom: 0;
+    border-bottom: govuk-spacing(1) solid transparent;
+    
+    &.service-header__list-item--active {
+      border-left: 0;
+      padding-left: 0;
+      border-bottom: govuk-spacing(1) solid govuk-colour("blue");
+    }
+  }
+}
+
+.service-header__list-item-link {
+  @include govuk-link-common;
+  @include govuk-link-style-default;
+
+  &:not(:hover) {
+    text-decoration: none;
+  }
+}
+
+
+.service-nav {
+  display: block;
+  overflow: hidden;
+
+  .js-enabled & {
+    display: none;
+
+    &.service-nav--open {
+      display: block;
+    }
+
+    @include govuk-media-query ($from: tablet) {
+      display: block;
+    } 
+  }
+
+  @include govuk-media-query ($until: tablet) {
+    width: 100%;
+  }
+}
+// end service navigation styles

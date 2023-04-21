@@ -1,10 +1,10 @@
-// This component relies on JavaScript from GOV.UK Frontend
 function CrossServiceHeader ($module) {
   this.$module = $module
   this.$menuButton = $module && $module.querySelector('.js-x-header-toggle')
   this.$menu = this.$menuButton && $module.querySelector(
     '#' + this.$menuButton.getAttribute('aria-controls')
   )
+  this.$menuOpenClass = this.$menuButton && this.$menu.dataset.openClass;
 }
 /**
 * Initialise header
@@ -13,11 +13,11 @@ function CrossServiceHeader ($module) {
 * missing then there's nothing to do so return early.
 */
 CrossServiceHeader.prototype.init = function () {
-  if (!this.$module || !this.$menuButton || !this.$menu) {
+  if (!this.$module || !this.$menuButton || !this.$menu || !this.$menuOpenClass) {
     return
   }
   this.$module.classList.add('js-enabled')
-  this.syncState(this.$menu.classList.contains('x-service-nav--open'))
+  this.syncState(this.$menu.classList.contains(this.$menuOpenClass))
   this.$menuButton.addEventListener('click', this.handleMenuButtonClick.bind(this))
 }
 /**
@@ -29,7 +29,7 @@ CrossServiceHeader.prototype.init = function () {
 * @param {boolean} isVisible Whether the menu is currently visible
 */
 CrossServiceHeader.prototype.syncState = function (isVisible) {
-  this.$menuButton.classList.toggle('x-service-nav__button--open', isVisible)
+  this.$menuButton.classList.toggle('cross-service-header__button--open', isVisible)
   this.$menuButton.setAttribute('aria-expanded', isVisible)
 }
 /**
@@ -39,6 +39,6 @@ CrossServiceHeader.prototype.syncState = function (isVisible) {
 * sync the accessibility state and menu button state
 */
 CrossServiceHeader.prototype.handleMenuButtonClick = function () {
-  var isVisible = this.$menu.classList.toggle('x-service-nav--open')
+  var isVisible = this.$menu.classList.toggle(this.$menuOpenClass)
   this.syncState(isVisible)
 }
