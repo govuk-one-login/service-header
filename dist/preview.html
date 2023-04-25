@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="./service-header.css">
   </head>
   <body style="margin:0;">
-    <header class="cross-service-header" role="banner">
-  <div class="one-login-header" data-module="one-login-header">
+    <header class="cross-service-header" role="banner" data-module="one-login-header">
+  <div class="one-login-header" data-module="one-login-header-nav">
     <div class="one-login-header__container govuk-width-container">
       <div class="one-login-header__logo">
         <a href="https://www.gov.uk/" class="one-login-header__link one-login-header__link--homepage">
@@ -24,7 +24,14 @@
           </span>
         </a>
       </div>
-      <button type="button" aria-controls="one-login-nav" aria-label="Show or hide GOV.UK One Login menu" aria-expanded="false" class="cross-service-header__button cross-service-header__button--one-login js-x-header-toggle">
+      <button type="button" 
+        aria-controls="one-login-nav" 
+        aria-label="Show GOV.UK One Login menu" 
+        data-open-class="cross-service-header__button--open" 
+        data-text-for-show="Show GOV.UK One Login menu" 
+        data-text-for-hide="Hide GOV.UK One Login menu" 
+        aria-expanded="false" 
+        class="cross-service-header__button cross-service-header__button--one-login js-x-header-toggle">
         <span class="cross-service-header__button-content">One Login</span>
           
 
@@ -115,18 +122,24 @@
       </nav>
     </div>
   </div>
-  <div class="service-header" data-module="one-login-header">
+  <div class="service-header" data-module="one-login-header-nav">
     <div class="govuk-width-container">
       <!-- Important! Label your navigation appropriately! When there are multiple navigation landmarks on a page, additional labelling is required to provide support for screen reader users -->
       <nav class="govuk-grid-row" aria-label="Your service menu">
         <div class="govuk-grid-column-one-third">
           <!-- The name of your service goes here -->
-          <!-- The name of your service goes here -->
           <h2 class="service-header__heading">Name of service</h2>
         </div>
         <div class="govuk-grid-column-two-thirds">
           <!-- Label the toggle button appropriately (you might want to use the name of your service) to provide support for screen reader users -->
-          <button type="button" aria-controls="service-nav" aria-label="Show or hide service menu" aria-expanded="false" class="cross-service-header__button cross-service-header__button--service-header js-x-header-toggle">
+          <button type="button" 
+            aria-controls="service-nav" 
+            data-open-class="cross-service-header__button--open" 
+            aria-label="Show service navigation menu" 
+            data-text-for-show="Show service navigation menu" 
+            data-text-for-hide="Hide service navigation menu" 
+            aria-expanded="false" 
+            class="cross-service-header__button cross-service-header__button--service-header js-x-header-toggle">
             <span class="service-header__button-content">Menu</span>
           </button>
           <ul class="service-header__list service-nav" id="service-nav" data-open-class="service-nav--open">
@@ -146,10 +159,8 @@
 
     <script src="./service-header.js"></script>
     <script>
-      var xServiceHeader = document.querySelectorAll("[data-module='one-login-header']");
-      for (var i=0;i<xServiceHeader.length;i++) {
-        new window.CrossServiceHeader(xServiceHeader[i]).init();
-      }
+      var oneLoginHeader = document.querySelector("[data-module='one-login-header']");
+      new window.CrossServiceHeader(oneLoginHeader).init();
     </script>
   </body>
 </html>

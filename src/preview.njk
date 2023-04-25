@@ -10,10 +10,8 @@
     {% include './service-header.njk' %}
     <script src="./service-header.js"></script>
     <script>
-      var xServiceHeader = document.querySelectorAll("[data-module='one-login-header']");
-      for (var i=0;i<xServiceHeader.length;i++) {
-        new window.CrossServiceHeader(xServiceHeader[i]).init();
-      }
+      var oneLoginHeader = document.querySelector("[data-module='one-login-header']");
+      new window.CrossServiceHeader(oneLoginHeader).init();
     </script>
   </body>
 </html>

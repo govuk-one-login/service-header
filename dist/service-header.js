@@ -1,10 +1,11 @@
+/**
+* A modified adaptation of the Design System header script
+*
+*/
 function CrossServiceHeader ($module) {
-  this.$module = $module
-  this.$menuButton = $module && $module.querySelector('.js-x-header-toggle')
-  this.$menu = this.$menuButton && $module.querySelector(
-    '#' + this.$menuButton.getAttribute('aria-controls')
-  )
-  this.$menuOpenClass = this.$menuButton && this.$menu.dataset.openClass;
+  this.$header = $module
+  this.$navigation = $module.querySelectorAll("[data-module='one-login-header-nav']");
+  this.$header.classList.add('js-enabled')
 }
 /**
 * Initialise header
@@ -13,25 +14,32 @@ function CrossServiceHeader ($module) {
 * missing then there's nothing to do so return early.
 */
 CrossServiceHeader.prototype.init = function () {
-  if (!this.$module || !this.$menuButton || !this.$menu || !this.$menuOpenClass) {
+  if (!this.$header && !this.$navigation.length) {
     return
   }
-  this.$module.classList.add('js-enabled')
-  this.syncState(this.$menu.classList.contains(this.$menuOpenClass))
-  this.$menuButton.addEventListener('click', this.handleMenuButtonClick.bind(this))
+
+  for (var i = 0; i < this.$navigation.length; i++) {
+    var $currentNav = this.$navigation[i];
+    $currentNav.$menuButton = $currentNav.querySelector('.js-x-header-toggle')
+    
+    $currentNav.$menu = $currentNav.$menuButton && $currentNav.querySelector(
+      '#' + $currentNav.$menuButton.getAttribute('aria-controls')
+      )
+    if (!$currentNav.$menuButton || !$currentNav.$menu) {
+      return
+    }
+    $currentNav.$menuOpenClass = $currentNav.$menu && $currentNav.$menu.dataset.openClass;
+    $currentNav.$menuButtonOpenClass = $currentNav.$menuButton && $currentNav.$menuButton.dataset.openClass;
+    $currentNav.$menuButtonOpenLabel = $currentNav.$menuButton && $currentNav.$menuButton.dataset.textForShow;
+    $currentNav.$menuButtonCloseLabel = $currentNav.$menuButton && $currentNav.$menuButton.dataset.textForHide;
+    $currentNav.$menu.hidden = true;
+    $currentNav.isOpen = false;
+
+    $currentNav.$menuButton.addEventListener('click', this.handleMenuButtonClick.bind($currentNav))
+  }
 }
-/**
-* Sync menu state
-*
-* Sync the menu button class and the accessible state of the menu and the menu
-* button with the visible state of the menu
-*
-* @param {boolean} isVisible Whether the menu is currently visible
-*/
-CrossServiceHeader.prototype.syncState = function (isVisible) {
-  this.$menuButton.classList.toggle('cross-service-header__button--open', isVisible)
-  this.$menuButton.setAttribute('aria-expanded', isVisible)
-}
+
+
 /**
 * Handle menu button click
 *
@@ -39,6 +47,10 @@ CrossServiceHeader.prototype.syncState = function (isVisible) {
 * sync the accessibility state and menu button state
 */
 CrossServiceHeader.prototype.handleMenuButtonClick = function () {
-  var isVisible = this.$menu.classList.toggle(this.$menuOpenClass)
-  this.syncState(isVisible)
+  this.isOpen = !this.isOpen
+  this.$menu.classList.toggle(this.$menuOpenClass, this.isOpen)
+  this.$menuButton.classList.toggle(this.$menuButtonOpenClass, this.isOpen)
+  this.$menuButton.setAttribute('aria-expanded', this.isOpen)
+  this.$menuButton.setAttribute('aria-label', (this.isOpen ? this.$menuButtonCloseLabel : this.$menuButtonOpenLabel))
+  this.$menu.hidden = !this.isOpen
 }
