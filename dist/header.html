@@ -16,7 +16,7 @@
         </a>
       </div>
       <button type="button" 
-        aria-controls="one-login-nav" 
+        aria-controls="one-login-header__nav" 
         aria-label="Show GOV.UK One Login menu" 
         data-open-class="cross-service-header__button--open" 
         data-text-for-show="Show GOV.UK One Login menu" 
@@ -59,15 +59,14 @@
   <!--<![endif]-->
 
       </button>
-      <nav aria-label="GOV.UK One Login menu" class="one-login-nav" data-open-class="one-login-nav--open" id="one-login-nav">
-        <div class="one-login-nav__list-container">
-          <ul class="one-login-nav__list">
-            <li class="one-login-nav__list-item">
-              <a class="one-login-nav__link one-login-nav__link--one-login" href="https://home.account.gov.uk/">
-                <span class="one-login-nav__link-content">
-                  GOV.UK One Login
-                </span>
-                
+      <nav aria-label="GOV.UK One Login menu" class="one-login-header__nav" data-open-class="one-login-header__nav--open" id="one-login-header__nav">
+        <ul class="one-login-header__nav__list">
+          <li class="one-login-header__nav__list-item">
+            <a class="one-login-header__nav__link one-login-header__nav__link--one-login" href="https://home.account.gov.uk/">
+              <span class="one-login-header__nav__link-content">
+                GOV.UK One Login
+              </span>
+              
 
 
   
@@ -101,22 +100,21 @@
   </span>
   <!--<![endif]-->
 
-              </a>
-            </li>
-            <li class="one-login-nav__list-item">
-              <a class="one-login-nav__link" href="https://home.account.gov.uk/sign-out">
-                Sign out
-              </a>
-            </li>
-          </ul>
-        </div>
+            </a>
+          </li>
+          <li class="one-login-header__nav__list-item">
+            <a class="one-login-header__nav__link" href="https://home.account.gov.uk/sign-out">
+              Sign out
+            </a>
+          </li>
+        </ul>
       </nav>
     </div>
   </div>
   <div class="service-header" data-module="one-login-header-nav">
     <div class="govuk-width-container">
       <!-- Important! Label your navigation appropriately! When there are multiple navigation landmarks on a page, additional labelling is required to provide support for screen reader users -->
-      <nav class="govuk-grid-row" aria-label="Your service menu">
+      <nav class="govuk-grid-row" aria-label="Service menu">
         <div class="govuk-grid-column-one-third">
           <!-- The name of your service goes here -->
           <h2 class="service-header__heading">Name of service</h2>
@@ -124,7 +122,7 @@
         <div class="govuk-grid-column-two-thirds">
           <!-- Label the toggle button appropriately (you might want to use the name of your service) to provide support for screen reader users -->
           <button type="button" 
-            aria-controls="service-nav" 
+            aria-controls="service-header__nav" 
             data-open-class="cross-service-header__button--open" 
             aria-label="Show service navigation menu" 
             data-text-for-show="Show service navigation menu" 
@@ -133,14 +131,14 @@
             class="cross-service-header__button cross-service-header__button--service-header js-x-header-toggle">
             <span class="service-header__button-content">Menu</span>
           </button>
-          <ul class="service-header__list service-nav" id="service-nav" data-open-class="service-nav--open">
-            <!-- Use the "service-header__list-item--active" modifier class on the li to visually highlight the page the user is currently viewing -->
-            <li class="service-header__list-item service-header__list-item--active">
+          <ul class="service-header__nav-list service-header__nav" id="service-header__nav" data-open-class="service-header__nav--open">
+            <!-- Use the "service-header__nav-list-item--active" modifier class on the li to visually highlight the page the user is currently viewing -->
+            <li class="service-header__nav-list-item service-header__nav-list-item--active">
               <!-- Use the aria-current="page" attribute on the anchor tag -->
-              <a class="service-header__list-item-link" aria-current="page" href="#">Service link 1</a>
+              <a class="service-header__nav-list-item-link" aria-current="page" href="#">Service link 1</a>
             </li>
-            <li class="service-header__list-item"><a class="service-header__list-item-link" href="#">Service link 2</a></li>
-            <li class="service-header__list-item"><a class="service-header__list-item-link" href="#">Service link 3</a></li>
+            <li class="service-header__nav-list-item"><a class="service-header__nav-list-item-link" href="#">Service link 2</a></li>
+            <li class="service-header__nav-list-item"><a class="service-header__nav-list-item-link" href="#">Service link 3</a></li>
           </ul>
         </div>
       </nav>

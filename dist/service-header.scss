@@ -9,12 +9,151 @@ $govuk-new-link-styles: true;
 
 // end dependencies from GOVUK frontend
 
+// start mixins and variables
+$govuk-header-link-underline-thickness: 3px;
+
+@mixin toggle-button-focus($default-text-colour) {
+  color: $default-text-colour;
+  // apply focus style on :focus for browsers which support :focus but not :focus-visible
+  &:focus {
+    @include govuk-focused-text;
+
+    // overwrite previous styles for browsers which support :focus-visible
+    &:not(:focus-visible) {
+      outline: none;
+      color: $default-text-colour;
+      background: none;
+      box-shadow: none;
+    }
+
+    // apply focus style on :focus-visible for browsers which support :focus-visible
+    &-visible {
+      @include govuk-focused-text;
+    }
+  }
+}
+
+@mixin nav-style($nav-open-class) {
+  display: block;
+  // if JS is unavailable, the nav links are expanded and the toggle button is hidden
+  .js-enabled & {
+    display: none;
+
+    &#{$nav-open-class} {
+      display: block;
+    }
+
+    @include govuk-media-query ($from: tablet) {
+      display: block;
+    } 
+  }
+
+  @include govuk-media-query ($until: tablet) {
+    width: 100%;
+  }
+}
+// end mixins and variables
+
+
+.cross-service-header__button {
+  display: none;
+
+  .js-enabled & {
+    display: inline;
+    display: flex;
+
+    @include govuk-media-query ($from: tablet) {
+      display: none;
+    }
+  }
+
+  @include govuk-font($size: 19, $weight: bold);
+  position: relative;
+  align-items: center;
+  cursor: pointer;
+  min-width: 240px;
+  min-width: max-content;
+  border: 0;
+  margin: 0;
+  padding: govuk-spacing(2) 0 govuk-spacing(2) govuk-spacing(4);
+  background: none;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: .15rem;
+    top: 50%;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 0.6rem;
+    height: 0.6rem;
+    transform: translateY(-65%) rotate(135deg);
+    border-top: 0.15rem solid;
+    border-right: 0.15rem solid;
+  }
+
+  &.cross-service-header__button--open {
+    &:before {
+      transform: translateY(-15%) rotate(-45deg);
+    }
+  }
+
+  &.cross-service-header__button--service-header {
+    @include toggle-button-focus($govuk-link-colour);
+  }
+
+  &.cross-service-header__button--one-login {
+    @include toggle-button-focus(govuk-colour("white"));
+  }
+}
+
+.cross-service-header__button-icon {
+  margin-left: govuk-spacing(2);
+
+  &.cross-service-header__button-icon--focus {
+    display: none;
+  }
+
+  // apply focus style on :focus for browsers which support :focus but not :focus-visible
+  .cross-service-header__button:focus & {
+    &.cross-service-header__button-icon--default {
+      display: none;
+    }
+
+    &.cross-service-header__button-icon--focus {
+      display: inline;
+    }
+  }
+
+  // overwrite previous styles for browsers which support :focus-visible
+  .cross-service-header__button:focus:not(:focus-visible) & {
+    &.cross-service-header__button-icon--default {
+      display: inline;
+    }
+
+    &.cross-service-header__button-icon--focus {
+      display: none;
+    }
+  }
+
+  // apply focus style on :focus-visible for browsers which support :focus-visible
+  .cross-service-header__button:focus-visible & {
+    &.cross-service-header__button-icon--default {
+      display: none;
+    }
+
+    &.cross-service-header__button-icon--focus {
+      display: inline;
+    }
+  }
+}
+
 // start One Login header styles
 .one-login-header {
   @include govuk-font($size: 16);
   color: govuk-colour("white");
   background: govuk-colour("black");
-  border-bottom: govuk-spacing(2) solid govuk-colour("blue");
+  border-bottom: govuk-spacing(2) solid $govuk-link-colour;
   position: relative;
 }
 
@@ -37,10 +176,8 @@ $govuk-new-link-styles: true;
   }
 }
 
-$govuk-header-link-underline-thickness: 3px;
-
 .one-login-header__link,
-.one-login-nav__link {
+.one-login-header__nav__link {
   &:link,
   &:visited {
     @include govuk-typography-common;
@@ -139,159 +276,11 @@ $govuk-header-link-underline-thickness: 3px;
   }
 }
 
-.cross-service-header__button {
-  display: none;
-
-  .js-enabled & {
-    display: inline;
-    display: flex;
-
-    @include govuk-media-query ($from: tablet) {
-      display: none;
-    }
-
-  }
-
-  @include govuk-font($size: 19, $weight: bold);
-  position: relative;
-  align-items: center;
-  cursor: pointer;
-  min-width: 240px;
-  min-width: max-content;
-  border: 0;
-  margin: 0;
-  padding: govuk-spacing(2) 0 govuk-spacing(2) govuk-spacing(4);
-  background: none;
-
-  &:before {
-    content: "";
-    position: absolute;
-    left: .15rem;
-    top: 50%;
-    box-sizing: border-box;
-    display: inline-block;
-    width: 0.6rem;
-    height: 0.6rem;
-    transform: translateY(-65%) rotate(135deg);
-    border-top: 0.15rem solid;
-    border-right: 0.15rem solid;
-  }
-
-  &.cross-service-header__button--open {
-    &:before {
-      transform: translateY(-15%) rotate(-45deg);
-    }
-  }
-
-  &.cross-service-header__button--service-header {
-    color: govuk-colour("blue");
-    
-
-    &:focus {
-      &:focus-visible {
-        @include govuk-focused-text;
-      }
-      
-      &:not(:focus-visible) {
-        outline: none;
-        background: none;
-        color: govuk-colour("blue");
-      }
-    }
-  }
-
-  &.cross-service-header__button--one-login {
-    color: govuk-colour("white");
-
-    &:focus {
-      background: $govuk-focus-colour;
-      color: $govuk-focus-text-colour;
-      outline: 3px solid transparent;
-      &:not(:focus-visible) {
-        outline: none;
-        color: govuk-colour("white");
-        background: none;
-      }
-    }
-  }
-
-  &:focus-visible {
-    background: $govuk-focus-colour;
-    color: $govuk-focus-text-colour;
-    outline: 3px solid transparent;
-
-    &:hover {
-      color: $govuk-focus-text-colour;
-    }
-  }
+.one-login-header__nav {
+  @include nav-style(".one-login-header__nav--open");
 }
 
-.cross-service-header__button-icon {
-  margin-left: govuk-spacing(2);
-}
-
-.cross-service-header__button-icon {
-  &.cross-service-header__button-icon--focus {
-    display: none;
-  }
-
-  // apply focus style on :focus for browsers which support :focus but not :focus-visible
-  .cross-service-header__button:focus & {
-    &.cross-service-header__button-icon--default {
-      display: none;
-    }
-
-    &.cross-service-header__button-icon--focus {
-      display: inline;
-    }
-  }
-
-  // overwrite previous styles for browsers which support :focus-visible
-  .cross-service-header__button:focus:not(:focus-visible) & {
-    &.cross-service-header__button-icon--default {
-      display: inline;
-    }
-
-    &.cross-service-header__button-icon--focus {
-      display: none;
-    }
-  }
-
-  // apply focus style on :focus-visible for browsers which support :focus-visible
-  .cross-service-header__button:focus-visible & {
-    &.cross-service-header__button-icon--default {
-      display: none;
-    }
-
-    &.cross-service-header__button-icon--focus {
-      display: inline;
-    }
-  }
-}
-
-.one-login-nav {
-  display: inline-block;
-  overflow: hidden;
-
-  // if JS is unavailable, the nav links are expanded and the toggle button is hidden
-  .js-enabled & {
-    display: none;
-
-    &.one-login-nav--open {
-      display: block;
-    }
-
-    @include govuk-media-query ($from: tablet) {
-      display: inline-block;
-    } 
-  }
-
-  @include govuk-media-query ($until: tablet) {
-    width: 100%;
-  }
-}
-
-.one-login-nav__list {
+.one-login-header__nav__list {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -303,7 +292,7 @@ $govuk-header-link-underline-thickness: 3px;
   } 
 }
 
-.one-login-nav__list-item {
+.one-login-header__nav__list-item {
   display: inline-block;
   padding: govuk-spacing(2) 0;
 
@@ -325,13 +314,14 @@ $govuk-header-link-underline-thickness: 3px;
   }
 }
 
-.one-login-nav__link {
+.one-login-header__nav__link {
   font-weight: bold;
 
-  &.one-login-nav__link--one-login {
+  &.one-login-header__nav__link--one-login {
     @include govuk-media-query ($from: tablet) {
       display: flex;
       justify-content: center;
+
       &:focus {
         .cross-service-header__button-icon {
           display: none;
@@ -350,11 +340,9 @@ $govuk-header-link-underline-thickness: 3px;
     } 
   }
 }
-
 // end One Login header styles
 
 // start service navigation styles
-
 .service-header {
   background-color: govuk-colour('light-grey');
   border-bottom: 1px solid govuk-colour('mid-grey');
@@ -370,7 +358,11 @@ $govuk-header-link-underline-thickness: 3px;
   }
 }
 
-.service-header__list {
+.service-header__nav {
+  @include nav-style(".service-header__nav--open");
+}
+
+.service-header__nav-list {
   @include govuk-font($size: 19, $weight: bold);
   list-style: none;
   margin: 0;
@@ -382,10 +374,10 @@ $govuk-header-link-underline-thickness: 3px;
   }
 }
 
-.service-header__list-item {
+.service-header__nav-list-item {
   margin: govuk-spacing(2) 0 govuk-spacing(4);
 
-  &.service-header__list-item--active {
+  &.service-header__nav-list-item--active {
     padding-left: govuk-spacing(3);
     border-left: govuk-spacing(1) solid $govuk-link-colour;
   }
@@ -400,7 +392,7 @@ $govuk-header-link-underline-thickness: 3px;
       margin: 0;
     }
     
-    &.service-header__list-item--active {
+    &.service-header__nav-list-item--active {
       border-left: 0;
       padding-left: 0;
       border-bottom: govuk-spacing(1) solid $govuk-link-colour;
@@ -408,35 +400,13 @@ $govuk-header-link-underline-thickness: 3px;
   }
 }
 
-.service-header__list-item-link {
+.service-header__nav-list-item-link {
   @include govuk-link-common;
   @include govuk-link-style-default;
   @include govuk-link-style-no-visited-state;
 
   &:not(:hover) {
     text-decoration: none;
-  }
-}
-
-
-.service-nav {
-  display: block;
-  overflow: hidden;
-
-  .js-enabled & {
-    display: none;
-
-    &.service-nav--open {
-      display: block;
-    }
-
-    @include govuk-media-query ($from: tablet) {
-      display: block;
-    } 
-  }
-
-  @include govuk-media-query ($until: tablet) {
-    width: 100%;
   }
 }
 // end service navigation styles

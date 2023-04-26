@@ -19,23 +19,22 @@ CrossServiceHeader.prototype.init = function () {
   }
 
   for (var i = 0; i < this.$navigation.length; i++) {
-    var $currentNav = this.$navigation[i];
-    $currentNav.$menuButton = $currentNav.querySelector('.js-x-header-toggle')
+    var $nav = this.$navigation[i];
+    $nav.$menuButton = $nav.querySelector('.js-x-header-toggle')
     
-    $currentNav.$menu = $currentNav.$menuButton && $currentNav.querySelector(
-      '#' + $currentNav.$menuButton.getAttribute('aria-controls')
+    $nav.$menu = $nav.$menuButton && $nav.querySelector(
+      '#' + $nav.$menuButton.getAttribute('aria-controls')
       )
-    if (!$currentNav.$menuButton || !$currentNav.$menu) {
+    if (!$nav.$menuButton || !$nav.$menu) {
       return
     }
-    $currentNav.$menuOpenClass = $currentNav.$menu && $currentNav.$menu.dataset.openClass;
-    $currentNav.$menuButtonOpenClass = $currentNav.$menuButton && $currentNav.$menuButton.dataset.openClass;
-    $currentNav.$menuButtonOpenLabel = $currentNav.$menuButton && $currentNav.$menuButton.dataset.textForShow;
-    $currentNav.$menuButtonCloseLabel = $currentNav.$menuButton && $currentNav.$menuButton.dataset.textForHide;
-    $currentNav.$menu.hidden = true;
-    $currentNav.isOpen = false;
+    $nav.$menuOpenClass = $nav.$menu && $nav.$menu.dataset.openClass;
+    $nav.$menuButtonOpenClass = $nav.$menuButton && $nav.$menuButton.dataset.openClass;
+    $nav.$menuButtonOpenLabel = $nav.$menuButton && $nav.$menuButton.dataset.textForShow;
+    $nav.$menuButtonCloseLabel = $nav.$menuButton && $nav.$menuButton.dataset.textForHide;
+    $nav.isOpen = false;
 
-    $currentNav.$menuButton.addEventListener('click', this.handleMenuButtonClick.bind($currentNav))
+    $nav.$menuButton.addEventListener('click', this.handleMenuButtonClick.bind($nav))
   }
 }
 
@@ -52,5 +51,4 @@ CrossServiceHeader.prototype.handleMenuButtonClick = function () {
   this.$menuButton.classList.toggle(this.$menuButtonOpenClass, this.isOpen)
   this.$menuButton.setAttribute('aria-expanded', this.isOpen)
   this.$menuButton.setAttribute('aria-label', (this.isOpen ? this.$menuButtonCloseLabel : this.$menuButtonOpenLabel))
-  this.$menu.hidden = !this.isOpen
 }
