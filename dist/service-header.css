@@ -621,7 +621,7 @@
 }
 @media (max-width: 40.0525em) {
   .service-header__heading {
-    padding: 10px 0;
+    padding: 15px 0 5px;
   }
 }
 

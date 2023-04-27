@@ -354,7 +354,7 @@ $govuk-header-link-underline-thickness: 3px;
   margin: 0;
 
   @include govuk-media-query ($until: tablet) {
-    padding: govuk-spacing(2) 0;
+    padding: govuk-spacing(3) 0  govuk-spacing(1);
   }
 }
 

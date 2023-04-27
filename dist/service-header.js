@@ -4,7 +4,7 @@
 */
 function CrossServiceHeader ($module) {
   this.$header = $module
-  this.$navigation = $module.querySelectorAll("[data-module='one-login-header-nav']");
+  this.$navigation = $module.querySelectorAll("[data-module='one-login-header-nav']")
   this.$header.classList.add('js-enabled')
 }
 /**
@@ -30,8 +30,10 @@ CrossServiceHeader.prototype.init = function () {
     }
     $nav.$menuOpenClass = $nav.$menu && $nav.$menu.dataset.openClass;
     $nav.$menuButtonOpenClass = $nav.$menuButton && $nav.$menuButton.dataset.openClass;
-    $nav.$menuButtonOpenLabel = $nav.$menuButton && $nav.$menuButton.dataset.textForShow;
-    $nav.$menuButtonCloseLabel = $nav.$menuButton && $nav.$menuButton.dataset.textForHide;
+    $nav.$menuButtonOpenLabel = $nav.$menuButton && $nav.$menuButton.dataset.labelForShow;
+    $nav.$menuButtonCloseLabel = $nav.$menuButton && $nav.$menuButton.dataset.labelForHide;
+    $nav.$menuButtonOpenText = $nav.$menuButton && $nav.$menuButton.dataset.textForShow;
+    $nav.$menuButtonCloseText = $nav.$menuButton && $nav.$menuButton.dataset.textForHide;
     $nav.isOpen = false;
 
     $nav.$menuButton.addEventListener('click', this.handleMenuButtonClick.bind($nav))
@@ -51,4 +53,7 @@ CrossServiceHeader.prototype.handleMenuButtonClick = function () {
   this.$menuButton.classList.toggle(this.$menuButtonOpenClass, this.isOpen)
   this.$menuButton.setAttribute('aria-expanded', this.isOpen)
   this.$menuButton.setAttribute('aria-label', (this.isOpen ? this.$menuButtonCloseLabel : this.$menuButtonOpenLabel))
+  if (this.$menuButtonCloseText && this.$menuButtonOpenText) {
+    this.$menuButton.innerHTML = this.isOpen ? this.$menuButtonCloseText : this.$menuButtonOpenText
+  }
 }
