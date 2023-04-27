@@ -1,5 +1,7 @@
 /**
 * A modified adaptation of the Design System header script
+* To initialise the One Login header, run:
+* new window.CrossServiceHeader(document.querySelector("[data-module='one-login-header']")).init();
 */
 function CrossServiceHeader ($module) {
   this.$header = $module
@@ -17,8 +19,6 @@ CrossServiceHeader.prototype.init = function () {
     return
   }
   /**
-  * Initialise header
-  *
   * The header can render with one or two navigation elements which collapse 
   * into dropdowns on the mobile variation. This initialises the dropdown 
   * functionality for all navs that have a menu button which has: 
