@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build-templates": "node build.js",
-    "build-sass": "sass --no-source-map --load-path=node_modules/govuk-frontend/govuk src/service-header.scss dist/service-header.css",
-    "watch-sass": "sass --no-source-map --load-path=node_modules/govuk-frontend/govuk --watch src/service-header.scss dist/service-header.css",
+    "build-sass": "sass --no-source-map --load-path=node_modules/govuk-frontend src/service-header.scss dist/service-header.css",
+    "watch-sass": "sass --no-source-map --load-path=node_modules/govuk-frontend --watch src/service-header.scss dist/service-header.css",
     "build-all": "npm run build-templates && npm run build-sass"
   },
   "author": "",
