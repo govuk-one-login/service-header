@@ -278,6 +278,9 @@ $govuk-header-link-underline-thickness: 3px;
 
 .one-login-header__nav {
   @include nav-style(".one-login-header__nav--open");
+  @include govuk-media-query ($from: tablet) {
+    max-width: 66%;
+  } 
 }
 
 .one-login-header__nav__list {
@@ -296,13 +299,13 @@ $govuk-header-link-underline-thickness: 3px;
   display: inline-block;
   padding: govuk-spacing(2) 0;
 
-  &:not(:last-child) {
-    margin-right: govuk-spacing(4);
-  }
-
   @include govuk-media-query ($from: tablet) {
     padding: govuk-spacing(2) 0 govuk-spacing(2) govuk-spacing(6);
     border-left: 1px solid $govuk-border-colour;
+
+    &:not(:last-child) {
+      margin-right: govuk-spacing(4);
+    }
   }
 
   @include govuk-media-query ($until: tablet) {
@@ -350,6 +353,7 @@ $govuk-header-link-underline-thickness: 3px;
 
 .service-header__heading {
   @include govuk-font($size: 19, $weight: bold);
+  color: $govuk-text-colour;
   padding-top: govuk-spacing(4);
   margin: 0;
 

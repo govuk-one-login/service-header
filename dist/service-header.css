@@ -528,6 +528,11 @@
     width: 100%;
   }
 }
+@media (min-width: 40.0625em) {
+  .one-login-header__nav {
+    max-width: 66%;
+  }
+}
 
 .one-login-header__nav__list {
   margin: 0;
@@ -546,13 +551,13 @@
   display: inline-block;
   padding: 10px 0;
 }
-.one-login-header__nav__list-item:not(:last-child) {
-  margin-right: 20px;
-}
 @media (min-width: 40.0625em) {
   .one-login-header__nav__list-item {
     padding: 10px 0 10px 30px;
     border-left: 1px solid #b1b4b6;
+  }
+  .one-login-header__nav__list-item:not(:last-child) {
+    margin-right: 20px;
   }
 }
 @media (max-width: 40.0525em) {
@@ -598,6 +603,7 @@
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.25;
+  color: #0b0c0c;
   padding-top: 20px;
   margin: 0;
 }

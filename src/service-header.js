@@ -5,7 +5,7 @@
 */
 function CrossServiceHeader ($module) {
   this.$header = $module
-  this.$navigation = $module.querySelectorAll("[data-module='one-login-header-nav']")
+  this.$navigation = $module.querySelectorAll("[data-one-login-header-nav]")
   this.$header.classList.add('js-enabled')
 }
 /**
