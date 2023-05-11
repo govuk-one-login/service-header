@@ -36,7 +36,7 @@ $govuk-header-link-underline-thickness: 3px;
 @mixin nav-style($nav-open-class) {
   display: block;
   // if JS is unavailable, the nav links are expanded and the toggle button is hidden
-  .js-enabled & {
+  .cross-service-header.js-enabled & {
     display: none;
 
     &#{$nav-open-class} {
@@ -58,7 +58,7 @@ $govuk-header-link-underline-thickness: 3px;
 .cross-service-header__button {
   display: none;
 
-  .js-enabled & {
+  .cross-service-header.js-enabled & {
     display: inline;
     display: flex;
 
