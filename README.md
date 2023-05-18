@@ -117,7 +117,7 @@ This is to help users understand which navigation menu they are using. It also h
 
 #### Edit accessibility markup for the navigation menu page the user is currently on
 
-You can [visually highlight the page the user is currently on in the navigation menu](#) by adding the `service-header__nav-list-item--active` modifier class to the relevant `li` element in the menu.
+You can [visually highlight the page the user is currently on in the navigation menu](#visually-highlight-which-page-in-the-menu-the-user-is-currently-on).
 
 In addition to this, set the `aria-current="page"` attribute on the relevant `<a>` element.
 
