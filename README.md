@@ -93,7 +93,7 @@ You’ll need to edit the markup for the:
 
 #### Edit accessibility markup for the ‘menu’ button
 
-The menu button is used to show or hide the internal service navigation menu of the header on small devices. The code for the menu button is on [lines 58 to 68 of service-header.njk](https://github.com/alphagov/di-govuk-one-login-service-header/blob/de818fdf3a897ac95a3d062ba01e173d977403a2/src/service-header.njk#L58-L69).
+The menu button is used to show or hide the internal service navigation menu of the header on small devices.
 
 You’ll need to adapt the screen reader text for the following attributes of the menu button element:
 
