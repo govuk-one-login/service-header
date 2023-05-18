@@ -80,6 +80,7 @@ You'll need to modify the internal service navigation part of the header in orde
 #### Visually highlight which page in the menu the user is currently on
 
 You can visually highlight the page the user is currently on in the navigation menu by adding the `service-header__nav-list-item--active` modifier class to the relevant `li` element in the internal service navigation menu. You’ll need to implement this in the code you’re using to render your pages.
+
 #### Edit screen reader text and ARIA attributes to be specific to your service
 
 The header is designed to work for users of screen readers and contains some visually hidden text and [ARIA attributes](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) which you will need to edit to make it specific to your service.
