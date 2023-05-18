@@ -41,7 +41,7 @@ The header has space to optionally add links to different parts of your service,
 
 This repository contains:
 
-+ Nunjucks for the GOV.UK One Login header component
++ Nunjucks for the GOV.UK One Login service header component
 + plain HTML for the header - this is compiled from the Nunjucks into the `/dist` directory
 + Sass files for compiling CSS files to style the header
 + plain CSS, for services who are not using Sass
