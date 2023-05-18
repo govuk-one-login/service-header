@@ -28,7 +28,7 @@ You’ll need to adapt the internal service navigation so that it includes conte
 
 The header contains two links.
 
-| Link text and appearance | Link destination | Function |
+| Link text | Link destination | Function |
 | - | - | - |
 | GOV.UK One Login | `https://home.account.gov.uk/` | Takes the user to their One Login ‘home’ area, where they can manage their credentials and see and access the services they've used |
 | Sign out | `https://home.account.gov.uk/sign-out` | Signs the user out of One Login, and ends their signed in session with your services
