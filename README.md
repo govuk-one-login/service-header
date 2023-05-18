@@ -8,7 +8,7 @@ It provides a way for users to:
 + sign out
 + change their sign in credentials
 
-The cross-service header has been adapted from the [standard service header in the GOV.UK Design System](https://design-system.service.gov.uk/components/header/).
+The One Login header has been adapted from the [standard service header in the GOV.UK Design System](https://design-system.service.gov.uk/components/header/).
 
 It's a 'beta' component and we're interested to hear from service teams about how it performs with your users.
 
