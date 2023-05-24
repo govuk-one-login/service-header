@@ -16,10 +16,6 @@ We usability tested various iterations of the header. In testing, we asked parti
 
 ## Key things we are designing for
 
-We usability tested various iterations of the header. In testing, we asked participants to create a GOV.UK One Login to use a service, followed by a separate task of signing into a different service with their GOV.UK One Login. In these tasks we asked participants where they thought the links in the header would take them and where they would go to manage their GOV.UK One Login. This meant we could gauge participants' understanding of GOV.UK One Login’s relationship with the services on GOV.UK and which navigation designs were most successful in conveying this.
-
-## Key things we are designing for
-
 - helping users understand that the service account sits under an overarching multi-service login
 - showing users they are signed in
 - trying to impact service team's navigation patterns as little as possible
