@@ -1,3 +1,6 @@
+
+
+
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -7,7 +10,11 @@
     <link rel="stylesheet" href="./service-header.css">
   </head>
   <body style="margin:0;">
-    <header class="cross-service-header" role="banner" data-module="one-login-header">
+    
+
+
+
+<header class="cross-service-header" role="banner" data-module="one-login-header">
   <div class="one-login-header" data-one-login-header-nav>
     <div class="one-login-header__container govuk-width-container">
       <div class="one-login-header__logo">
@@ -34,12 +41,9 @@
         class="cross-service-header__button cross-service-header__button--one-login js-x-header-toggle">
         <span class="cross-service-header__button-content">One Login</span>
           
-
-
   
   
   
-
   <!--[if gt IE 8]><!-->
     <span class="cross-service-header__button-icon cross-service-header__button-icon--default">
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
@@ -51,11 +55,10 @@
     </span>
   <!--<![endif]-->
 
-
+          
   
   
   
-
   <!--[if gt IE 8]><!-->
     <span class="cross-service-header__button-icon cross-service-header__button-icon--focus">
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
@@ -76,12 +79,9 @@
                 GOV.UK One Login
               </span>
               
-
-
   
   
   
-
   <!--[if gt IE 8]><!-->
     <span class="cross-service-header__button-icon cross-service-header__button-icon--default">
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
@@ -93,11 +93,10 @@
     </span>
   <!--<![endif]-->
 
-
+              
   
   
   
-
   <!--[if gt IE 8]><!-->
     <span class="cross-service-header__button-icon cross-service-header__button-icon--focus">
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
@@ -126,8 +125,9 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-third">
           <!-- The name of your service goes here -->
-          <h2 class="service-header__heading">Name of service</h2>
+          <h2 class="service-header__heading">Name of example service</h2>
         </div>
+        
         <div class="govuk-grid-column-two-thirds">
           <!-- Label the toggle button appropriately (you might want to use the name of your service) to provide support for screen reader users -->
           <button type="button" 
@@ -143,18 +143,43 @@
             <span class="service-header__button-content">Menu</span>
           </button>
           <!-- Important! Label your navigation appropriately! When there are multiple navigation landmarks on a page, additional labelling is required to provide support for screen reader users -->
-          <nav aria-label="Service menu">
+          <nav aria-label="Name of example service menu">
             <ul class="service-header__nav-list service-header__nav" id="service-header__nav" data-open-class="service-header__nav--open">
+              
               <!-- Use the "service-header__nav-list-item--active" modifier class on the li to visually highlight the page the user is currently viewing -->
               <li class="service-header__nav-list-item service-header__nav-list-item--active">
                 <!-- Use the aria-current="page" attribute on the anchor tag -->
-                <a class="service-header__nav-list-item-link" aria-current="page" href="#">Service link 1</a>
+                <a class="service-header__nav-list-item-link" 
+                   aria-current="page" 
+                  href="#">
+                  Example link 1
+                </a>
               </li>
-              <li class="service-header__nav-list-item"><a class="service-header__nav-list-item-link" href="#">Service link 2</a></li>
-              <li class="service-header__nav-list-item"><a class="service-header__nav-list-item-link" href="#">Service link 3</a></li>
+              
+              <!-- Use the "service-header__nav-list-item--active" modifier class on the li to visually highlight the page the user is currently viewing -->
+              <li class="service-header__nav-list-item ">
+                <!-- Use the aria-current="page" attribute on the anchor tag -->
+                <a class="service-header__nav-list-item-link" 
+                  
+                  href="#">
+                  Example link 2
+                </a>
+              </li>
+              
+              <!-- Use the "service-header__nav-list-item--active" modifier class on the li to visually highlight the page the user is currently viewing -->
+              <li class="service-header__nav-list-item ">
+                <!-- Use the aria-current="page" attribute on the anchor tag -->
+                <a class="service-header__nav-list-item-link" 
+                  
+                  href="#">
+                  Example link 3
+                </a>
+              </li>
+              
             </ul>
           </nav>
         </div>
+        
       </div>
     </div>
   </div>
