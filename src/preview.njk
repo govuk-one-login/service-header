@@ -1,3 +1,18 @@
+{% set navigationItems = navigationItems if navigationItems else [
+  {
+    active: true,
+    href: "#",
+    text: 'Example link 1'
+  },{
+    href: "#",
+    text: 'Example link 2'
+  },{
+    href: "#",
+    text: 'Example link 3'
+  }]
+%}
+{% set serviceName = "Name of example service" %}
+
 <html lang="en">
   <head>
     <meta charset="UTF-8">

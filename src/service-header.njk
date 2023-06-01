@@ -1,3 +1,32 @@
+{% set navigationItems = navigationItems if navigationItems else [
+  {
+    active: true,
+    href: "#",
+    text: 'service link 1'
+  },{
+    href: "#",
+    text: 'service link 2'
+  },{
+    href: "#",
+    text: 'service link 3'
+  }] %}
+{% set serviceName = serviceName if serviceName else "Name of service" %}
+{% macro littlePersonIcon(modifier="default") %}
+  {% set class = "focus" if modifier == "focus" else "default" %}
+  {% set backgroundColour = "black" if modifier == "focus" else "white" %}
+  {% set personColour = "white" if modifier == "focus" else "#1D70B8" %}
+  <!--[if gt IE 8]><!-->
+    <span class="cross-service-header__button-icon cross-service-header__button-icon--{{class}}">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
+        <circle cx="11" cy="11" r="11" fill="{{backgroundColour}}"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.29297 18.8487C4.23255 15.4753 7.32741 13 11.0004 13C14.6731 13 17.7678 15.4749 18.7076 18.848C17.8058 19.7338 16.752 20.4654 15.5889 21H11.0004H6.41097C5.24819 20.4655 4.19463 19.7342 3.29297 18.8487Z" fill="{{personColour}}"/>
+        <circle cx="11" cy="7.75" r="3.75" fill="{{personColour}}"/>
+        <circle cx="11" cy="11" r="10" stroke="{{backgroundColour}}" stroke-width="2"/>
+      </svg>
+    </span>
+  <!--<![endif]-->
+{% endmacro %}
+
 <header class="cross-service-header" role="banner" data-module="one-login-header">
   <div class="one-login-header" data-one-login-header-nav>
     <div class="one-login-header__container govuk-width-container">
@@ -24,7 +53,8 @@
         aria-expanded="false" 
         class="cross-service-header__button cross-service-header__button--one-login js-x-header-toggle">
         <span class="cross-service-header__button-content">One Login</span>
-          {% include './little-person-icon.njk' %}
+          {{ littlePersonIcon() }}
+          {{ littlePersonIcon("focus") }}
       </button>
       <nav aria-label="GOV.UK One Login menu" class="one-login-header__nav" data-open-class="one-login-header__nav--open" id="one-login-header__nav">
         <ul class="one-login-header__nav__list">
@@ -33,7 +63,8 @@
               <span class="one-login-header__nav__link-content">
                 GOV.UK One Login
               </span>
-              {% include './little-person-icon.njk' %}
+              {{ littlePersonIcon() }}
+              {{ littlePersonIcon("focus") }}
             </a>
           </li>
           <li class="one-login-header__nav__list-item">
@@ -51,8 +82,9 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-third">
           <!-- The name of your service goes here -->
-          <h2 class="service-header__heading">Name of service</h2>
+          <h2 class="service-header__heading">{{ serviceName }}</h2>
         </div>
+        {% if navigationItems %}
         <div class="govuk-grid-column-two-thirds">
           <!-- Label the toggle button appropriately (you might want to use the name of your service) to provide support for screen reader users -->
           <button type="button" 
@@ -68,18 +100,23 @@
             <span class="service-header__button-content">Menu</span>
           </button>
           <!-- Important! Label your navigation appropriately! When there are multiple navigation landmarks on a page, additional labelling is required to provide support for screen reader users -->
-          <nav aria-label="Service menu">
+          <nav aria-label="{{ serviceName }} menu">
             <ul class="service-header__nav-list service-header__nav" id="service-header__nav" data-open-class="service-header__nav--open">
+              {% for item in navigationItems %}
               <!-- Use the "service-header__nav-list-item--active" modifier class on the li to visually highlight the page the user is currently viewing -->
-              <li class="service-header__nav-list-item service-header__nav-list-item--active">
+              <li class="service-header__nav-list-item {{ 'service-header__nav-list-item--active' if item.active else '' }}">
                 <!-- Use the aria-current="page" attribute on the anchor tag -->
-                <a class="service-header__nav-list-item-link" aria-current="page" href="#">Service link 1</a>
+                <a class="service-header__nav-list-item-link" 
+                  {% if item.active %} aria-current="page" {% endif %}
+                  href="{{item.href}}">
+                  {{item.text}}
+                </a>
               </li>
-              <li class="service-header__nav-list-item"><a class="service-header__nav-list-item-link" href="#">Service link 2</a></li>
-              <li class="service-header__nav-list-item"><a class="service-header__nav-list-item-link" href="#">Service link 3</a></li>
+              {% endfor %}
             </ul>
           </nav>
         </div>
+        {% endif %}
       </div>
     </div>
   </div>
