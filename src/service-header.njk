@@ -79,13 +79,11 @@
   <!-- Start of service navigation -->
   <div class="service-header" data-one-login-header-nav>
     <div class="govuk-width-container">
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-third">
-          <!-- The name of your service goes here -->
-          <h2 class="service-header__heading">{{ serviceName }}</h2>
-        </div>
+      <div class="service-header__container">
+        <!-- The name of your service goes here -->
+        <h2 class="service-header__heading">{{ serviceName }}</h2>
         {% if navigationItems %}
-        <div class="govuk-grid-column-two-thirds">
+        <div>
           <!-- Label the toggle button appropriately (you might want to use the name of your service) to provide support for screen reader users -->
           <button type="button" 
             aria-controls="service-header__nav" 
