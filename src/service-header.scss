@@ -362,7 +362,7 @@ $govuk-header-link-underline-thickness: 3px;
 .service-header__heading {
   @include govuk-font($size: 19, $weight: bold);
   color: $govuk-text-colour;
-  padding-top: govuk-spacing(3);
+  padding: govuk-spacing(3) 0;
   margin: 0;
   flex-grow: 1;
 
