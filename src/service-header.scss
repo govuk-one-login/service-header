@@ -350,14 +350,24 @@ $govuk-header-link-underline-thickness: 3px;
   border-bottom: 1px solid govuk-colour('mid-grey');
 }
 
+.service-header__container {
+  padding-top: govuk-spacing(1);
+
+  @include govuk-media-query ($from: tablet) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
 .service-header__heading {
   @include govuk-font($size: 19, $weight: bold);
   color: $govuk-text-colour;
-  padding-top: govuk-spacing(4);
+  padding-top: govuk-spacing(3);
   margin: 0;
+  flex-grow: 1;
 
   @include govuk-media-query ($until: tablet) {
-    padding: govuk-spacing(3) 0  govuk-spacing(1);
+    padding: govuk-spacing(1) 0;
   }
 }
 
@@ -373,7 +383,6 @@ $govuk-header-link-underline-thickness: 3px;
 
   @include govuk-media-query ($from: tablet) {
     @include govuk-font($size: 16, $weight: bold);
-    text-align: right;
   }
 }
 
@@ -387,11 +396,11 @@ $govuk-header-link-underline-thickness: 3px;
 
   @include govuk-media-query ($from: tablet) {
     display: inline-block;
-    padding: govuk-spacing(4) 0 govuk-spacing(3);
-    margin: 0 0 0 govuk-spacing(6);
+    padding: govuk-spacing(3) 0 govuk-spacing(3);
+    margin:  0 govuk-spacing(6) 0 0;
     border-bottom: govuk-spacing(1) solid transparent;
 
-    &:first-of-type {
+    &:last-of-type {
       margin: 0;
     }
     

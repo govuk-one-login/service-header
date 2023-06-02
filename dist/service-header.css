@@ -595,6 +595,16 @@
   border-bottom: 1px solid #b1b4b6;
 }
 
+.service-header__container {
+  padding-top: 5px;
+}
+@media (min-width: 40.0625em) {
+  .service-header__container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
 .service-header__heading {
   font-family: "GDS Transport", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -604,8 +614,9 @@
   font-size: 1rem;
   line-height: 1.25;
   color: #0b0c0c;
-  padding-top: 20px;
+  padding-top: 15px;
   margin: 0;
+  flex-grow: 1;
 }
 @media print {
   .service-header__heading {
@@ -627,7 +638,7 @@
 }
 @media (max-width: 40.0525em) {
   .service-header__heading {
-    padding: 15px 0 5px;
+    padding: 5px 0;
   }
 }
 
@@ -690,7 +701,6 @@
     font-size: 14px;
     font-size: 0.875rem;
     line-height: 1.1428571429;
-    text-align: right;
   }
 }
 @media print and (min-width: 40.0625em) {
@@ -722,11 +732,11 @@
 @media (min-width: 40.0625em) {
   .service-header__nav-list-item {
     display: inline-block;
-    padding: 20px 0 15px;
-    margin: 0 0 0 30px;
+    padding: 15px 0 15px;
+    margin: 0 30px 0 0;
     border-bottom: 5px solid transparent;
   }
-  .service-header__nav-list-item:first-of-type {
+  .service-header__nav-list-item:last-of-type {
     margin: 0;
   }
   .service-header__nav-list-item.service-header__nav-list-item--active {
