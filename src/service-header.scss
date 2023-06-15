@@ -396,7 +396,6 @@ $govuk-header-link-underline-thickness: 3px;
 
   @include govuk-media-query ($from: tablet) {
     display: inline-block;
-    padding: govuk-spacing(3) 0 govuk-spacing(3);
     margin:  0 govuk-spacing(6) 0 0;
     border-bottom: govuk-spacing(1) solid transparent;
 
@@ -419,6 +418,15 @@ $govuk-header-link-underline-thickness: 3px;
 
   &:not(:hover) {
     text-decoration: none;
+  }
+  
+  @include govuk-media-query ($from: tablet) {
+    display: inline-block;
+    padding: govuk-spacing(3) 0 govuk-spacing(3);
+
+    &:focus {
+      box-shadow: 0 (-(govuk-spacing(1))) $govuk-focus-colour , 0 govuk-spacing(1) $govuk-focus-text-colour;
+    }
   }
 }
 // end service navigation styles
