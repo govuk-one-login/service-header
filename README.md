@@ -8,7 +8,7 @@ It provides a way for users to:
 + sign out
 + change their sign in credentials
 
-The cross-service header has been adapted from the [standard service header in the GOV.UK Design System](https://design-system.service.gov.uk/components/header/).
+The One Login header has been adapted from the [standard service header in the GOV.UK Design System](https://design-system.service.gov.uk/components/header/).
 
 It's a 'beta' component and we're interested to hear from service teams about how it performs with your users.
 
@@ -28,7 +28,7 @@ You’ll need to adapt the internal service navigation so that it includes conte
 
 The header contains two links.
 
-| Link text and appearance | Link destination | Function |
+| Link text | Link destination | Function |
 | - | - | - |
 | GOV.UK One Login | `https://home.account.gov.uk/` | Takes the user to their One Login ‘home’ area, where they can manage their credentials and see and access the services they've used |
 | Sign out | `https://home.account.gov.uk/sign-out` | Signs the user out of One Login, and ends their signed in session with your services
@@ -41,7 +41,8 @@ The header has space to optionally add links to different parts of your service,
 
 This repository contains:
 
-+ Nunjucks for the GOV.UK One Login header component - this is compiled to HTML in the `/dist` directory
++ Nunjucks for the GOV.UK One Login service header component
++ plain HTML for the header - this is compiled from the Nunjucks into the `/dist` directory
 + Sass files for compiling CSS files to style the header
 + plain CSS, for services who are not using Sass
 + a Javascript file which enables 'drop down' behaviour for the header menu on small screens
@@ -63,13 +64,15 @@ You’ll need to build the logic for only showing the header to signed in users 
 
 ### Adapt the header's HTML so that it works in the templating language your service uses
 
-The code for the header is currently available in HTML and the Nunjucks templating language. You will need to adapt the HTML and Nunjucks for the templating language your service uses.
+The code for the header is currently available in HTML and the Nunjucks templating language. You will need to adapt the HTML or Nunjucks for the templating language your service uses.
+
+The Nunjucks code will work with the [GOV.UK Prototype Kit](https://prototype-kit.service.gov.uk/docs/), which uses Nunjucks as its templating language.
 
 [Contact the GOV.UK One Login team](#contact) if you would like to share your templating implementation in this repository for other teams to use.
 
 ### Adapt the internal service navigation HTML so that it includes content specific to your service
 
-You'll need to modify the HTML in this repository in order to:
+You'll need to modify the internal service navigation part of the header in order to:
 
 + visually highlight which page in the menu the user is currently on
 + ensure screen reader text and ARIA attributes are specific to your service
@@ -77,6 +80,7 @@ You'll need to modify the HTML in this repository in order to:
 #### Visually highlight which page in the menu the user is currently on
 
 You can visually highlight the page the user is currently on in the navigation menu by adding the `service-header__nav-list-item--active` modifier class to the relevant `li` element in the internal service navigation menu. You’ll need to implement this in the code you’re using to render your pages.
+
 #### Edit screen reader text and ARIA attributes to be specific to your service
 
 The header is designed to work for users of screen readers and contains some visually hidden text and [ARIA attributes](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) which you will need to edit to make it specific to your service.
@@ -89,7 +93,7 @@ You’ll need to edit the markup for the:
 
 #### Edit accessibility markup for the ‘menu’ button
 
-The menu button is used to show or hide the internal service navigation menu of the header on small devices. The code for the menu button is on [lines 58 to 68 of service-header.njk](https://github.com/alphagov/di-govuk-one-login-service-header/blob/de818fdf3a897ac95a3d062ba01e173d977403a2/src/service-header.njk#L58-L69).
+The menu button is used to show or hide the internal service navigation menu of the header on small devices.
 
 You’ll need to adapt the screen reader text for the following attributes of the menu button element:
 
@@ -113,7 +117,7 @@ This is to help users understand which navigation menu they are using. It also h
 
 #### Edit accessibility markup for the navigation menu page the user is currently on
 
-You can [visually highlight the page the user is currently on in the navigation menu](#) by adding the `service-header__nav-list-item--active` modifier class to the relevant `li` element in the menu.
+You can [visually highlight the page the user is currently on in the navigation menu](#visually-highlight-which-page-in-the-menu-the-user-is-currently-on).
 
 In addition to this, set the `aria-current="page"` attribute on the relevant `<a>` element.
 
