@@ -1,16 +1,19 @@
-{% set navigationItems = navigationItems if navigationItems else [
+{% set navigationItems = [
   {
-    active: true,
     href: "#",
-    text: 'Example link 1'
+    text: 'Example link 1',
+    id: 'id1'
   },{
     href: "#",
-    text: 'Example link 2'
+    text: 'Example link 2',
+    id: 'id2'
   },{
     href: "#",
-    text: 'Example link 3'
+    text: 'Example link 3',
+    id: 'id3'
   }]
 %}
+{% set activeLinkId = "id3" %}
 {% set serviceName = "Name of example service" %}
 
 <html lang="en">
