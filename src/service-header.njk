@@ -1,14 +1,16 @@
 {% set navigationItems = navigationItems if navigationItems else [
   {
-    active: true,
     href: "#",
-    text: 'service link 1'
+    text: 'service link 1',
+    id: 'servicelink1'
   },{
     href: "#",
-    text: 'service link 2'
+    text: 'service link 2',
+    id: 'servicelink2'
   },{
     href: "#",
-    text: 'service link 3'
+    text: 'service link 3',
+    id: 'servicelink3'
   }] %}
 {% set serviceName = serviceName if serviceName else "Name of service" %}
 {% macro littlePersonIcon(modifier="default") %}
@@ -102,10 +104,10 @@
             <ul class="service-header__nav-list service-header__nav" id="service-header__nav" data-open-class="service-header__nav--open">
               {% for item in navigationItems %}
               <!-- Use the "service-header__nav-list-item--active" modifier class on the li to visually highlight the page the user is currently viewing -->
-              <li class="service-header__nav-list-item {{ 'service-header__nav-list-item--active' if item.active else '' }}">
+              <li class="service-header__nav-list-item {{ 'service-header__nav-list-item--active' if (item.id == activeLinkId) else '' }}">
                 <!-- Use the aria-current="page" attribute on the anchor tag -->
                 <a class="service-header__nav-list-item-link" 
-                  {% if item.active %} aria-current="page" {% endif %}
+                  {% if (item.id == activeLinkId) %} aria-current="page" {% endif %}
                   href="{{item.href}}">
                   {{item.text}}
                 </a>
