@@ -316,6 +316,7 @@
 
 .cross-service-header__button-icon {
   margin-left: 10px;
+  font-size: 0;
 }
 .cross-service-header__button-icon.cross-service-header__button-icon--focus {
   display: none;

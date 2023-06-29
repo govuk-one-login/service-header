@@ -1,18 +1,4 @@
-
-
-
-
-
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service header – usage example</title>
-    <link rel="stylesheet" href="./styles/service-header.css">
-  </head>
-  <body style="margin:0;">
-    <header class="cross-service-header" role="banner" data-module="one-login-header">
+<header class="cross-service-header" role="banner" data-module="one-login-header">
   <div class="one-login-header" data-one-login-header-nav>
     <div class="one-login-header__container govuk-width-container">
       <div class="one-login-header__logo">
@@ -129,21 +115,21 @@
               <li class="service-header__nav-list-item ">
                 <!-- Use the aria-current="page" attribute on the anchor tag -->
                 <a class="service-header__nav-list-item-link"href="#">
-                  Example link 1
+                  service link 1
                 </a>
               </li>
               <!-- Use the "service-header__nav-list-item--active" modifier class on the li to visually highlight the page the user is currently viewing -->
               <li class="service-header__nav-list-item ">
                 <!-- Use the aria-current="page" attribute on the anchor tag -->
                 <a class="service-header__nav-list-item-link"href="#">
-                  Example link 2
+                  service link 2
                 </a>
               </li>
               <!-- Use the "service-header__nav-list-item--active" modifier class on the li to visually highlight the page the user is currently viewing -->
-              <li class="service-header__nav-list-item service-header__nav-list-item--active">
+              <li class="service-header__nav-list-item ">
                 <!-- Use the aria-current="page" attribute on the anchor tag -->
-                <a class="service-header__nav-list-item-link"aria-current="page"href="#">
-                  Example link 3
+                <a class="service-header__nav-list-item-link"href="#">
+                  service link 3
                 </a>
               </li>
             </ul>
@@ -156,11 +142,3 @@
   <!-- End of service navigation -->
   
 </header>
-
-    <script src="./scripts/service-header.js"></script>
-    <script>
-      var oneLoginHeader = document.querySelector("[data-module='one-login-header']");
-      new window.CrossServiceHeader(oneLoginHeader).init();
-    </script>
-  </body>
-</html>
