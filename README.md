@@ -28,12 +28,10 @@ You’ll need to adapt the internal service navigation so that it includes conte
 
 ### GOV.UK One Login links in the header
 
-The header contains two links.
+The header contains two links:
 
-| Link text | Link destination | Function |
-| - | - | - |
-| GOV.UK One Login | `https://home.account.gov.uk/` | Takes the user to their One Login ‘home’ area, where they can manage their credentials and see and access the services they've used |
-| Sign out | `https://home.account.gov.uk/sign-out` | Signs the user out of One Login, and ends their signed in session with your services
++ "GOV.UK One Login": this takes the user to their One Login ‘home’ area, where they can manage their credentials and see and access the services they've used - you don't need to update the url this points to
++ "Sign out": you'll need to adapt this link so that it signs the user out of your service and signs them out of One Login - how you do this will depend on how you've implemented sign out functionality in your service 
 
 ### Internal service navigation links in the header
 
