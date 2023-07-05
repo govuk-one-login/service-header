@@ -124,7 +124,7 @@ In addition to this, set the `aria-current="page"` attribute on the relevant `<a
 
 This is to indicate the user’s position in the navigation if they can’t perceive the visual highlight styling.
 
-## Point the 'Sign out' link at your service's sign out endpoint
+### Point the 'Sign out' link at your service's sign out endpoint
 
 The One Login header contains a ‘Sign out’ link. You’ll need to update this so that it calls the endpoint your service uses to sign users out.
 
