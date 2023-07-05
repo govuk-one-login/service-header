@@ -28,12 +28,10 @@ You’ll need to adapt the internal service navigation so that it includes conte
 
 ### GOV.UK One Login links in the header
 
-The header contains two links.
+The header contains two links:
 
-| Link text | Link destination | Function |
-| - | - | - |
-| GOV.UK One Login | `https://home.account.gov.uk/` | Takes the user to their One Login ‘home’ area, where they can manage their credentials and see and access the services they've used |
-| Sign out | `https://home.account.gov.uk/sign-out` | Signs the user out of One Login, and ends their signed in session with your services
++ "GOV.UK One Login": this takes the user to their One Login ‘home’ area, where they can manage their credentials and see and access the services they've used - you don't need to update the url this points to
++ "Sign out": you'll need to adapt this link so that it signs the user out of your service and signs them out of One Login - how you do this will depend on how you've implemented sign out functionality in your service 
 
 ### Internal service navigation links in the header
 
@@ -56,6 +54,7 @@ You will need to:
 + write logic within your service so that the header is only shown to users who are signed in
 + adapt the header's HTML so that it works in the templating language your service uses
 + adapt the internal service navigation HTML so that it includes content specific to your service
++ point the 'Sign out' link at your service's sign out endpoint
 + include the styling and Javascript files in your service
 
 ### Write logic within your service so that the header is only shown to users who are signed in
@@ -124,6 +123,16 @@ You can [visually highlight the page the user is currently on in the navigation 
 In addition to this, set the `aria-current="page"` attribute on the relevant `<a>` element.
 
 This is to indicate the user’s position in the navigation if they can’t perceive the visual highlight styling.
+
+### Point the 'Sign out' link at your service's sign out endpoint
+
+The One Login header contains a ‘Sign out’ link. You’ll need to update this so that it calls the endpoint your service uses to sign users out.
+
+There’s documentation about how to sign users out in the main [GOV.UK One Login technical documentation](https://docs.sign-in.service.gov.uk/integrate-with-integration-environment/log-your-users-out/). It covers how to:
+
++ request a redirect back to your service after your user has been signed out of One Login
++ subscribe to ‘backchannel log out’ notifications
+
 
 ## Using the styles for the header in your service
 
