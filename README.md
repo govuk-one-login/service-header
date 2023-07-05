@@ -42,7 +42,7 @@ The header has space to optionally add links to different parts of your service,
 This repository contains:
 
 + Nunjucks for the GOV.UK One Login service header component
-+ plain HTML for the header - this is compiled from the Nunjucks into the `/dist` directory
++ plain HTML for the header - this is compiled from the Nunjucks into the `/dist/html` directory
 + Sass files for compiling CSS files to style the header
 + plain CSS, for services who are not using Sass
 + a Javascript file which enables 'drop down' behaviour for the header menu on small screens
@@ -152,13 +152,13 @@ Alternatively, you can edit the header’s Sass import paths to specify `node_mo
 
 ### If you use the GOV.UK Frontend pre-compiled CSS files
 
-Copy the pre-compiled CSS files from this repository into your service's pre-compiled CSS.
+Copy the [pre-compiled CSS files](https://github.com/alphagov/di-govuk-one-login-service-header/blob/main/dist/styles/service-header.css) from this repository into your service's pre-compiled CSS.
 
 The pre-compiled CSS files in this repository duplicate some code from the GOV.UK Frontend CSS files. The header will still be styled correctly but your CSS files will be slightly larger than they need to be.
 
 ### If you do not use GOV.UK Frontend
 
-Copy the pre-compiled CSS files from this repository into your service's CSS.
+Copy the [pre-compiled CSS files](https://github.com/alphagov/di-govuk-one-login-service-header/blob/main/dist/styles/service-header.css) from this repository into your service's CSS.
 
 The pre-compiled CSS files contain all the CSS you need to style the header.
 
@@ -182,7 +182,7 @@ Copying the header’s Javascript file into your project does not initialise the
 
 You’ll need to initialise the Javascript in your code to make it work. To do this, you need to:
 
-+ include [service-header.js](https://github.com/alphagov/di-govuk-one-login-service-header/blob/main/src/service-header.js) in your application Javascript - this attaches the function to the window object by default but you can namespace it if you need to
++ include [service-header.js](https://github.com/alphagov/di-govuk-one-login-service-header/blob/main/dist/scripts/service-header.js) in your application Javascript - this attaches the function to the window object by default but you can namespace it if you need to
 + initialise the header by running `new window.CrossServiceHeader(document.querySelector("[data-module='one-login-header']")).init()`
 
 ### If you don’t use the header’s Javascript
