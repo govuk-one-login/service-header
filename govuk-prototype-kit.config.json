@@ -13,5 +13,6 @@
       "macroName": "govukOneLoginServiceHeader",
       "importFrom": "service-header.njk"
     }
-  ]
+  ],
+  "pluginDependencies": ["govuk-frontend"]
 }
