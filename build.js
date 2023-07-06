@@ -1,5 +1,6 @@
 const fs = require('fs');
 const nunjucks = require('nunjucks');
+
 var params =  { serviceName: "Name of example service", navigationItems: [
   {
     href: "#",
@@ -14,7 +15,9 @@ var params =  { serviceName: "Name of example service", navigationItems: [
     text: 'service link 3',
     id: 'servicelink3'
   }] }
+// generate header HTML preview from nunjucks
 const previewHtml = nunjucks.render("src/preview.njk");
+// generate header HTML from the nunjucks template
 const headerHtml = nunjucks.render("src/template.njk", {params: params});
 
 fs.writeFile(__dirname + '/dist/preview.html', previewHtml, err => {
@@ -41,18 +44,13 @@ fs.copyFile("src/template.njk", __dirname + '/dist/nunjucks/template.njk', (err)
   console.log('header nunjucks template copied to dist folder');
 });
 
-
-fs.copyFile("src/service-header.js", __dirname + '/dist/scripts/service-header.js', (err) => {
+fs.cp('src/scripts', 'dist/scripts', { recursive: true } , function (err) {
   if (err) throw err;
-  console.log('service-header.js copied to dist folder');
-});
+  console.log('copied scripts to dist folder');
+}); 
 
-fs.copyFile("src/service-header.scss", __dirname + '/dist/styles/service-header.scss', (err) => {
+fs.cp('src/styles', 'dist/styles', { recursive: true } , function (err) {
   if (err) throw err;
-  console.log('service-header.scss file copied to dist folder');
-});
+  console.log('copied sass to dist folder');
+}); 
 
-fs.copyFile("src/service-header-no-imports.scss", __dirname + '/dist/styles/service-header-no-imports.scss', (err) => {
-  if (err) throw err;
-  console.log('service-header-no-imports.scss file copied to dist folder');
-});

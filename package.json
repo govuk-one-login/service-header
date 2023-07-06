@@ -9,9 +9,9 @@
   ],
   "scripts": {
     "build-templates": "node build.js",
-    "build-sass": "sass --no-source-map --load-path=node_modules/govuk-frontend src/service-header.scss dist/styles/service-header.css",
-    "watch-sass": "sass --no-source-map --load-path=node_modules/govuk-frontend --watch src/service-header.scss dist/styles/service-header.css",
-    "build-all": "npm run build-templates && npm run build-sass"
+    "build-sass": "sass --no-source-map --load-path=node_modules/govuk-frontend src/styles/service-header.scss src/styles/service-header.css",
+    "watch-sass": "sass --no-source-map --load-path=node_modules/govuk-frontend --watch src/styles/service-header.scss dist/styles/service-header.css",
+    "build-all": "npm run build-sass && npm run build-templates"
   },
   "author": "",
   "license": "ISC",
