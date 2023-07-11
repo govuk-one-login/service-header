@@ -18,7 +18,7 @@ var params =  { serviceName: "Name of example service", navigationItems: [
 // generate header HTML preview from nunjucks
 const previewHtml = nunjucks.render("src/preview.njk");
 // generate header HTML from the nunjucks template
-const headerHtml = nunjucks.render("src/template.njk", {params: params});
+const headerHtml = nunjucks.render("src/nunjucks/template.njk", {params: params});
 
 fs.writeFile(__dirname + '/dist/preview.html', previewHtml, err => {
   if (err) {
@@ -34,16 +34,10 @@ fs.writeFile(__dirname + '/dist/html/header.html', headerHtml, err => {
   console.log('header HTML copied to dist folder');
 });
 
-fs.copyFile("src/service-header.njk", __dirname + '/dist/nunjucks/service-header.njk', (err) => {
+fs.cp('src/nunjucks', 'dist/nunjucks/di-govuk-one-login-service-header', { recursive: true } , function (err) {
   if (err) throw err;
-  console.log('header nunjucks macro copied to dist folder');
-});
-
-fs.copyFile("src/template.njk", __dirname + '/dist/nunjucks/template.njk', (err) => {
-  if (err) throw err;
-  console.log('header nunjucks template copied to dist folder');
-});
-
+  console.log('copied njk templates to dist folder');
+})
 fs.cp('src/scripts', 'dist/scripts', { recursive: true } , function (err) {
   if (err) throw err;
   console.log('copied scripts to dist folder');
