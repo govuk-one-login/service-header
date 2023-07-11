@@ -18,7 +18,7 @@ var params =  { serviceName: "Name of example service", navigationItems: [
 // generate header HTML preview from nunjucks
 const previewHtml = nunjucks.render("src/preview.njk");
 // generate header HTML from the nunjucks template
-const headerHtml = nunjucks.render("src/nunjucks/template.njk", {params: params});
+const headerHtml = nunjucks.render("src/nunjucks/template.njk", { params: params });
 
 fs.writeFile(__dirname + '/dist/preview.html', previewHtml, err => {
   if (err) {

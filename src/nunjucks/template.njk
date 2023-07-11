@@ -116,7 +116,7 @@ Component options:
               <li class="service-header__nav-list-item {{ 'service-header__nav-list-item--active' if (item.id == params.activeLinkId) else '' }}">
                 <!-- Use the aria-current="page" attribute on the anchor tag -->
                 <a class="service-header__nav-list-item-link" 
-                  {%- if (item.id == params.activeLinkId) -%} aria-current="page" {%- endif -%}
+                  {%- if (item.id == params.activeLinkId) -%} aria-current="page" {%- endif %}
                   href="{{item.href}}">
                   {{item.text}}
                 </a>
