@@ -1,5 +1,5 @@
 {
-  "name": "di-govuk-one-login-service-header",
+  "name": "govuk-one-login-service-header",
   "version": "1.0.0",
   "description": "A header for services using GOV.UK One Login",
   "main": "index.js",
