@@ -37,6 +37,10 @@ The header contains two links:
 
 The header has space to optionally add links to different parts of your service, just as the current ‘service header’ component from the Design System does. Follow the same patterns for internal service navigation links as you do with the Design System service header.
 
+## How to use the header in a Prototype Kit prototype
+
+Instructions on how the header can be installed in your Prototype Kit project are available [here](docs/prototype-kit-installation.md).  
+
 ## How to start using the header in your service
 
 This repository contains:
