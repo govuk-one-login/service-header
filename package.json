@@ -1,6 +1,6 @@
 {
   "name": "di-cross-service-header",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A header for services using GOV.UK One Login",
   "main": "index.js",
   "scripts": {
