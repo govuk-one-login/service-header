@@ -2,6 +2,9 @@
 
 ## Install the header plugin 
 Before you [start the kit](https://prototype-kit.service.gov.uk/docs/install/how-to-run-the-kit), run `npm install github:alphagov/di-govuk-one-login-service-header` in your terminal. 
+
+(Note: if you are using a Mac and seeing an error along the lines of `xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun.`, try running `xcode-select --install` before you run the `npm install` command above)
+
 Now the header should appear in the list of installed plugins under the `/manage-prototype/plugins` page in your prototype. 
 
 ![Image of the DI GOVUK One Login Service Header plugin appearing on the prototype plugins page](/docs/assets/prototype-kit/plugins.png)
@@ -40,6 +43,8 @@ The fields indicate as follows:
 - `id` this should be a unique identifier as it is used to set the active link
 
 To set the currently active link which indicates the page the user is currently on, use the following syntax `{% set activeLinkId = "id3" %}`. The value of `activeLinkId` must match the id of one of the objects in the `navigationItems` array.
+
+Add the `set` statements listed above after the `extends` line at the top of the file.
 
 ## Use the header component in an existing page or template
 
