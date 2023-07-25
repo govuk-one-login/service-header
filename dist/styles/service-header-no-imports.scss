@@ -1,13 +1,3 @@
-$govuk-new-link-styles: true;
-// dependencies from GOVUK frontend
-// if this is throwing errors, check that you have govuk-frontend installed and that the load paths are correct
-
-@import "govuk/base";
-@import "govuk/objects/width-container";
-@import "govuk/objects/grid";
-
-// end dependencies from GOVUK frontend
-
 // start mixins and variables
 $govuk-header-link-underline-thickness: 3px;
 
@@ -108,6 +98,7 @@ $govuk-header-link-underline-thickness: 3px;
 
 .cross-service-header__button-icon {
   margin-left: govuk-spacing(2);
+  font-size: 0;
 
   &.cross-service-header__button-icon--focus {
     display: none;

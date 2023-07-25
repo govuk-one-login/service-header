@@ -1,0 +1,26 @@
+{
+  "sass": [
+    "/dist/styles/service-header-no-imports.scss"
+  ],
+  "scripts": [
+    "/dist/scripts/service-header.js",
+    "/dist/scripts/init-service-header.js"
+  ],
+  "nunjucksPaths": [
+    "/dist/nunjucks"
+  ],
+  "templates": [
+    {
+      "name": "Page with GOVUK One Login header",
+      "path": "/dist/nunjucks/di-govuk-one-login-service-header/templates/service-header.njk",
+      "type": "nunjucks"
+    }
+  ],
+  "nunjucksMacros": [
+    {
+      "macroName": "govukOneLoginServiceHeader",
+      "importFrom": "di-govuk-one-login-service-header/service-header.njk"
+    }
+  ],
+  "pluginDependencies": ["govuk-frontend"]
+}

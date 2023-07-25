@@ -34,13 +34,13 @@ We usability tested various iterations of the header. In testing, we asked parti
 
 ### 14, 15 March 2023  -  (most recent version)
 Desktop:
-![The black GOV.UK header with two links 'Your GOV.UK One Login' and 'Sign out'. Underneath this in a grey header are the service navigation links.](/docs/assets/7-header-desktop.png)
+![The black GOV.UK header with two links 'Your GOV.UK One Login' and 'Sign out'. Underneath this in a grey header are the service navigation links.](/docs/assets/design-history/7-header-desktop.png)
 
 Mobile: </br>
-![The black GOV.UK header with two links 'Your GOV.UK One Login' and 'Sign out'. Underneath this in a grey header are the service navigation links.](/docs/assets/7-header-mobile.png)
+![The black GOV.UK header with two links 'Your GOV.UK One Login' and 'Sign out'. Underneath this in a grey header are the service navigation links.](/docs/assets/design-history/7-header-mobile.png)
 
 Context:
-![Image of the desktop version of the service header from 14, 15 March testing ](/docs/assets/7-context.png)
+![Image of the desktop version of the service header from 14, 15 March testing ](/docs/assets/design-history/7-context.png)
 
 
 **Services we used when testing:** Check your state Pension forecast, Register to vote
@@ -62,13 +62,13 @@ Context:
 
 ### 27, 28 February 2023
 Desktop:
-![Blue banner with text saying 'Signed in as name@digital-cabinet-office.gov.uk' on the right and 'Your GOV.UK One Login' and 'Sign out' links on the right. Below is a black header with GOV.UK crown logo on the left and service name in the centre.](/docs/assets/6-header-desktop.png)
+![Blue banner with text saying 'Signed in as name@digital-cabinet-office.gov.uk' on the right and 'Your GOV.UK One Login' and 'Sign out' links on the right. Below is a black header with GOV.UK crown logo on the left and service name in the centre.](/docs/assets/design-history/6-header-desktop.png)
 
 Mobile: </br>
-![Blue banner with text saying 'Signed in as name@digital-cabinet-office.gov.uk' and below an expandable menu link. Below is a black header with GOV.UK crown logo with Service name underneath.](/docs/assets/6-header-mobile.png)
+![Blue banner with text saying 'Signed in as name@digital-cabinet-office.gov.uk' and below an expandable menu link. Below is a black header with GOV.UK crown logo with Service name underneath.](/docs/assets/design-history/6-header-mobile.png)
 
 Context:
-![Image of the Check your state Pension forecast service using the service header](/docs/assets/6-context.png)
+![Image of the Check your state Pension forecast service using the service header](/docs/assets/design-history/6-context.png)
 
 **Services we used when testing:** Check your state Pension forecast, Register to vote
 
@@ -90,10 +90,10 @@ Context:
 
 ### 17, 18 January 2023
 Desktop:
-![Black header with GOV.UK crown logo on the left, service name in the centre, 'GOV.UK One Login' dropdown link on the right.](/docs/assets/5-header-desktop.png)
+![Black header with GOV.UK crown logo on the left, service name in the centre, 'GOV.UK One Login' dropdown link on the right.](/docs/assets/design-history/5-header-desktop.png)
 
 Context: </br>
-![Image of the Check your state Pension forecast service using the service header on mobile](/docs/assets/5-context.png)
+![Image of the Check your state Pension forecast service using the service header on mobile](/docs/assets/design-history/5-context.png)
 
 **Services we used when testing:** Check your state Pension forecast
 
@@ -111,13 +111,13 @@ Context: </br>
 
 ### 25, 26 October 2022 (round 2)
 Desktop:
-![Black header with GOV.UK crown logo on the left, service name in the centre, 'GOV.UK One Login' dropdown link on the right.](/docs/assets/4+3-header-desktop.png)
+![Black header with GOV.UK crown logo on the left, service name in the centre, 'GOV.UK One Login' dropdown link on the right.](/docs/assets/design-history/4+3-header-desktop.png)
 
 Desktop menu open:
-![Black header with GOV.UK crown logo on the left, service name in the centre, 'GOV.UK One Login' dropdown link on the right open revealing a menu with 'Your services', 'Settings' and 'Sign out' links.](/docs/assets/4-header-desktop-open.png)
+![Black header with GOV.UK crown logo on the left, service name in the centre, 'GOV.UK One Login' dropdown link on the right open revealing a menu with 'Your services', 'Settings' and 'Sign out' links.](/docs/assets/design-history/4-header-desktop-open.png)
 
 Context: </br>
-![Image of the Childcare service using the service header on mobile](/docs/assets/4-context.png)
+![Image of the Childcare service using the service header on mobile](/docs/assets/design-history/4-context.png)
 
 **Services we used when testing:** The childcare service, Find a lost teacher reference number (TRN)
 
@@ -133,7 +133,7 @@ Context: </br>
 
 ### 11, 12 October 2022 (round 1)
 Desktop menu open:
-![Image of the desktop version of the service header from 11, 12 October testing, there is a 'GOV.UK One Login' dropdown link on the right open revealing a menu with 'Home', 'Settings' and 'Sign out' links.](/docs/assets/3-header-desktop-open.png)
+![Image of the desktop version of the service header from 11, 12 October testing, there is a 'GOV.UK One Login' dropdown link on the right open revealing a menu with 'Home', 'Settings' and 'Sign out' links.](/docs/assets/design-history/3-header-desktop-open.png)
 
 **Services we used when testing it:** The childcare service, Find a lost teacher reference number (TRN)
 
@@ -153,13 +153,13 @@ Desktop menu open:
 
 ### 25, 26 May 2022 (round 2)
 Desktop:
-![Black header with GOV.UK crown logo on the left, 'Your GOV.UK account' and 'Sign out' links on the right. Grey header below with service name and service links.](/docs/assets/2-header-desktop.png)
+![Black header with GOV.UK crown logo on the left, 'Your GOV.UK account' and 'Sign out' links on the right. Grey header below with service name and service links.](/docs/assets/design-history/2-header-desktop.png)
 
 Mobile: </br>
-![Black header with GOV.UK crown logo on the left, expandable menu on the right. Grey header below with service name and expandable menu.](/docs/assets/2-header-mobile.png)
+![Black header with GOV.UK crown logo on the left, expandable menu on the right. Grey header below with service name and expandable menu.](/docs/assets/design-history/2-header-mobile.png)
 
 Context:
-![Image of the Dart charge service using the service header](/docs/assets/2-context.png)
+![Image of the Dart charge service using the service header](/docs/assets/design-history/2-context.png)
 
 **Services we used when testing:** Dart Charge, GOV.UK email subscriptions
 
@@ -176,13 +176,13 @@ Context:
 
 ### 10, 11 May 2022 (round 1)
 Desktop:
-![Black header with GOV.UK crown logo on the left, GOV.UK account and sign out links on the right. White header below with service name and service links.](/docs/assets/1-header-desktop.png)
+![Black header with GOV.UK crown logo on the left, GOV.UK account and sign out links on the right. White header below with service name and service links.](/docs/assets/design-history/1-header-desktop.png)
 
 Mobile: </br>
-![Black header with GOV.UK crown logo on the left, expandable menu link on the right. White header below with service name and expandable menu link.](/docs/assets/1-header-mobile.png)
+![Black header with GOV.UK crown logo on the left, expandable menu link on the right. White header below with service name and expandable menu link.](/docs/assets/design-history/1-header-mobile.png)
 
 Context:
-![Image of the Dart charge service using the service header](/docs/assets/1-context.png)
+![Image of the Dart charge service using the service header](/docs/assets/design-history/1-context.png)
 
 **Services we used when testing:** Dart Charge, GOV.UK email subscriptions
 

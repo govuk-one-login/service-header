@@ -1,3 +1,4 @@
+{% from "./nunjucks/service-header.njk" import govukOneLoginServiceHeader %}
 {% set navigationItems = [
   {
     href: "#",
@@ -22,11 +23,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Service header – usage example</title>
-    <link rel="stylesheet" href="./service-header.css">
+    <link rel="stylesheet" href="./styles/service-header.css">
   </head>
   <body style="margin:0;">
-    {% include './service-header.njk' %}
-    <script src="./service-header.js"></script>
+    {{ govukOneLoginServiceHeader({ navigationItems: navigationItems, serviceName: serviceName, activeLinkId: activeLinkId }) }}
+    <script src="./scripts/service-header.js"></script>
     <script>
       var oneLoginHeader = document.querySelector("[data-module='one-login-header']");
       new window.CrossServiceHeader(oneLoginHeader).init();
