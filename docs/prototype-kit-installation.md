@@ -7,7 +7,7 @@ Before you [start the kit](https://prototype-kit.service.gov.uk/docs/install/how
 
 Now the header should appear in the list of installed plugins under the `/manage-prototype/plugins` page in your prototype. 
 
-![Image of the DI GOVUK One Login Service Header plugin appearing on the prototype plugins page](/docs/assets/prototype-kit/plugins.png)
+![Image of the DI GOVUK One Login Service Header plugin appearing on the prototype plugins page](assets/prototype-kit/plugins.png)
 
 Note that once the header has been added to the list of available plugins published by the Prototype Kit team, you will be able to install the header by simply clicking the **Install** button on the `/manage-prototype/plugins` page.
 
@@ -15,7 +15,7 @@ Note that once the header has been added to the list of available plugins publis
 
 To create a page in your prototype using a pre-built template containing the header, navigate to `/manage-prototype/templates` and create a new page from the "Page with GOVUK One Login header" template.
 
-![List of templates available to install on the Prototype Kit templates page](/docs/assets/prototype-kit/templates.png)
+![List of templates available to install on the Prototype Kit templates page](assets/prototype-kit/templates.png)
 
 To set the service name that is displayed in the header, use the following syntax: <code>&lbrace;&percnt; set serviceName = "My example service name" &percnt;&rbrace;</code>.
 
