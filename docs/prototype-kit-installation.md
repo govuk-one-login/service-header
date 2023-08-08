@@ -17,11 +17,10 @@ To create a page in your prototype using a pre-built template containing the hea
 
 ![List of templates available to install on the Prototype Kit templates page](/docs/assets/prototype-kit/templates.png)
 
-To set the service name that is displayed in the header, use the following syntax: `{% raw %}{% set serviceName = "My example service name" %}{% endraw %}`.
+To set the service name that is displayed in the header, use the following syntax: `{% set serviceName = "My example service name" %}`.
 
 To set the list of navigation links , use the following syntax:
 ```
-{% raw %}
 {% set navigationItems = [
   {
     href: "#",
@@ -36,26 +35,24 @@ To set the list of navigation links , use the following syntax:
     text: 'Example link 3',
     id: 'id3'
   }]
-%}
-{% endraw %}
+%} 
 ```
 The fields indicate as follows:
 - `href` indicates the link destination, 
 - `text` is the text being displayed, 
 - `id` this should be a unique identifier as it is used to set the active link
 
-To set the currently active link which indicates the page the user is currently on, use the following syntax `{% raw %}{% set activeLinkId = "id3" %}{% endraw %}`. The value of `activeLinkId` must match the id of one of the objects in the `navigationItems` array.
+To set the currently active link which indicates the page the user is currently on, use the following syntax `{% set activeLinkId = "id3" %}`. The value of `activeLinkId` must match the id of one of the objects in the `navigationItems` array.
 
 Add the `set` statements listed above after the `extends` line at the top of the file.
 
 ## Use the header component in an existing page or template
 
 If instead of using the template installation described above, you want to include the header component into one of your existing layouts or templates, the component can be imported using the syntax: 
-`{% raw %}{% from "di-govuk-one-login-service-header/service-header.njk" import govukOneLoginServiceHeader %}{% endraw %}`
+`{% from "di-govuk-one-login-service-header/service-header.njk" import govukOneLoginServiceHeader %}`
 
 The component can then be used like so: 
 ```
-{% raw %}
 {% block header %}
   {{ govukOneLoginServiceHeader({
     serviceName: "My example service name",
@@ -75,5 +72,4 @@ The component can then be used like so:
     activeLinkId: 'servicelink3'
   }) }}
 {% endblock %}
-{% endraw %}
 ```
