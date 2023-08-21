@@ -556,6 +556,7 @@
   .one-login-header__nav__list-item {
     padding: 10px 0 10px 30px;
     border-left: 1px solid #b1b4b6;
+    align-self: stretch;
   }
   .one-login-header__nav__list-item:not(:last-child) {
     margin-right: 20px;
