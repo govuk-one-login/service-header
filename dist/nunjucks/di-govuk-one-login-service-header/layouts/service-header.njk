@@ -3,7 +3,13 @@
 {% from "../service-header.njk" import govukOneLoginServiceHeader %}
 
 {% block header %}
-  {{ govukOneLoginServiceHeader({ navigationItems: navigationItems, serviceName: serviceName, activeLinkId: activeLinkId }) }}
+  {{ govukOneLoginServiceHeader({ 
+    navigationItems: navigationItems, 
+    serviceName: serviceName, 
+    activeLinkId: activeLinkId,
+    oneLoginLink: oneLoginLink, 
+    homepageLink: homepageLink
+  }) }}
 {% endblock %}
 
 {% block main %}
