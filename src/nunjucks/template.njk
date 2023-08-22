@@ -21,7 +21,10 @@ Component options:
       id: 'servicelink3'
     }] 
   - activeLinkId (string): The id of the link that is currently active 
+  - oneLoginLink (string): Option to overwrite the default One Login Home link. Defaults to "https://home.account.gov.uk/"
+  - homepageLink (string): Option to overwrite the default GOV.UK link. Defaults to "https://www.gov.uk/"
 #}
+
 {%- set oneLoginLink = params.oneLoginLink if params.oneLoginLink else "https://home.account.gov.uk/" -%}
 {%- set homepageLink = params.homepageLink if params.homepageLink else "https://www.gov.uk/" -%}
 {%- macro littlePersonIcon(modifier="default") -%}

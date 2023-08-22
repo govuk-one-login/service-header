@@ -44,6 +44,10 @@ The fields indicate as follows:
 
 To set the currently active link which indicates the page the user is currently on, use the following syntax <code>&lbrace;&percnt; set activeLinkId = "id3" &percnt;&rbrace;</code>. The value of `activeLinkId` must match the id of one of the objects in the `navigationItems` array.
 
+To overwrite the destination for the GOV.UK link in the header, use <code>&lbrace;&percnt; set homepageLink = "https://example.service.gov.uk/" &percnt;&rbrace;</code>. The link goes to "https://www.gov.uk/" by default.
+
+To overwrite the destination for the One Login link in the header, use <code>&lbrace;&percnt; set oneLoginLink = "https://example.service.gov.uk/" &percnt;&rbrace;</code>. The link goes to "https://home.account.gov.uk/" by default.
+
 Add the `set` statements listed above after the `extends` line at the top of the file.
 
 ## Use the header component in an existing page or template
