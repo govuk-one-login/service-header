@@ -140,7 +140,7 @@ $govuk-header-link-underline-thickness: 3px;
 
 // start One Login header styles
 .one-login-header {
-  @include govuk-font($size: 16);
+  @include govuk-font($size: 19);
   color: govuk-colour("white");
   background: govuk-colour("black");
   border-bottom: govuk-spacing(2) solid $govuk-link-colour;
@@ -352,7 +352,7 @@ $govuk-header-link-underline-thickness: 3px;
 }
 
 .service-header__heading {
-  @include govuk-font($size: 19, $weight: bold);
+  @include govuk-font($size: 24, $weight: bold);
   color: $govuk-text-colour;
   padding: govuk-spacing(3) 0;
   margin: 0;
@@ -374,7 +374,7 @@ $govuk-header-link-underline-thickness: 3px;
   padding: 0;
 
   @include govuk-media-query ($from: tablet) {
-    @include govuk-font($size: 16, $weight: bold);
+    @include govuk-font($size: 19, $weight: bold);
   }
 }
 

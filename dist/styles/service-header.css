@@ -345,9 +345,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 14px;
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.25;
   color: #ffffff;
   background: #0b0c0c;
   border-bottom: 10px solid #1d70b8;
@@ -360,15 +360,15 @@
 }
 @media (min-width: 40.0625em) {
   .one-login-header {
-    font-size: 16px;
-    font-size: 1rem;
-    line-height: 1.25;
+    font-size: 19px;
+    font-size: 1.1875rem;
+    line-height: 1.3157894737;
   }
 }
 @media print {
   .one-login-header {
     font-size: 14pt;
-    line-height: 1.2;
+    line-height: 1.15;
   }
 }
 
@@ -612,9 +612,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 700;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.1111111111;
   color: #0b0c0c;
   padding: 15px 0;
   margin: 0;
@@ -627,14 +627,14 @@
 }
 @media (min-width: 40.0625em) {
   .service-header__heading {
-    font-size: 19px;
-    font-size: 1.1875rem;
-    line-height: 1.3157894737;
+    font-size: 24px;
+    font-size: 1.5rem;
+    line-height: 1.25;
   }
 }
 @media print {
   .service-header__heading {
-    font-size: 14pt;
+    font-size: 18pt;
     line-height: 1.15;
   }
 }
@@ -700,9 +700,9 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-weight: 700;
-    font-size: 14px;
-    font-size: 0.875rem;
-    line-height: 1.1428571429;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
   }
 }
 @media print and (min-width: 40.0625em) {
@@ -712,15 +712,15 @@
 }
 @media (min-width: 40.0625em) and (min-width: 40.0625em) {
   .service-header__nav-list {
-    font-size: 16px;
-    font-size: 1rem;
-    line-height: 1.25;
+    font-size: 19px;
+    font-size: 1.1875rem;
+    line-height: 1.3157894737;
   }
 }
 @media print and (min-width: 40.0625em) {
   .service-header__nav-list {
     font-size: 14pt;
-    line-height: 1.2;
+    line-height: 1.15;
   }
 }
 
