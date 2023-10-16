@@ -22,11 +22,13 @@ Component options:
     }] 
   - activeLinkId (string): The id of the link that is currently active 
   - oneLoginLink (string): Option to overwrite the default One Login Home link. Defaults to "https://home.account.gov.uk/"
-  - homepageLink (string): Option to overwrite the default GOV.UK link. Defaults to "https://www.gov.uk/"
+  - signOutLink (string): Option to overwrite the default signed out page. Defaults to "https://home.account.gov.uk/sign-out"
+  - homepageLink (string): Option to overwrite the default GOV.UK link. Defaults to "https://home.account.gov.uk/"
 #}
 
 {%- set oneLoginLink = params.oneLoginLink if params.oneLoginLink else "https://home.account.gov.uk/" -%}
 {%- set homepageLink = params.homepageLink if params.homepageLink else "https://www.gov.uk/" -%}
+{%- set signOutLink = params.signOutLink if params.signOutLink else "https://home.account.gov.uk/sign-out" -%}
 {%- macro littlePersonIcon(modifier="default") -%}
   {%- set class = "focus" if modifier == "focus" else "default" %}
   {%- set backgroundColour = "black" if modifier == "focus" else "white" %}
@@ -84,7 +86,7 @@ Component options:
           </li>
           <li class="one-login-header__nav__list-item">
             <!-- REPLACE SIGN OUT URL PLACEHOLDER WITH SIGN OUT PAGE FOR YOUR SERVICE -->
-            <a class="one-login-header__nav__link" href="https://your-service-sign-out-url-goes-here.gov.uk">
+            <a class="one-login-header__nav__link" href="{{ signOutLink }}">
               Sign out
             </a>
           </li>

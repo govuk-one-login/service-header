@@ -48,6 +48,8 @@ To overwrite the destination for the GOV.UK link in the header, use <code>&lbrac
 
 To overwrite the destination for the One Login link in the header, use <code>&lbrace;&percnt; set oneLoginLink = "https://example.service.gov.uk/" &percnt;&rbrace;</code>. The link goes to "https://home.account.gov.uk/" by default.
 
+To overwrite the destination for the sign out link in the header, use <code>&lbrace;&percnt; set signOutLink = "https://example.service.gov.uk/sign-out" &percnt;&rbrace;</code>. The link goes to "https://home.account.gov.uk/sign-out" by default.
+
 Add the `set` statements listed above after the `extends` line at the top of the file.
 
 ## Use the header component in an existing page or template
