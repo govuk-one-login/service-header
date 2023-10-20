@@ -5,8 +5,11 @@
 */
 function CrossServiceHeader ($module) {
   this.$header = $module
-  this.$navigation = $module.querySelectorAll("[data-one-login-header-nav]")
-  this.$header.classList.add('js-enabled')
+  this.$navigation = $module && $module.querySelectorAll("[data-one-login-header-nav]")
+  this.$numberOfNavs = this.$navigation && this.$navigation.length
+  if (this.$header) {
+    this.$header.classList.add('js-enabled')
+  }
 }
 /**
 * Initialise header
@@ -15,7 +18,7 @@ function CrossServiceHeader ($module) {
 * missing then there's nothing to do so return early.
 */
 CrossServiceHeader.prototype.init = function () {
-  if (!this.$header && !this.$navigation.length) {
+  if (!this.$header && !this.$numberOfNavs) {
     return
   }
   /**
@@ -26,7 +29,7 @@ CrossServiceHeader.prototype.init = function () {
   * 2. an aria-controls attribute which can be mapped to the ID of the element
   * that should be hidden on mobile
   */ 
-  for (var i = 0; i < this.$navigation.length; i++) {
+  for (var i = 0; i < this.$numberOfNavs; i++) {
     var $nav = this.$navigation[i];
     $nav.$menuButton = $nav.querySelector('.js-x-header-toggle')
     
