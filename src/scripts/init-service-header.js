@@ -1,2 +1,4 @@
 var oneLoginHeader = document.querySelector("[data-module='one-login-header']");
-new window.CrossServiceHeader(oneLoginHeader).init();
+if (oneLoginHeader) {
+  new window.CrossServiceHeader(oneLoginHeader).init();
+}
