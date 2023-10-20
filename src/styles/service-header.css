@@ -198,7 +198,7 @@
   min-width: max-content;
   border: 0;
   margin: 0;
-  padding: 10px 0 10px 20px;
+  padding: 10px 0 5px 20px;
   background: none;
 }
 .cross-service-header.js-enabled .cross-service-header__button {
@@ -600,6 +600,11 @@
 .service-header__container {
   padding-top: 5px;
 }
+@media (max-width: 40.0525em) {
+  .service-header__container {
+    margin-bottom: 5px;
+  }
+}
 @media (min-width: 40.0625em) {
   .service-header__container {
     display: flex;
@@ -725,7 +730,7 @@
 }
 
 .service-header__nav-list-item {
-  margin: 10px 0 20px;
+  margin: 15px 0 20px;
 }
 .service-header__nav-list-item.service-header__nav-list-item--active {
   padding-left: 15px;
