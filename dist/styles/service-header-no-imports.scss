@@ -64,7 +64,7 @@ $govuk-header-link-underline-thickness: 3px;
   min-width: max-content;
   border: 0;
   margin: 0;
-  padding: govuk-spacing(2) 0 govuk-spacing(2) govuk-spacing(4);
+  padding: govuk-spacing(2) 0 govuk-spacing(1) govuk-spacing(4);
   background: none;
 
   &:before {
@@ -345,6 +345,10 @@ $govuk-header-link-underline-thickness: 3px;
 .service-header__container {
   padding-top: govuk-spacing(1);
 
+  @include govuk-media-query ($until: tablet) {
+    margin-bottom: govuk-spacing(1);
+  }
+
   @include govuk-media-query ($from: tablet) {
     display: flex;
     flex-wrap: wrap;
@@ -379,7 +383,7 @@ $govuk-header-link-underline-thickness: 3px;
 }
 
 .service-header__nav-list-item {
-  margin: govuk-spacing(2) 0 govuk-spacing(4);
+  margin: govuk-spacing(3) 0 govuk-spacing(4);
 
   &.service-header__nav-list-item--active {
     padding-left: govuk-spacing(3);
