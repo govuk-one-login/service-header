@@ -201,12 +201,12 @@
   padding: 10px 0 5px 20px;
   background: none;
 }
-.cross-service-header.js-enabled .cross-service-header__button {
+.toggle-enabled .cross-service-header__button {
   display: inline;
   display: flex;
 }
 @media (min-width: 40.0625em) {
-  .cross-service-header.js-enabled .cross-service-header__button {
+  .toggle-enabled .cross-service-header__button {
     display: none;
   }
 }
@@ -513,14 +513,14 @@
 .one-login-header__nav {
   display: block;
 }
-.cross-service-header.js-enabled .one-login-header__nav {
+.toggle-enabled .one-login-header__nav {
   display: none;
 }
-.cross-service-header.js-enabled .one-login-header__nav.one-login-header__nav--open {
+.toggle-enabled .one-login-header__nav.one-login-header__nav--open {
   display: block;
 }
 @media (min-width: 40.0625em) {
-  .cross-service-header.js-enabled .one-login-header__nav {
+  .toggle-enabled .one-login-header__nav {
     display: block;
   }
 }
@@ -652,14 +652,14 @@
 .service-header__nav {
   display: block;
 }
-.cross-service-header.js-enabled .service-header__nav {
+.toggle-enabled .service-header__nav {
   display: none;
 }
-.cross-service-header.js-enabled .service-header__nav.service-header__nav--open {
+.toggle-enabled .service-header__nav.service-header__nav--open {
   display: block;
 }
 @media (min-width: 40.0625em) {
-  .cross-service-header.js-enabled .service-header__nav {
+  .toggle-enabled .service-header__nav {
     display: block;
   }
 }
