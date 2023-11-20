@@ -1,3 +1,83 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
 .govuk-width-container {
   max-width: 960px;
   margin-right: 15px;
@@ -34,11 +114,52 @@
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
 .govuk-grid-row {
   margin-right: -15px;
   margin-left: -15px;
 }
-.govuk-grid-row:after {
+.govuk-grid-row::after {
   content: "";
   display: block;
   clear: both;
@@ -182,13 +303,13 @@
   }
 }
 
+
 .cross-service-header__button {
   display: none;
   font-family: "GDS Transport", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 700;
-  font-size: 16px;
   font-size: 1rem;
   line-height: 1.25;
   position: relative;
@@ -232,7 +353,6 @@
 }
 @media (min-width: 40.0625em) {
   .cross-service-header__button {
-    font-size: 19px;
     font-size: 1.1875rem;
     line-height: 1.3157894737;
   }
@@ -345,7 +465,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 16px;
   font-size: 1rem;
   line-height: 1.25;
   color: #ffffff;
@@ -360,7 +479,6 @@
 }
 @media (min-width: 40.0625em) {
   .one-login-header {
-    font-size: 19px;
     font-size: 1.1875rem;
     line-height: 1.3157894737;
   }
@@ -432,7 +550,7 @@
 .one-login-header__nav__link:visited:hover {
   text-decoration: underline;
   text-decoration-thickness: 3px;
-  text-underline-offset: 0.1em;
+  text-underline-offset: 0.1578em;
 }
 .one-login-header__link:link:focus, .one-login-header__link:visited:focus,
 .one-login-header__nav__link:link:focus,
@@ -617,7 +735,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 700;
-  font-size: 18px;
   font-size: 1.125rem;
   line-height: 1.1111111111;
   color: #0b0c0c;
@@ -632,7 +749,6 @@
 }
 @media (min-width: 40.0625em) {
   .service-header__heading {
-    font-size: 24px;
     font-size: 1.5rem;
     line-height: 1.25;
   }
@@ -674,7 +790,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 700;
-  font-size: 16px;
   font-size: 1rem;
   line-height: 1.25;
   list-style: none;
@@ -688,7 +803,6 @@
 }
 @media (min-width: 40.0625em) {
   .service-header__nav-list {
-    font-size: 19px;
     font-size: 1.1875rem;
     line-height: 1.3157894737;
   }
@@ -705,7 +819,6 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-weight: 700;
-    font-size: 16px;
     font-size: 1rem;
     line-height: 1.25;
   }
@@ -717,7 +830,6 @@
 }
 @media (min-width: 40.0625em) and (min-width: 40.0625em) {
   .service-header__nav-list {
-    font-size: 19px;
     font-size: 1.1875rem;
     line-height: 1.3157894737;
   }
@@ -758,7 +870,7 @@
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
   text-decoration-thickness: max(1px, .0625rem);
-  text-underline-offset: 0.1em;
+  text-underline-offset: 0.1578em;
 }
 @media print {
   .service-header__nav-list-item-link {
