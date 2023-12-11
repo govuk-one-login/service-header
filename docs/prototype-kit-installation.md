@@ -1,7 +1,7 @@
 # How to install the header if you are using the Prototype Kit
 
 ## Install the header plugin 
-Before you [start the kit](https://prototype-kit.service.gov.uk/docs/install/how-to-run-the-kit), run `npm install github:alphagov/di-govuk-one-login-service-header` in your terminal. 
+Before you [start the kit](https://prototype-kit.service.gov.uk/docs/install/how-to-run-the-kit), run `npm install github:govuk-one-login/di-govuk-one-login-service-header` in your terminal. 
 
 (Note: if you are using a Mac and seeing an error along the lines of `xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun.`, try running `xcode-select --install` before you run the `npm install` command above)
 
