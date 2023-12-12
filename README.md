@@ -14,7 +14,7 @@ It's a 'beta' component and we're interested to hear from service teams about ho
 
 The header works best if your service uses [GOV.UK Frontend](https://frontend.design-system.service.gov.uk/).
 
-You can [preview the header in your browser](https://govuk-one-login.github.io/di-govuk-one-login-service-header/dist/preview.html).
+You can [preview the header in your browser](https://govuk-one-login.github.io/service-header/dist/preview.html).
 
 ![A screenshot of the GOV.UK One Login header. It has 2 sections: a black section at the top showing the GOV.UK crown logo, a link saying "GOV.UK One Login", which takes you into your account, and a "Sign out" button. Below this section is a grey section, displaying the name of a government service and internal links within that service. Those just have placeholder text, so read "Service name" and "Service link 1" and so on. The black and grey sections are divided by a blue bar, like on the GOV.UK homepage.](header_screenshot_larger_screen.png)
 
@@ -156,13 +156,13 @@ Alternatively, you can edit the header’s Sass import paths to specify `node_mo
 
 ### If you use the GOV.UK Frontend pre-compiled CSS files
 
-Copy the [pre-compiled CSS files](https://github.com/govuk-one-login/di-govuk-one-login-service-header/blob/main/dist/styles/service-header.css) from this repository into your service's pre-compiled CSS.
+Copy the [pre-compiled CSS files](https://github.com/govuk-one-login/service-header/blob/main/dist/styles/service-header.css) from this repository into your service's pre-compiled CSS.
 
 The pre-compiled CSS files in this repository duplicate some code from the GOV.UK Frontend CSS files. The header will still be styled correctly but your CSS files will be slightly larger than they need to be.
 
 ### If you do not use GOV.UK Frontend
 
-Copy the [pre-compiled CSS files](https://github.com/govuk-one-login/di-govuk-one-login-service-header/blob/main/dist/styles/service-header.css) from this repository into your service's CSS.
+Copy the [pre-compiled CSS files](https://github.com/govuk-one-login/service-header/blob/main/dist/styles/service-header.css) from this repository into your service's CSS.
 
 The pre-compiled CSS files contain all the CSS you need to style the header.
 
@@ -186,7 +186,7 @@ Copying the header’s Javascript file into your project does not initialise the
 
 You’ll need to initialise the Javascript in your code to make it work. To do this, you need to:
 
-+ include [service-header.js](https://github.com/govuk-one-login/di-govuk-one-login-service-header/blob/main/dist/scripts/service-header.js) in your application Javascript - this attaches the function to the window object by default but you can namespace it if you need to
++ include [service-header.js](https://github.com/govuk-one-login/service-header/blob/main/dist/scripts/service-header.js) in your application Javascript - this attaches the function to the window object by default but you can namespace it if you need to
 + initialise the header by running `new window.CrossServiceHeader(document.querySelector("[data-module='one-login-header']")).init()`
 
 ### If you don’t use the header’s Javascript
