@@ -21,6 +21,7 @@ You can [preview the header in your browser](https://govuk-one-login.github.io/s
 ## Contacting the maintainers
 
 Cross-Government Slack: use the #govuk-one-login channel
+
 Within GDS: use the #di-one-login-home channel
 
 ## What different parts of the header do
