@@ -20,7 +20,7 @@ You can [preview the header in your browser](https://govuk-one-login.github.io/s
 
 ## Contacting the maintainers
 
-Cross-Government Slack: use the #govuk-one-login channel
+Cross-Government Slack: use the [#govuk-one-login](https://ukgovernmentdigital.slack.com/archives/C02AQUJ6WTC) channel
 
 Within GDS: use the #di-one-login-home channel
 
