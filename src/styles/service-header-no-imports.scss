@@ -218,11 +218,12 @@ $govuk-header-link-underline-thickness: 3px;
   vertical-align: top;
 }
 
-.one-login-header__logotype-crown-fallback-image {
-  width: 36px;
-  height: 32px;
-  border: 0;
-  vertical-align: bottom;
+// Spacing adjustment for Tudor crown, as the new graphic is narrower than the
+// existing crown. In Frontend v5, this rule should replace the equivalent in
+// the block above.
+.one-login-header__logotype-crown[width="32"] {
+  top: -3px;
+  margin-right: 2px;
 }
 
 .one-login-header__link--homepage {
