@@ -18,6 +18,12 @@ You can [preview the header in your browser](https://govuk-one-login.github.io/s
 
 ![A screenshot of the GOV.UK One Login header. It has 2 sections: a black section at the top showing the GOV.UK crown logo, a link saying "GOV.UK One Login", which takes you into your account, and a "Sign out" button. Below this section is a grey section, displaying the name of a government service and internal links within that service. Those just have placeholder text, so read "Service name" and "Service link 1" and so on. The black and grey sections are divided by a blue bar, like on the GOV.UK homepage.](header_screenshot_larger_screen.png)
 
+## Contacting the maintainers
+
+Cross-Government Slack: use the [#govuk-one-login](https://ukgovernmentdigital.slack.com/archives/C02AQUJ6WTC) channel
+
+Within GDS: use the #di-one-login-home channel
+
 ## What different parts of the header do
 
 The header contains two distinct navigation menus - one for GOV.UK One Login links and another for internal service navigation.
@@ -201,7 +207,3 @@ The header degrades gracefully in the absence of Javascript (for example, if a u
 The content for the header is currently only provided in English. A Welsh translation will be available soon.
 
 If you need to translate the header into other languages, please consider sharing your translation with [the GOV.UK One Login team](#contact) so it can be used by other services.
-
-## Contact
-
-The best way to contact the maintainers of this repository is to use the [#govuk-one-login](https://ukgovernmentdigital.slack.com/archives/C02AQUJ6WTC) on Cross-Government Slack.
