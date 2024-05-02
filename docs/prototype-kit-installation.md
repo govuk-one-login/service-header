@@ -79,3 +79,9 @@ The component can then be used like so:
   }) &rbrace;&rbrace;
 &lbrace;&percnt; endblock &percnt;&rbrace;
 </code></pre>
+
+## How to update the header if you are using the Prototype Kit 
+
+You may not receive updates or bug fixes automatically. 
+
+To update the header to the most recent version, please run `npm update govuk-one-login-service-header` in your terminal.
