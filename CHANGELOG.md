@@ -2,9 +2,10 @@
 
 Use [semver guidelines](https://semver.org/).
 
-## Unreleased 
+## Unreleased
 
-* BUG: Support overwriting sign out link when using pre-built layout template for Prototype Kit ([PR #41](https://github.com/govuk-one-login/service-header/pull/41))
+- BUG: Support overwriting sign out link when using pre-built layout template for Prototype Kit ([PR #41](https://github.com/govuk-one-login/service-header/pull/41))
+- Add module export to service-header.js ([PR #39](https://github.com/govuk-one-login/service-header/pull/39))
 
 ## 1.1.0
 
