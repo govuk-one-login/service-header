@@ -70,3 +70,5 @@ CrossServiceHeader.prototype.handleMenuButtonClick = function () {
     this.$menuButton.innerHTML = this.isOpen ? this.$menuButtonCloseText : this.$menuButtonOpenText;
   }
 }
+
+export { CrossServiceHeader };
