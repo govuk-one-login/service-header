@@ -44,7 +44,10 @@
   </head>
   <body style="margin:0;">
     {{ govukOneLoginServiceHeader({ navigationItems: navigationItems, serviceName: serviceName, activeLinkId: activeLinkId, signOutLink: signOutLink }) }}
-    <script src="./scripts/service-header.js"></script>
-    <script src="./scripts/init-service-header.js"></script>
+    <script type="module" src="./scripts/service-header.js"></script>
+    <script type="module">
+      import { initCrossServiceHeader } from './scripts/service-header.js';
+      initCrossServiceHeader();
+    </script>
   </body>
 </html>

@@ -1,23 +1,41 @@
 /**
 * A modified adaptation of the Design System header script
-* To initialise the One Login header, run:
-* new window.CrossServiceHeader(document.querySelector("[data-module='one-login-header']")).init();
 */
 function CrossServiceHeader ($module) {
   this.$header = $module
   this.$navigation = $module && $module.querySelectorAll("[data-one-login-header-nav]")
   this.$numberOfNavs = this.$navigation && this.$navigation.length
-}
-/**
-* Initialise header
-*
-* Check for the presence of the header, menu and menu button – if any are
-* missing then there's nothing to do so return early.
-*/
-CrossServiceHeader.prototype.init = function () {
+
+  /**
+  * Handle menu button click
+  *
+  * When the menu button is clicked, change the visibility of the menu and then
+  * sync the accessibility state and menu button state
+  */
+   this.handleMenuButtonClick = function() {
+    this.isOpen = !this.isOpen;
+    this.$menuOpenClass && this.$menu.classList.toggle(this.$menuOpenClass, this.isOpen);
+    this.$menuButtonOpenClass && this.$menuButton.classList.toggle(this.$menuButtonOpenClass, this.isOpen);
+    this.$menuButton.setAttribute('aria-expanded', this.isOpen);
+    if (this.$menuButtonCloseLabel && this.$menuButtonOpenLabel) {
+      this.$menuButton.setAttribute('aria-label', (this.isOpen ? this.$menuButtonCloseLabel : this.$menuButtonOpenLabel));
+    }
+    if (this.$menuButtonCloseText && this.$menuButtonOpenText) {
+      this.$menuButton.innerHTML = this.isOpen ? this.$menuButtonCloseText : this.$menuButtonOpenText;
+    }
+  }
+
+  /**
+  * Initialise header
+  *
+  * Check for the presence of the header, menu and menu button – if any are
+  * missing then there's nothing to do so return early.
+  */
+  
   if (!this.$header && !this.$numberOfNavs) {
     return
   }
+  
   /**
   * The header can render with one or two navigation elements which collapse 
   * into dropdowns on the mobile variation. This initialises the dropdown 
@@ -51,24 +69,11 @@ CrossServiceHeader.prototype.init = function () {
   }
 }
 
-
-/**
-* Handle menu button click
-*
-* When the menu button is clicked, change the visibility of the menu and then
-* sync the accessibility state and menu button state
-*/
-CrossServiceHeader.prototype.handleMenuButtonClick = function () {
-  this.isOpen = !this.isOpen;
-  this.$menuOpenClass && this.$menu.classList.toggle(this.$menuOpenClass, this.isOpen);
-  this.$menuButtonOpenClass && this.$menuButton.classList.toggle(this.$menuButtonOpenClass, this.isOpen);
-  this.$menuButton.setAttribute('aria-expanded', this.isOpen);
-  if (this.$menuButtonCloseLabel && this.$menuButtonOpenLabel) {
-    this.$menuButton.setAttribute('aria-label', (this.isOpen ? this.$menuButtonCloseLabel : this.$menuButtonOpenLabel));
-  }
-  if (this.$menuButtonCloseText && this.$menuButtonOpenText) {
-    this.$menuButton.innerHTML = this.isOpen ? this.$menuButtonCloseText : this.$menuButtonOpenText;
+function initCrossServiceHeader () {
+  const oneLoginHeader = document.querySelector("[data-module='one-login-header']");
+  if (oneLoginHeader && CrossServiceHeader) {
+    new CrossServiceHeader(oneLoginHeader);
   }
 }
 
-export { CrossServiceHeader };
+export { CrossServiceHeader, initCrossServiceHeader };
