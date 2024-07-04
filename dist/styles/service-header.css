@@ -16,28 +16,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
  
-
-
-
-
-
-
-
-
  
 
 
@@ -52,12 +31,7 @@
 
 
 
-
-
-
-
-
-
+ 
 
 
 
@@ -83,6 +57,12 @@
 
 
  
+ 
+
+
+
+
+
 
 
 
@@ -92,12 +72,6 @@
 
 
  
-
-
-
-
-
-
 
 
 
@@ -159,6 +133,8 @@
 
 
 
+ 
+ 
 
 
 
@@ -173,21 +149,6 @@
 
 
  
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
 
 
 
@@ -198,7 +159,7 @@
   margin-right: -15px;
   margin-left: -15px;
 }
-.govuk-grid-row:after {
+.govuk-grid-row::after {
   content: "";
   display: block;
   clear: both;
@@ -349,9 +310,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 700;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   position: relative;
   align-items: center;
   cursor: pointer;
@@ -389,13 +349,6 @@
 @media print {
   .cross-service-header__button {
     font-family: sans-serif;
-  }
-}
-@media (min-width: 40.0625em) {
-  .cross-service-header__button {
-    font-size: 19px;
-    font-size: 1.1875rem;
-    line-height: 1.3157894737;
   }
 }
 @media print {
@@ -506,9 +459,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   color: #ffffff;
   background: #0b0c0c;
   border-bottom: 10px solid #1d70b8;
@@ -517,13 +469,6 @@
 @media print {
   .one-login-header {
     font-family: sans-serif;
-  }
-}
-@media (min-width: 40.0625em) {
-  .one-login-header {
-    font-size: 19px;
-    font-size: 1.1875rem;
-    line-height: 1.3157894737;
   }
 }
 @media print {
@@ -776,9 +721,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 700;
-  font-size: 18px;
-  font-size: 1.125rem;
-  line-height: 1.1111111111;
+  font-size: 1.3125rem;
+  line-height: 1.1904761905;
   color: #0b0c0c;
   padding: 15px 0;
   margin: 0;
@@ -791,7 +735,6 @@
 }
 @media (min-width: 40.0625em) {
   .service-header__heading {
-    font-size: 24px;
     font-size: 1.5rem;
     line-height: 1.25;
   }
@@ -833,9 +776,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 700;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -843,13 +785,6 @@
 @media print {
   .service-header__nav-list {
     font-family: sans-serif;
-  }
-}
-@media (min-width: 40.0625em) {
-  .service-header__nav-list {
-    font-size: 19px;
-    font-size: 1.1875rem;
-    line-height: 1.3157894737;
   }
 }
 @media print {
@@ -864,21 +799,13 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-weight: 700;
-    font-size: 16px;
-    font-size: 1rem;
-    line-height: 1.25;
+    font-size: 1.1875rem;
+    line-height: 1.3157894737;
   }
 }
 @media print and (min-width: 40.0625em) {
   .service-header__nav-list {
     font-family: sans-serif;
-  }
-}
-@media (min-width: 40.0625em) and (min-width: 40.0625em) {
-  .service-header__nav-list {
-    font-size: 19px;
-    font-size: 1.1875rem;
-    line-height: 1.3157894737;
   }
 }
 @media print and (min-width: 40.0625em) {

@@ -1,6 +1,17 @@
 /**
-* A modified adaptation of the Design System header script
+  * This file is primarily for the GOVUK Prototype Kit service header plugin. 
+  * The PK doesn't seem to support adding ES6 JS modules as dependencies 
+  * on plugins. 
+  * 
+  * DIFFERENCE BETWEEN THIS SCRIPT AND service-header.js
+  * 
+  * This script automatically initialises the header component. 
+  * `service-header.js` contains the JS needed for the header, but leaves 
+  * initialisation to the end user.
+  * 
+  * Choose one or the other depending on your needs.
 */
+
 function CrossServiceHeader ($module) {
   this.$header = $module
   this.$navigation = $module && $module.querySelectorAll("[data-one-login-header-nav]")
@@ -76,4 +87,4 @@ function initCrossServiceHeader () {
   }
 }
 
-export { CrossServiceHeader, initCrossServiceHeader };
+initCrossServiceHeader();
