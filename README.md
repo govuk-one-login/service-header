@@ -156,9 +156,9 @@ How you use the styles for the header will be different depending on whether you
 
 Copy the Sass files from this repository into your service's Sass implementation.
 
-Make sure you have added `node_modules/govuk-frontend` to your Sass loadpath. The header code uses this to [simplify its Sass import paths](https://frontend.design-system.service.gov.uk/importing-css-assets-and-javascript/#simplify-sass-import-paths).
+Make sure you have added `node_modules/govuk-frontend/dist` to your Sass loadpath. The header code uses this to [simplify its Sass import paths](https://frontend.design-system.service.gov.uk/importing-css-assets-and-javascript/#simplify-sass-import-paths).
 
-Alternatively, you can edit the header’s Sass import paths to specify `node_modules/govuk-frontend` for each import.
+Alternatively, you can edit the header’s Sass import paths to specify `node_modules/govuk-frontend/dist` for each import.
 
 ### If you use the GOV.UK Frontend pre-compiled CSS files
 
@@ -184,16 +184,22 @@ There’s [more information about using GDS Transport](https://design-system.ser
 
 The GOV.UK One Login service header uses Javascript to enable 'drop down' behaviour for the header on small screen sizes. The header doesn't rely on Javascript to do anything else.
 
-Copy the code in this repository's Javascript file into your service's Javascript implementation.
+Copy the code from one of this repository's [Javascript files](https://github.com/govuk-one-login/service-header/blob/main/dist/scripts) into your service's Javascript implementation. 
+
+You will only need one of the files:
+
++ `service-header.js` contains the JS required for the header, but leaves initialisation to you. This is so you can run other Javascript functions before initialisation of the header dropdown functionality if you need to. 
++ `service-header-with-init.js` automatically initialises the header component. All you need to do is include this file
+
+Choose one or the other depending on your needs.
+
+The recommendation is to import `service-header.js` and run the initialisation function at a point in your code where it makes sense. 
 
 ### Initialising the header
 
-Copying the header’s Javascript file into your project does not initialise the drop down behaviour. This is so you can run other Javascript functions before initialisation of the header dropdown functionality if you need to.
+If you choose to use `service-header.js`, you will need to initialise the header by importing the `initCrossServiceHeader` function from the file and running `initCrossServiceHeader()` in your code.
 
-You’ll need to initialise the Javascript in your code to make it work. To do this, you need to:
-
-+ include [service-header.js](https://github.com/govuk-one-login/service-header/blob/main/dist/scripts/service-header.js) in your application Javascript - this attaches the function to the window object by default but you can namespace it if you need to
-+ initialise the header by running `new window.CrossServiceHeader(document.querySelector("[data-module='one-login-header']")).init()`
+A basic working example using `service-header.js` can be seen on the [header preview page](https://github.com/govuk-one-login/service-header/blob/main/dist/preview.html).
 
 ### If you don’t use the header’s Javascript
 
