@@ -18,6 +18,10 @@ You can [preview the header in your browser](https://govuk-one-login.github.io/s
 
 ![A screenshot of the GOV.UK One Login header. It has 2 sections: a black section at the top showing the GOV.UK crown logo, a link saying "GOV.UK One Login", which takes you into your account, and a "Sign out" button. Below this section is a grey section, displaying the name of a government service and internal links within that service. Those just have placeholder text, so read "Service name" and "Service link 1" and so on. The black and grey sections are divided by a blue bar, like on the GOV.UK homepage.](service-header-larger-screen.png)
 
+## How to contribute to the service header
+
+If you are a developer working on this project, familiarise yourself with the notes on [this page](docs/dev-contribution-notes.md).
+
 ## Contacting the maintainers
 
 Cross-Government Slack: use the [#govuk-one-login](https://ukgovernmentdigital.slack.com/archives/C02AQUJ6WTC) channel
