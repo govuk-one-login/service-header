@@ -191,10 +191,14 @@ $govuk-header-link-underline-thickness: 3px;
 
 .one-login-header__logotype {
   display: inline-block;
+  position: relative;
+  top: -3px;
 
   // Add a gap after the logo in case it's followed by a product name. This
   // gets removed later if the logotype is a :last-child.
   margin-right: govuk-spacing(1);
+  fill: currentcolor;
+  vertical-align: top;
 
   // Prevent readability backplate from obscuring underline in Windows High
   // Contrast Mode
@@ -208,22 +212,6 @@ $govuk-header-link-underline-thickness: 3px;
   &:last-child {
     margin-right: 0;
   }
-}
-
-.one-login-header__logotype-crown {
-  position: relative;
-  top: -1px;
-  margin-right: 1px;
-  fill: currentcolor;
-  vertical-align: top;
-}
-
-// Spacing adjustment for Tudor crown, as the new graphic is narrower than the
-// existing crown. In Frontend v5, this rule should replace the equivalent in
-// the block above.
-.one-login-header__logotype-crown[width="32"] {
-  top: -3px;
-  margin-right: 2px;
 }
 
 .one-login-header__link--homepage {
