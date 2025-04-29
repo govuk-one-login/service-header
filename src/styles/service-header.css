@@ -554,7 +554,11 @@
 
 .one-login-header__logotype {
   display: inline-block;
+  position: relative;
+  top: -3px;
   margin-right: 5px;
+  fill: currentcolor;
+  vertical-align: top;
 }
 @media (forced-colors: active) {
   .one-login-header__logotype {
@@ -564,19 +568,6 @@
 }
 .one-login-header__logotype:last-child {
   margin-right: 0;
-}
-
-.one-login-header__logotype-crown {
-  position: relative;
-  top: -1px;
-  margin-right: 1px;
-  fill: currentcolor;
-  vertical-align: top;
-}
-
-.one-login-header__logotype-crown[width="32"] {
-  top: -3px;
-  margin-right: 2px;
 }
 
 .one-login-header__link--homepage {
