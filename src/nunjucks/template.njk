@@ -25,6 +25,7 @@ Component options:
   - signOutLink (string): Option to overwrite the default signed out page. Defaults to "https://home.account.gov.uk/sign-out"
   - homepageLink (string): Option to overwrite the default GOV.UK link. Defaults to "https://home.account.gov.uk/"
 #}
+{% from "../../node_modules/govuk-frontend/dist/govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
 {%- set oneLoginLink = params.oneLoginLink if params.oneLoginLink else "https://home.account.gov.uk/" -%}
 {%- set homepageLink = params.homepageLink if params.homepageLink else "https://www.gov.uk/" -%}
@@ -96,49 +97,31 @@ Component options:
       </nav>
     </div>
   </div>
-  {% if params.serviceName %}
   <!-- Start of service navigation -->
-  <div class="service-header" data-one-login-header-nav>
-    <div class="govuk-width-container">
-      <div class="service-header__container">
-        <!-- The name of your service goes here -->
-        <h2 class="service-header__heading">{{ params.serviceName }}</h2>
-        {%- if params.navigationItems %}
-        <div>
-          <!-- Label the toggle button appropriately (you might want to use the name of your service) to provide support for screen reader users -->
-          <button type="button" 
-            aria-controls="service-header__nav" 
-            data-open-class="cross-service-header__button--open" 
-            aria-label="Show service navigation menu" 
-            data-label-for-show="Show service navigation menu" 
-            data-label-for-hide="Hide service navigation menu" 
-            data-text-for-show="Menu" 
-            data-text-for-hide="Close" 
-            aria-expanded="false" 
-            class="cross-service-header__button cross-service-header__button--service-header js-x-header-toggle">
-            <span class="service-header__button-content">Menu</span>
-          </button>
-          <!-- Important! Label your navigation appropriately! When there are multiple navigation landmarks on a page, additional labelling is required to provide support for screen reader users -->
-          <nav aria-label="{{ params.serviceName }} menu">
-            <ul class="service-header__nav-list service-header__nav" id="service-header__nav" data-open-class="service-header__nav--open">
-              {%- for item in params.navigationItems %}
-              <!-- Use the "service-header__nav-list-item--active" modifier class on the li to visually highlight the page the user is currently viewing -->
-              <li class="service-header__nav-list-item {{ 'service-header__nav-list-item--active' if (item.id == params.activeLinkId) else '' }}">
-                <!-- Use the aria-current="page" attribute on the anchor tag -->
-                <a class="service-header__nav-list-item-link" 
-                  {%- if (item.id == params.activeLinkId) -%} aria-current="page" {%- endif %}
-                  href="{{item.href}}">
-                  {{item.text}}
-                </a>
-              </li>
-              {%- endfor %}
-            </ul>
-          </nav>
-        </div>
-        {% endif %}
-      </div>
-    </div>
-  </div>
+  <!-- This is a DESIGN SYSTEM component with a dependency on Javascript  -->
+  <!-- Javascript is necessary to enable dropdown functionality for the list of links on mobile -->
+  <!-- Import the latest version of the script for this component using the instructions here https://frontend.design-system.service.gov.uk/import-javascript/#import-javascript  -->
+
+    {# navigationItems is a legacy parameter #}
+    {# please migrate to the Design System style parameters for Secondary Navigation as soon as you can #}
+    {% if params.navigationItems %}
+      {% set navArr = [] %}
+      {%- for item in params.navigationItems %}
+        {{ '' if navArr.push({
+            href: item.href,
+            text: item.text,
+            active: item.id == params.activeLinkId
+        }) }}
+      {%- endfor %}
+      {{ govukServiceNavigation({
+        menuButtonText: params.menuButtonText,
+        menuButtonLabel: params.menuButtonLabel,
+        serviceName: params.serviceName,
+        navigation: navArr
+      }) if params.serviceName }}
+    {% elif params.serviceNavigationParams %}
+       {{ govukServiceNavigation(params.serviceNavigationParams) if params.serviceNavigationParams.serviceName }}
+    {% endif %}
+
   <!-- End of service navigation -->
-  {% endif %}
 </header>
