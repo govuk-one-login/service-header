@@ -4,12 +4,14 @@
 
 
 
+
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Service header – usage example</title>
+    <link rel="stylesheet" href="../node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.css">
     <link rel="stylesheet" href="./styles/service-header.css">
     <style>
       @font-face {
@@ -28,8 +30,43 @@
       }
     </style>
   </head>
-  <body style="margin:0;">
-    <header class="cross-service-header" role="banner" data-module="one-login-header">
+  <body class="govuk-frontend-supported" style="margin:0;">
+    <br>
+    <h2 class="govuk-heading-m">With new Service Navigation component, but using legacy parameters </h2>
+    <details class="govuk-details">
+      <summary>Nunjucks code</summary>
+      <code>
+      
+      &#10100;&#10100; govukOneLoginServiceHeader(&#10100; 
+          <br>&nbsp; signOutLink: "/test",
+            <br>&nbsp; navigationItems: [
+             <br>&nbsp;&nbsp;&nbsp; {
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;  href: "#example1", 
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;  text: "Example link 1" 
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;  id: 'id3'
+             <br>&nbsp;&nbsp;&nbsp; },
+             <br>&nbsp;&nbsp;&nbsp; { 
+               <br>&nbsp;&nbsp;&nbsp;&nbsp;  href: "#example2",  
+               <br>&nbsp;&nbsp;&nbsp;&nbsp;  text: "Example link 2", 
+               <br>&nbsp;&nbsp;&nbsp;&nbsp;  id: 'id2'
+             <br>&nbsp;&nbsp;&nbsp; }, 
+             <br>&nbsp;&nbsp;&nbsp; { 
+              <br>&nbsp;&nbsp;&nbsp;&nbsp;  href: "#example3",  
+              <br>&nbsp;&nbsp;&nbsp;&nbsp;  text: "Example link 3" 
+              <br>&nbsp;&nbsp;&nbsp;&nbsp;  id: 'id3'
+             <br>&nbsp;&nbsp;&nbsp; } 
+            <br>&nbsp;&nbsp;], 
+            <br>&nbsp; serviceName: "A very useful service with a relatively long name", 
+            <br>&nbsp; activeLinkId: "id3", 
+            <br>&nbsp; navigationLabel: "Test label" &#10101;)  
+      <br>&#10101;&#10101;
+
+      </code>
+    </details>
+    <p class="govuk-body"> The code above is for reference for Nunjucks users only – if you do not use Nunjucks in your service please follow the <a class="govuk-link" href="https://github.com/govuk-one-login/service-header/tree/main?tab=readme-ov-file#how-to-start-using-the-header-in-your-service"> instructions to copy the header HTML into your service</a>.</p>
+
+    
+<header class="cross-service-header" role="banner" data-module="one-login-header">
   <div class="one-login-header" data-one-login-header-nav>
     <div class="one-login-header__container govuk-width-container">
       <div class="one-login-header__logo">
@@ -121,69 +158,340 @@
       </nav>
     </div>
   </div>
-  
   <!-- Start of service navigation -->
-  <div class="service-header" data-one-login-header-nav>
-    <div class="govuk-width-container">
-      <div class="service-header__container">
-        <!-- The name of your service goes here -->
-        <h2 class="service-header__heading">Name of example service</h2>
-        <div>
-          <!-- Label the toggle button appropriately (you might want to use the name of your service) to provide support for screen reader users -->
-          <button type="button" 
-            aria-controls="service-header__nav" 
-            data-open-class="cross-service-header__button--open" 
-            aria-label="Show service navigation menu" 
-            data-label-for-show="Show service navigation menu" 
-            data-label-for-hide="Hide service navigation menu" 
-            data-text-for-show="Menu" 
-            data-text-for-hide="Close" 
-            aria-expanded="false" 
-            class="cross-service-header__button cross-service-header__button--service-header js-x-header-toggle">
-            <span class="service-header__button-content">Menu</span>
-          </button>
-          <!-- Important! Label your navigation appropriately! When there are multiple navigation landmarks on a page, additional labelling is required to provide support for screen reader users -->
-          <nav aria-label="Name of example service menu">
-            <ul class="service-header__nav-list service-header__nav" id="service-header__nav" data-open-class="service-header__nav--open">
-              <!-- Use the "service-header__nav-list-item--active" modifier class on the li to visually highlight the page the user is currently viewing -->
-              <li class="service-header__nav-list-item ">
-                <!-- Use the aria-current="page" attribute on the anchor tag -->
-                <a class="service-header__nav-list-item-link"
-                  href="#">
-                  Example link 1
-                </a>
-              </li>
-              <!-- Use the "service-header__nav-list-item--active" modifier class on the li to visually highlight the page the user is currently viewing -->
-              <li class="service-header__nav-list-item ">
-                <!-- Use the aria-current="page" attribute on the anchor tag -->
-                <a class="service-header__nav-list-item-link"
-                  href="#">
-                  Example link 2
-                </a>
-              </li>
-              <!-- Use the "service-header__nav-list-item--active" modifier class on the li to visually highlight the page the user is currently viewing -->
-              <li class="service-header__nav-list-item service-header__nav-list-item--active">
-                <!-- Use the aria-current="page" attribute on the anchor tag -->
-                <a class="service-header__nav-list-item-link"aria-current="page"
-                  href="#">
-                  Example link 3
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+  <!-- This is a DESIGN SYSTEM component with a dependency on Javascript  -->
+  <!-- Javascript is necessary to enable dropdown functionality for the list of links on mobile -->
+  <!-- Import the latest version of the script for this component using the instructions here https://frontend.design-system.service.gov.uk/import-javascript/#import-javascript  -->
+
+    
+    
+    
+      
         
+        
+        
+      
+
+  <section aria-label="Service information" 
+class="govuk-service-navigation"
+data-module="govuk-service-navigation"
+>
+    
+  <div class="govuk-width-container">
+
+    <div class="govuk-service-navigation__container">
+      
+      
+        <span class="govuk-service-navigation__service-name">
+          
+            <span class="govuk-service-navigation__text">A very useful service with a relatively long name</span>
+          
+        </span>
+      
+
+      
+      
+        <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+          <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden>
+            Menu
+          </button>
+
+          <ul class="govuk-service-navigation__list" id="navigation" >
+
+            
+              
+
+              
+              <li class="govuk-service-navigation__item">
+                
+                  <a class="govuk-service-navigation__link" href="#example1">
+                    
+                
+                Example link 1
+              
+                  </a>
+                
+              </li>
+            
+              
+
+              
+              <li class="govuk-service-navigation__item">
+                
+                  <a class="govuk-service-navigation__link" href="#example2">
+                    
+                
+                Example link 2
+              
+                  </a>
+                
+              </li>
+            
+              
+
+              
+              <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+                
+                  <a class="govuk-service-navigation__link" href="#example3" aria-current="true">
+                    
+                
+                
+                  <strong class="govuk-service-navigation__active-fallback">Example link 3</strong>
+                
+              
+                  </a>
+                
+              </li>
+            
+
+            </ul>
+        </nav>
+      
+    </div>
+
+    </div>
+
+  </section>
+
+
+    
+
+  <!-- End of service navigation -->
+</header>
+
+    <br>
+    <h2 class="govuk-heading-m">With new Service Navigation component, passing in updated parameters </h2>
+
+    <details class="govuk-details">
+      <summary>Nunjucks code</summary>
+      <code>
+      
+      &#10100;&#10100; govukOneLoginServiceHeader(&#10100; 
+          <br>&nbsp; signOutLink: "/test",
+          <br>&nbsp; serviceNavigationParams: &#10100; 
+            <br>&nbsp;&nbsp; navigation: [
+             <br>&nbsp;&nbsp;&nbsp; {
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;  href: "#navigation1", 
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;  text: "Navigation item 1" 
+             <br>&nbsp;&nbsp;&nbsp; },
+             <br>&nbsp;&nbsp;&nbsp; { 
+               <br>&nbsp;&nbsp;&nbsp;&nbsp;  href: "#navigation2",  
+               <br>&nbsp;&nbsp;&nbsp;&nbsp;  text: "Navigation item 2", 
+               <br>&nbsp;&nbsp;&nbsp;&nbsp;  active: true 
+             <br>&nbsp;&nbsp;&nbsp; }, 
+             <br>&nbsp;&nbsp;&nbsp; { 
+              <br>&nbsp;&nbsp;&nbsp;&nbsp;  href: "#navigation3",  
+              <br>&nbsp;&nbsp;&nbsp;&nbsp;  text: "Navigation item 3" 
+             <br>&nbsp;&nbsp;&nbsp; } 
+            <br>&nbsp;&nbsp;], 
+            <br>&nbsp; serviceName: "A very useful service with a relatively long name", 
+            <br>&nbsp; navigationLabel: "Test label" &#10101;&#10101;)  
+      <br>&#10101;&#10101;
+
+      </code>
+    </details>
+    <p class="govuk-body"> The code above is for reference for Nunjucks users only – if you do not use Nunjucks in your service please follow the <a class="govuk-link" href="https://github.com/govuk-one-login/service-header/tree/main?tab=readme-ov-file#how-to-start-using-the-header-in-your-service"> instructions to copy the header HTML into your service</a>.</p>
+
+    
+<header class="cross-service-header" role="banner" data-module="one-login-header">
+  <div class="one-login-header" data-one-login-header-nav>
+    <div class="one-login-header__container govuk-width-container">
+      <div class="one-login-header__logo">
+        <a href="https://www.gov.uk/" class="one-login-header__link one-login-header__link--homepage">
+          <svg
+            focusable="false"
+            role="img"
+            class="one-login-header__logotype"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 148 30"
+            height="30"
+            width="148"
+            aria-label="GOV.UK">
+            <title>GOV.UK</title>
+            <path d="M22.6 10.4c-1 .4-2-.1-2.4-1-.4-.9.1-2 1-2.4.9-.4 2 .1 2.4 1s-.1 2-1 2.4m-5.9 6.7c-.9.4-2-.1-2.4-1-.4-.9.1-2 1-2.4.9-.4 2 .1 2.4 1s-.1 2-1 2.4m10.8-3.7c-1 .4-2-.1-2.4-1-.4-.9.1-2 1-2.4.9-.4 2 .1 2.4 1s0 2-1 2.4m3.3 4.8c-1 .4-2-.1-2.4-1-.4-.9.1-2 1-2.4.9-.4 2 .1 2.4 1s-.1 2-1 2.4M17 4.7l2.3 1.2V2.5l-2.3.7-.2-.2.9-3h-3.4l.9 3-.2.2c-.1.1-2.3-.7-2.3-.7v3.4L15 4.7c.1.1.1.2.2.2l-1.3 4c-.1.2-.1.4-.1.6 0 1.1.8 2 1.9 2.2h.7c1-.2 1.9-1.1 1.9-2.1 0-.2 0-.4-.1-.6l-1.3-4c-.1-.2 0-.2.1-.3m-7.6 5.7c.9.4 2-.1 2.4-1 .4-.9-.1-2-1-2.4-.9-.4-2 .1-2.4 1s0 2 1 2.4m-5 3c.9.4 2-.1 2.4-1 .4-.9-.1-2-1-2.4-.9-.4-2 .1-2.4 1s.1 2 1 2.4m-3.2 4.8c.9.4 2-.1 2.4-1 .4-.9-.1-2-1-2.4-.9-.4-2 .1-2.4 1s0 2 1 2.4m14.8 11c4.4 0 8.6.3 12.3.8 1.1-4.5 2.4-7 3.7-8.8l-2.5-.9c.2 1.3.3 1.9 0 2.7-.4-.4-.8-1.1-1.1-2.3l-1.2 4c.7-.5 1.3-.8 2-.9-1.1 2.5-2.6 3.1-3.5 3-1.1-.2-1.7-1.2-1.5-2.1.3-1.2 1.5-1.5 2.1-.1 1.1-2.3-.8-3-2-2.3 1.9-1.9 2.1-3.5.6-5.6-2.1 1.6-2.1 3.2-1.2 5.5-1.2-1.4-3.2-.6-2.5 1.6.9-1.4 2.1-.5 1.9.8-.2 1.1-1.7 2.1-3.5 1.9-2.7-.2-2.9-2.1-2.9-3.6.7-.1 1.9.5 2.9 1.9l.4-4.3c-1.1 1.1-2.1 1.4-3.2 1.4.4-1.2 2.1-3 2.1-3h-5.4s1.7 1.9 2.1 3c-1.1 0-2.1-.2-3.2-1.4l.4 4.3c1-1.4 2.2-2 2.9-1.9-.1 1.5-.2 3.4-2.9 3.6-1.9.2-3.4-.8-3.5-1.9-.2-1.3 1-2.2 1.9-.8.7-2.3-1.2-3-2.5-1.6.9-2.2.9-3.9-1.2-5.5-1.5 2-1.3 3.7.6 5.6-1.2-.7-3.1 0-2 2.3.6-1.4 1.8-1.1 2.1.1.2.9-.3 1.9-1.5 2.1-.9.2-2.4-.5-3.5-3 .6 0 1.2.3 2 .9l-1.2-4c-.3 1.1-.7 1.9-1.1 2.3-.3-.8-.2-1.4 0-2.7l-2.9.9C1.3 23 2.6 25.5 3.7 30c3.7-.5 7.9-.8 12.3-.8m28.3-11.6c0 .9.1 1.7.3 2.5.2.8.6 1.5 1 2.2.5.6 1 1.1 1.7 1.5.7.4 1.5.6 2.5.6.9 0 1.7-.1 2.3-.4s1.1-.7 1.5-1.1c.4-.4.6-.9.8-1.5.1-.5.2-1 .2-1.5v-.2h-5.3v-3.2h9.4V28H55v-2.5c-.3.4-.6.8-1 1.1-.4.3-.8.6-1.3.9-.5.2-1 .4-1.6.6s-1.2.2-1.8.2c-1.5 0-2.9-.3-4-.8-1.2-.6-2.2-1.3-3-2.3-.8-1-1.4-2.1-1.8-3.4-.3-1.4-.5-2.8-.5-4.3s.2-2.9.7-4.2c.5-1.3 1.1-2.4 2-3.4.9-1 1.9-1.7 3.1-2.3 1.2-.6 2.6-.8 4.1-.8 1 0 1.9.1 2.8.3.9.2 1.7.6 2.4 1s1.4.9 1.9 1.5c.6.6 1 1.3 1.4 2l-3.7 2.1c-.2-.4-.5-.9-.8-1.2-.3-.4-.6-.7-1-1-.4-.3-.8-.5-1.3-.7-.5-.2-1.1-.2-1.7-.2-1 0-1.8.2-2.5.6-.7.4-1.3.9-1.7 1.5-.5.6-.8 1.4-1 2.2-.3.8-.4 1.9-.4 2.7zM71.5 6.8c1.5 0 2.9.3 4.2.8 1.2.6 2.3 1.3 3.1 2.3.9 1 1.5 2.1 2 3.4s.7 2.7.7 4.2-.2 2.9-.7 4.2c-.4 1.3-1.1 2.4-2 3.4-.9 1-1.9 1.7-3.1 2.3-1.2.6-2.6.8-4.2.8s-2.9-.3-4.2-.8c-1.2-.6-2.3-1.3-3.1-2.3-.9-1-1.5-2.1-2-3.4-.4-1.3-.7-2.7-.7-4.2s.2-2.9.7-4.2c.4-1.3 1.1-2.4 2-3.4.9-1 1.9-1.7 3.1-2.3 1.2-.5 2.6-.8 4.2-.8zm0 17.6c.9 0 1.7-.2 2.4-.5s1.3-.8 1.7-1.4c.5-.6.8-1.3 1.1-2.2.2-.8.4-1.7.4-2.7v-.1c0-1-.1-1.9-.4-2.7-.2-.8-.6-1.6-1.1-2.2-.5-.6-1.1-1.1-1.7-1.4-.7-.3-1.5-.5-2.4-.5s-1.7.2-2.4.5-1.3.8-1.7 1.4c-.5.6-.8 1.3-1.1 2.2-.2.8-.4 1.7-.4 2.7v.1c0 1 .1 1.9.4 2.7.2.8.6 1.6 1.1 2.2.5.6 1.1 1.1 1.7 1.4.6.3 1.4.5 2.4.5zM88.9 28 83 7h4.7l4 15.7h.1l4-15.7h4.7l-5.9 21h-5.7zm28.8-3.6c.6 0 1.2-.1 1.7-.3.5-.2 1-.4 1.4-.8.4-.4.7-.8.9-1.4.2-.6.3-1.2.3-2v-13h4.1v13.6c0 1.2-.2 2.2-.6 3.1s-1 1.7-1.8 2.4c-.7.7-1.6 1.2-2.7 1.5-1 .4-2.2.5-3.4.5-1.2 0-2.4-.2-3.4-.5-1-.4-1.9-.9-2.7-1.5-.8-.7-1.3-1.5-1.8-2.4-.4-.9-.6-2-.6-3.1V6.9h4.2v13c0 .8.1 1.4.3 2 .2.6.5 1 .9 1.4.4.4.8.6 1.4.8.6.2 1.1.3 1.8.3zm13-17.4h4.2v9.1l7.4-9.1h5.2l-7.2 8.4L148 28h-4.9l-5.5-9.4-2.7 3V28h-4.2V7zm-27.6 16.1c-1.5 0-2.7 1.2-2.7 2.7s1.2 2.7 2.7 2.7 2.7-1.2 2.7-2.7-1.2-2.7-2.7-2.7z"></path>
+          </svg>
+        </a>
       </div>
+      <button type="button" 
+        aria-controls="one-login-header__nav" 
+        aria-label="Show GOV.UK One Login menu" 
+        data-open-class="cross-service-header__button--open" 
+        data-label-for-show="Show GOV.UK One Login menu" 
+        data-label-for-hide="Hide GOV.UK One Login menu" 
+        aria-expanded="false" 
+        class="cross-service-header__button cross-service-header__button--one-login js-x-header-toggle">
+        <span class="cross-service-header__button-content">One Login</span>
+          
+  <!--[if gt IE 8]><!-->
+    <span class="cross-service-header__button-icon cross-service-header__button-icon--default">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
+        <circle cx="11" cy="11" r="11" fill="white"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.29297 18.8487C4.23255 15.4753 7.32741 13 11.0004 13C14.6731 13 17.7678 15.4749 18.7076 18.848C17.8058 19.7338 16.752 20.4654 15.5889 21H11.0004H6.41097C5.24819 20.4655 4.19463 19.7342 3.29297 18.8487Z" fill="#1D70B8"/>
+        <circle cx="11" cy="7.75" r="3.75" fill="#1D70B8"/>
+        <circle cx="11" cy="11" r="10" stroke="white" stroke-width="2"/>
+      </svg>
+    </span>
+  <!--<![endif]-->
+          
+  <!--[if gt IE 8]><!-->
+    <span class="cross-service-header__button-icon cross-service-header__button-icon--focus">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
+        <circle cx="11" cy="11" r="11" fill="black"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.29297 18.8487C4.23255 15.4753 7.32741 13 11.0004 13C14.6731 13 17.7678 15.4749 18.7076 18.848C17.8058 19.7338 16.752 20.4654 15.5889 21H11.0004H6.41097C5.24819 20.4655 4.19463 19.7342 3.29297 18.8487Z" fill="white"/>
+        <circle cx="11" cy="7.75" r="3.75" fill="white"/>
+        <circle cx="11" cy="11" r="10" stroke="black" stroke-width="2"/>
+      </svg>
+    </span>
+  <!--<![endif]-->
+      </button>
+      <nav aria-label="GOV.UK One Login menu" class="one-login-header__nav" data-open-class="one-login-header__nav--open" id="one-login-header__nav">
+        <ul class="one-login-header__nav__list">
+          <li class="one-login-header__nav__list-item">
+            <a class="one-login-header__nav__link one-login-header__nav__link--one-login" href="https://home.account.gov.uk/">
+              <span class="one-login-header__nav__link-content">
+                GOV.UK One Login
+              </span>
+              
+  <!--[if gt IE 8]><!-->
+    <span class="cross-service-header__button-icon cross-service-header__button-icon--default">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
+        <circle cx="11" cy="11" r="11" fill="white"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.29297 18.8487C4.23255 15.4753 7.32741 13 11.0004 13C14.6731 13 17.7678 15.4749 18.7076 18.848C17.8058 19.7338 16.752 20.4654 15.5889 21H11.0004H6.41097C5.24819 20.4655 4.19463 19.7342 3.29297 18.8487Z" fill="#1D70B8"/>
+        <circle cx="11" cy="7.75" r="3.75" fill="#1D70B8"/>
+        <circle cx="11" cy="11" r="10" stroke="white" stroke-width="2"/>
+      </svg>
+    </span>
+  <!--<![endif]-->
+              
+  <!--[if gt IE 8]><!-->
+    <span class="cross-service-header__button-icon cross-service-header__button-icon--focus">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
+        <circle cx="11" cy="11" r="11" fill="black"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.29297 18.8487C4.23255 15.4753 7.32741 13 11.0004 13C14.6731 13 17.7678 15.4749 18.7076 18.848C17.8058 19.7338 16.752 20.4654 15.5889 21H11.0004H6.41097C5.24819 20.4655 4.19463 19.7342 3.29297 18.8487Z" fill="white"/>
+        <circle cx="11" cy="7.75" r="3.75" fill="white"/>
+        <circle cx="11" cy="11" r="10" stroke="black" stroke-width="2"/>
+      </svg>
+    </span>
+  <!--<![endif]-->
+            </a>
+          </li>
+          <li class="one-login-header__nav__list-item">
+            <!-- REPLACE SIGN OUT URL PLACEHOLDER WITH SIGN OUT PAGE FOR YOUR SERVICE -->
+            <a class="one-login-header__nav__link" href="#">
+              Sign out
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </div>
+  <!-- Start of service navigation -->
+  <!-- This is a DESIGN SYSTEM component with a dependency on Javascript  -->
+  <!-- Javascript is necessary to enable dropdown functionality for the list of links on mobile -->
+  <!-- Import the latest version of the script for this component using the instructions here https://frontend.design-system.service.gov.uk/import-javascript/#import-javascript  -->
+
+    
+    
+    
+       
+
+  <section aria-label="Service information" 
+class="govuk-service-navigation"
+data-module="govuk-service-navigation"
+>
+    
+  <div class="govuk-width-container">
+
+    <div class="govuk-service-navigation__container">
+      
+      
+        <span class="govuk-service-navigation__service-name">
+          
+            <span class="govuk-service-navigation__text">A very useful service with a relatively long name</span>
+          
+        </span>
+      
+
+      
+      
+        <nav aria-label="Test" class="govuk-service-navigation__wrapper">
+          <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden>
+            Menu
+          </button>
+
+          <ul class="govuk-service-navigation__list" id="navigation" >
+
+            
+              
+
+              
+              <li class="govuk-service-navigation__item">
+                
+                  <a class="govuk-service-navigation__link" href="#navigation1">
+                    
+                
+                Navigation item 1
+              
+                  </a>
+                
+              </li>
+            
+              
+
+              
+              <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+                
+                  <a class="govuk-service-navigation__link" href="#navigation2" aria-current="true">
+                    
+                
+                
+                  <strong class="govuk-service-navigation__active-fallback">Navigation item 2</strong>
+                
+              
+                  </a>
+                
+              </li>
+            
+              
+
+              
+              <li class="govuk-service-navigation__item">
+                
+                  <a class="govuk-service-navigation__link" href="#navigation3">
+                    
+                
+                Navigation item 3
+              
+                  </a>
+                
+              </li>
+            
+
+            </ul>
+        </nav>
+      
+    </div>
+
+    </div>
+
+  </section>
+
+
+    
+
   <!-- End of service navigation -->
-  
 </header>
 
     <script type="module" src="./scripts/service-header.js"></script>
+    <script type="module" src="../node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.js"></script>
     <script type="module">
       import { initCrossServiceHeader } from './scripts/service-header.js';
       initCrossServiceHeader();
+    </script>
+
+    <script type="module">
+      import { ServiceNavigation, createAll} from '../node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.js';
+      createAll(ServiceNavigation);
     </script>
   </body>
 </html>

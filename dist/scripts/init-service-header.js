@@ -1,17 +1,6 @@
 /**
-  * This file is primarily for the GOVUK Prototype Kit service header plugin. 
-  * The PK doesn't seem to support adding ES6 JS modules as dependencies 
-  * on plugins. 
-  * 
-  * DIFFERENCE BETWEEN THIS SCRIPT AND service-header.js
-  * 
-  * This script automatically initialises the header component. 
-  * `service-header.js` contains the JS needed for the header, but leaves 
-  * initialisation to the end user.
-  * 
-  * Choose one or the other depending on your needs.
+* A modified adaptation of the Design System header script
 */
-
 function CrossServiceHeader ($module) {
   this.$header = $module
   this.$navigation = $module && $module.querySelectorAll("[data-one-login-header-nav]")
@@ -48,9 +37,8 @@ function CrossServiceHeader ($module) {
   }
   
   /**
-  * The header can render with one or two navigation elements which collapse 
-  * into dropdowns on the mobile variation. This initialises the dropdown 
-  * functionality for all navs that have a menu button which has: 
+  * The header navigation elements collapse into dropdowns on the mobile variation. 
+  * This initialises the dropdown functionality for all navs that have a menu button which has: 
   * 1. a class of .js-x-header-toggle   
   * 2. an aria-controls attribute which can be mapped to the ID of the element
   * that should be hidden on mobile
@@ -86,5 +74,18 @@ function initCrossServiceHeader () {
     new CrossServiceHeader(oneLoginHeader);
   }
 }
+
+export { CrossServiceHeader, initCrossServiceHeader };/**
+  * This file is here to bundle the init-service-header.js script for the GOVUK Prototype Kit service header plugin. 
+  * The PK doesn't seem to support adding ES6 JS modules as dependencies 
+  * on plugins. 
+  * 
+  * Relationship between this script service-header.js:
+  * 
+  * `service-header.js` contains the JS needed for the header, but leaves 
+  * initialisation to the end user.
+  *  This script just calls the function to initialise the header. 
+  * 
+*/
 
 initCrossServiceHeader();

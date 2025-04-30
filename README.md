@@ -193,7 +193,7 @@ Copy the code from one of this repository's [Javascript files](https://github.co
 You will only need one of the files:
 
 + `service-header.js` contains the JS required for the header, but leaves initialisation to you. This is so you can run other Javascript functions before initialisation of the header dropdown functionality if you need to. 
-+ `service-header-with-init.js` automatically initialises the header component. All you need to do is include this file
++ `init-service-header.js` automatically initialises the header component. All you need to do is include this file
 
 Choose one or the other depending on your needs.
 

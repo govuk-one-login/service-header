@@ -3,7 +3,7 @@
     "/dist/styles/service-header-no-imports.scss"
   ],
   "scripts": [
-    "/dist/scripts/service-header-with-init.js"
+    "/dist/scripts/init-service-header.js"
   ],
   "nunjucksPaths": [
     "/dist/nunjucks"
@@ -23,6 +23,6 @@
   ],
   "pluginDependencies": [{
     "packageName": "govuk-frontend",
-    "minVersion": "5.0.0"
+    "minVersion": "5.9.0"
   }]
 }
