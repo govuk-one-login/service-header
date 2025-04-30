@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "build-templates": "node build.js",
-    "build-sass": "sass --no-source-map --load-path=node_modules/govuk-frontend/dist src/styles/service-header.scss src/styles/service-header.css",
+    "build-sass": "sass --no-source-map --load-path=node_modules/govuk-frontend/dist src/styles/service-header.scss dist/styles/service-header.css",
     "watch-sass": "sass --no-source-map --load-path=node_modules/govuk-frontend/dist --watch src/styles/service-header.scss dist/styles/service-header.css",
     "build-all": "npm run build-sass && npm run build-templates"
   },
