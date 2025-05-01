@@ -1,7 +1,7 @@
 {# 
 Component options:
-  - serviceName (string): The name of the service. The service navigation bar will not render unless serviceName is specified
-  - navigationItems (array): An array of objects representing service navigation links. 
+  - serviceName (string, DEPRECATED: pass it as an option on serviceNavigationParams instead): The name of the service. The service navigation bar will not render unless serviceName is specified
+  - navigationItems (array, DEPRECATED: pass it as the navigation option on serviceNavigationParams instead): An array of objects representing service navigation links. 
     Each link object contains the following fields: 
       - href (string – indicates the link destination), 
       - text (string, is the text being displayed), 
@@ -20,10 +20,11 @@ Component options:
       text: 'service link 3',
       id: 'servicelink3'
     }] 
-  - activeLinkId (string): The id of the link that is currently active 
+  - activeLinkId (string, DEPRECATED: replaced by navigation option on serviceNavigationParams): The id of the link that is currently active 
   - oneLoginLink (string): Option to overwrite the default One Login Home link. Defaults to "https://home.account.gov.uk/"
   - signOutLink (string): Option to overwrite the default signed out page. Defaults to "https://home.account.gov.uk/sign-out"
   - homepageLink (string): Option to overwrite the default GOV.UK link. Defaults to "https://home.account.gov.uk/"
+  - serviceNavigationParams (object): Options for the service navigation component. Accepts all the options listed under "Nunjucks macro options" on the Design System [service navigation component page](https://design-system.service.gov.uk/components/service-navigation/). The service nav bar will not render unless serviceName is specified
 #}
 {% from "../../node_modules/govuk-frontend/dist/govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
