@@ -30,7 +30,7 @@ Within GDS: use the #di-one-login-home channel
 
 ## What different parts of the header do
 
-The header contains two distinct navigation menus - one for GOV.UK One Login links and another for internal service navigation.
+The header contains two distinct navigation menus - one for GOV.UK One Login links and another for internal service navigation, which uses the Design System [service navigation component](https://design-system.service.gov.uk/components/service-navigation/).
 
 On smaller screens, both menus collapse and can be shown and hidden using Javascript.
 
@@ -53,20 +53,26 @@ Instructions on how the header can be installed in your Prototype Kit project ar
 
 ## How to start using the header in your service
 
+NOTE: If your service uses Nunjucks, you can use NPM to install the header direct from GitHub, and import the Nunjucks macro directly from `/dist/nunjucks/di-govuk-one-login-service-header/service-header.njk`. Some of the instructions below will seem redundant in your case.
+
 This repository contains:
 
-+ Nunjucks for the GOV.UK One Login service header component
++ Nunjucks for the GOV.UK One Login service header component 
 + plain HTML for the header - this is compiled from the Nunjucks into the `/dist/html` directory
-+ Sass files for compiling CSS files to style the header
++ Sass files for compiling CSS files to style the header (this covers both navigation bars)
 + plain CSS, for services who are not using Sass
-+ a Javascript file which enables 'drop down' behaviour for the header menu on small screens
++ a Javascript file which enables 'drop down' behaviour for the GOV.UK One Login and Sign out links on small screens
 
-This is all the code necessary to render the header, but you will need to make additional changes to your service and to the header code for it to function correctly.
+To enable drowdown behaviour for the service navigation links, you will need to import the service navigation component script from the Design System (or GOV.UK Frontend). Instructions on importing scripts from the Design System are outlined [on this page](https://frontend.design-system.service.gov.uk/import-javascript/)
+
+Further documentation on the service navigation component is available [on this page](https://design-system.service.gov.uk/components/service-navigation/).
+
+You will need to make additional changes to your service and to the header code for it to function correctly.
 
 You will need to:
 
 + write logic within your service so that the header is only shown to users who are signed in
-+ adapt the header's HTML so that it works in the templating language your service uses
++ adapt the header's HTML so that it works in the templating language your service uses (if your service does not use Nunjucks)
 + adapt the internal service navigation HTML so that it includes content specific to your service
 + point the 'Sign out' link at your service's sign out endpoint
 + include the styling and Javascript files in your service
@@ -94,13 +100,27 @@ You'll need to modify the internal service navigation part of the header in orde
 
 #### Visually highlight which page in the menu the user is currently on
 
-You can visually highlight the page the user is currently on in the navigation menu by adding the `service-header__nav-list-item--active` modifier class to the relevant `li` element in the internal service navigation menu. You’ll need to implement this in the code you’re using to render your pages.
+You can visually highlight the page the user is currently on in the navigation menu by adding the `govuk-service-navigation__item--active` modifier class to the relevant `li` element in the service navigation menu. You’ll need to implement this in the code you’re using to render your pages. 
+
+If you are using the Nunjucks macro, you can pass options into the service navigation using `serviceNavigationParams` like so:
+
+<pre><code>
+&lbrace;&lbrace; govukOneLoginServiceHeader(&lbrace;
+  signOutLink: "/placeholder", 
+  serviceNavigationParams: &lbrace; 
+    navigation: navigation, 
+    serviceName: serviceName, 
+    navigationLabel: "Test" 
+&rbrace;&rbrace;) &rbrace; &rbrace; 
+</code></pre>
+
+`serviceNavigationParams` accepts all the options listed under "Nunjucks macro options" on the [service navigation component page](https://design-system.service.gov.uk/components/service-navigation/).
 
 #### Edit screen reader text and ARIA attributes to be specific to your service
 
 The header is designed to work for users of screen readers and contains some visually hidden text and [ARIA attributes](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) which you will need to edit to make it specific to your service.
 
-You’ll need to edit the markup for the:
+You’ll need to edit the markup (or pass relevant parameters into the Nunjucks macro) for the:
 
 + ‘menu’ button
 + service navigation
@@ -134,7 +154,7 @@ This is to help users understand which navigation menu they are using. It also h
 
 You can [visually highlight the page the user is currently on in the navigation menu](#visually-highlight-which-page-in-the-menu-the-user-is-currently-on).
 
-In addition to this, set the `aria-current="page"` attribute on the relevant `<a>` element.
+In addition to this, set the `aria-current="true"` attribute on the relevant `<a>` element.
 
 This is to indicate the user’s position in the navigation if they can’t perceive the visual highlight styling.
 
