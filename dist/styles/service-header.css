@@ -488,33 +488,6 @@
 .cross-service-header__button.cross-service-header__button--open:before {
   transform: translateY(-15%) rotate(-45deg);
 }
-.cross-service-header__button.cross-service-header__button--service-header {
-  color: #1d70b8;
-}
-.cross-service-header__button.cross-service-header__button--service-header:focus {
-  outline: 3px solid transparent;
-  color: #0b0c0c;
-  background-color: #ffdd00;
-  box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
-  text-decoration: none;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-}
-.cross-service-header__button.cross-service-header__button--service-header:focus:not(:focus-visible) {
-  outline: none;
-  color: #1d70b8;
-  background: none;
-  box-shadow: none;
-}
-.cross-service-header__button.cross-service-header__button--service-header:focus-visible {
-  outline: 3px solid transparent;
-  color: #0b0c0c;
-  background-color: #ffdd00;
-  box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
-  text-decoration: none;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-}
 .cross-service-header__button.cross-service-header__button--one-login {
   color: #ffffff;
 }
@@ -712,20 +685,6 @@
   margin-bottom: 0;
   border-bottom: 0;
 }
-.one-login-header__nav {
-  display: block;
-}
-.toggle-enabled .one-login-header__nav {
-  display: none;
-}
-.toggle-enabled .one-login-header__nav.one-login-header__nav--open {
-  display: block;
-}
-@media (min-width: 40.0625em) {
-  .toggle-enabled .one-login-header__nav {
-    display: block;
-  }
-}
 @media (max-width: 40.0525em) {
   .one-login-header__nav {
     width: 100%;
@@ -740,6 +699,22 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  display: block;
+}
+@media (max-width: 40.0525em) {
+  .toggle-enabled .one-login-header__nav__list {
+    display: none;
+  }
+}
+@media (min-width: 40.0625em) {
+  .toggle-enabled .one-login-header__nav__list {
+    display: flex;
+  }
+}
+@media (max-width: 40.0525em) {
+  .one-login-header__nav--open .one-login-header__nav__list {
+    display: block;
+  }
 }
 @media (min-width: 40.0625em) {
   .one-login-header__nav__list {

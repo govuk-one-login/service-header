@@ -1,48 +1,4 @@
-// start mixins and variables
 $govuk-header-link-underline-thickness: 3px;
-
-@mixin toggle-button-focus($default-text-colour) {
-  color: $default-text-colour;
-  // apply focus style on :focus for browsers which support :focus but not :focus-visible
-  &:focus {
-    @include govuk-focused-text;
-
-    // overwrite previous styles for browsers which support :focus-visible
-    &:not(:focus-visible) {
-      outline: none;
-      color: $default-text-colour;
-      background: none;
-      box-shadow: none;
-    }
-
-    // apply focus style on :focus-visible for browsers which support :focus-visible
-    &-visible {
-      @include govuk-focused-text;
-    }
-  }
-}
-
-@mixin nav-style($nav-open-class) {
-  display: block;
-  // if JS is unavailable, the nav links are expanded and the toggle button is hidden
-  .toggle-enabled & {
-    display: none;
-
-    &#{$nav-open-class} {
-      display: block;
-    }
-
-    @include govuk-media-query ($from: tablet) {
-      display: block;
-    } 
-  }
-
-  @include govuk-media-query ($until: tablet) {
-    width: 100%;
-  }
-}
-// end mixins and variables
-
 
 .cross-service-header__button {
   display: none;
@@ -87,12 +43,25 @@ $govuk-header-link-underline-thickness: 3px;
     }
   }
 
-  &.cross-service-header__button--service-header {
-    @include toggle-button-focus($govuk-link-colour);
-  }
-
   &.cross-service-header__button--one-login {
-    @include toggle-button-focus(govuk-colour("white"));
+    color: govuk-colour("white");
+    // apply focus style on :focus for browsers which support :focus but not :focus-visible
+    &:focus {
+      @include govuk-focused-text;
+  
+      // overwrite previous styles for browsers which support :focus-visible
+      &:not(:focus-visible) {
+        outline: none;
+        color: govuk-colour("white");
+        background: none;
+        box-shadow: none;
+      }
+  
+      // apply focus style on :focus-visible for browsers which support :focus-visible
+      &-visible {
+        @include govuk-focused-text;
+      }
+    }
   }
 }
 
@@ -256,7 +225,10 @@ $govuk-header-link-underline-thickness: 3px;
 }
 
 .one-login-header__nav {
-  @include nav-style(".one-login-header__nav--open");
+  @include govuk-media-query ($until: tablet) {
+    width: 100%;
+  }
+
   @include govuk-media-query ($from: tablet) {
     max-width: 66%;
   } 
@@ -266,6 +238,25 @@ $govuk-header-link-underline-thickness: 3px;
   margin: 0;
   padding: 0;
   list-style: none;
+  display: block;
+
+  // if JS is unavailable, the nav links are expanded and the toggle button is hidden
+
+  .toggle-enabled & {
+    @include govuk-media-query ($until: tablet) {
+      display: none;
+    }
+
+    @include govuk-media-query ($from: tablet) {
+      display: flex;
+    } 
+  }
+
+  .one-login-header__nav--open & {
+    @include govuk-media-query ($until: tablet) {
+      display: block;
+    }
+  }
 
   @include govuk-media-query ($from: tablet) {
     padding: govuk-spacing(2) 0;
