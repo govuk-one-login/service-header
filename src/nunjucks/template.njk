@@ -26,8 +26,7 @@ Component options:
   - homepageLink (string): Option to overwrite the default GOV.UK link. Defaults to "https://home.account.gov.uk/"
   - serviceNavigationParams (object): Options for the service navigation component. Accepts all the options listed under "Nunjucks macro options" on the Design System [service navigation component page](https://design-system.service.gov.uk/components/service-navigation/). The service nav bar will not render unless serviceName is specified
 #}
-{% from "../../node_modules/govuk-frontend/dist/govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
-
+{%- from "../../node_modules/govuk-frontend/dist/govuk/components/service-navigation/macro.njk" import govukServiceNavigation -%}
 {%- set oneLoginLink = params.oneLoginLink if params.oneLoginLink else "https://home.account.gov.uk/" -%}
 {%- set homepageLink = params.homepageLink if params.homepageLink else "https://www.gov.uk/" -%}
 {%- set signOutLink = params.signOutLink if params.signOutLink else "https://home.account.gov.uk/sign-out" -%}
@@ -74,8 +73,8 @@ Component options:
         aria-expanded="false" 
         class="cross-service-header__button cross-service-header__button--one-login js-x-header-toggle">
         <span class="cross-service-header__button-content">One Login</span>
-          {{ littlePersonIcon() }}
-          {{ littlePersonIcon("focus") }}
+          {{- littlePersonIcon() -}}
+          {{- littlePersonIcon("focus") -}}
       </button>
       <nav aria-label="GOV.UK One Login" class="one-login-header__nav" data-open-class="one-login-header__nav--open" id="one-login-header__nav">
         <ul class="one-login-header__nav__list">
@@ -84,8 +83,8 @@ Component options:
               <span class="one-login-header__nav__link-content">
                 GOV.UK One Login
               </span>
-              {{ littlePersonIcon() }}
-              {{ littlePersonIcon("focus") }}
+              {{- littlePersonIcon() -}}
+              {{- littlePersonIcon("focus") -}}
             </a>
           </li>
           <li class="one-login-header__nav__list-item">
@@ -102,27 +101,25 @@ Component options:
   <!-- This is a DESIGN SYSTEM component with a dependency on Javascript  -->
   <!-- Javascript is necessary to enable dropdown functionality for the list of links on mobile -->
   <!-- Import the latest version of the script for this component using the instructions here https://frontend.design-system.service.gov.uk/import-javascript/#import-javascript  -->
-
     {# navigationItems is a legacy parameter #}
     {# please migrate to the Design System style parameters for Secondary Navigation as soon as you can #}
-    {% if params.navigationItems %}
-      {% set navArr = [] %}
-      {%- for item in params.navigationItems %}
-        {{ '' if navArr.push({
+    {%- if params.navigationItems -%}
+      {%- set navArr = [] -%}
+      {%- for item in params.navigationItems -%}
+        {{- '' if navArr.push({
             href: item.href,
             text: item.text,
             active: item.id == params.activeLinkId
-        }) }}
-      {%- endfor %}
+        }) -}}
+      {%- endfor -%}
       {{ govukServiceNavigation({
         menuButtonText: params.menuButtonText,
         menuButtonLabel: params.menuButtonLabel,
         serviceName: params.serviceName,
         navigation: navArr
       }) if params.serviceName }}
-    {% elif params.serviceNavigationParams %}
+    {%- elif params.serviceNavigationParams -%}
        {{ govukServiceNavigation(params.serviceNavigationParams) if params.serviceNavigationParams.serviceName }}
-    {% endif %}
-
+    {%- endif -%}
   <!-- End of service navigation -->
 </header>

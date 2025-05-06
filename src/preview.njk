@@ -32,7 +32,7 @@
   %}
 {% set activeLinkId = "id3" %}
 {% set serviceName = "A very useful service with a relatively long name" %}
-{% set signOutLink = "#" %}
+{% set signOutLink = "/test" %}
 
 <html lang="en">
   <head>
@@ -60,87 +60,83 @@
     </style>
   </head>
   <body class="govuk-frontend-supported" style="margin:0;">
-    <h2 class="govuk-heading-m">Basic (no secondary navigation) </h2>
-        <details class="govuk-details">
-      <summary>Nunjucks code</summary>
-      <code>
-      {# This is awful but nothing else is working #}
-      &#10100;&#10100; govukOneLoginServiceHeader() &#10101;&#10101;
-      </code>
-    </details>
+    <div class="govuk-!-padding-3">
+      <h2 class="govuk-heading-m">1. Basic (no secondary navigation) </h2>
+          <details class="govuk-details">
+        <summary>Nunjucks code</summary>
+        <pre><code>
+        {% raw %} {{ govukOneLoginServiceHeader({ signOutLink: "/test"}) }} {% endraw %}
+        </code></pre>
+      </details>
+    </div>
 
-    <br>
-    {{ govukOneLoginServiceHeader() }}
-    <br>
+    {{ govukOneLoginServiceHeader({ signOutLink: "/test"}) }}
 
-    <h2 class="govuk-heading-m">With new Service Navigation component, passing in updated parameters </h2>
+    <div class="govuk-!-padding-3 govuk-!-margin-top-8">
+      <h2 class="govuk-heading-m">2. With new Service Navigation component, passing in updated parameters </h2>
 
-    <details class="govuk-details">
-      <summary>Nunjucks code</summary>
-      <code>
-      {# This is awful but nothing else is working #}
-      &#10100;&#10100; govukOneLoginServiceHeader(&#10100; 
-          <br>&nbsp; signOutLink: "/test",
-          <br>&nbsp; serviceNavigationParams: &#10100; 
-            <br>&nbsp;&nbsp; navigation: [
-             <br>&nbsp;&nbsp;&nbsp; {
-                <br>&nbsp;&nbsp;&nbsp;&nbsp;  href: "#navigation1", 
-                <br>&nbsp;&nbsp;&nbsp;&nbsp;  text: "Navigation item 1" 
-             <br>&nbsp;&nbsp;&nbsp; },
-             <br>&nbsp;&nbsp;&nbsp; { 
-               <br>&nbsp;&nbsp;&nbsp;&nbsp;  href: "#navigation2",  
-               <br>&nbsp;&nbsp;&nbsp;&nbsp;  text: "Navigation item 2", 
-               <br>&nbsp;&nbsp;&nbsp;&nbsp;  active: true 
-             <br>&nbsp;&nbsp;&nbsp; }, 
-             <br>&nbsp;&nbsp;&nbsp; { 
-              <br>&nbsp;&nbsp;&nbsp;&nbsp;  href: "#navigation3",  
-              <br>&nbsp;&nbsp;&nbsp;&nbsp;  text: "Navigation item 3" 
-             <br>&nbsp;&nbsp;&nbsp; } 
-            <br>&nbsp;&nbsp;], 
-            <br>&nbsp; serviceName: "A very useful service with a relatively long name", 
-            <br>&nbsp; navigationLabel: "Test label" &#10101;&#10101;)  
-      <br>&#10101;&#10101;
-
-      </code>
-    </details>
-    <p class="govuk-body"> The code above is for reference for Nunjucks users only – if you do not use Nunjucks in your service please follow the <a class="govuk-link" href="https://github.com/govuk-one-login/service-header/tree/main?tab=readme-ov-file#how-to-start-using-the-header-in-your-service"> instructions to copy the header into your service</a>.</p>
+      <details class="govuk-details">
+        <summary>Nunjucks code</summary>
+        <pre><code>
+        {% raw %}
+          {{ govukOneLoginServiceHeader({
+            signOutLink:  "/test", 
+            serviceNavigationParams: { 
+              navigation: [
+              {
+                href: "#navigation1", 
+                text: "Navigation item 1" 
+              },{
+                href: "#navigation2", 
+                text: "Navigation item 2",
+                active: true
+              },{
+                href: "#navigation3", 
+                text: "Navigation item 3"
+              }], 
+              serviceName: "A very useful service with a relatively long name", 
+              navigationLabel: "Test label" 
+            }
+          })}}
+        {% endraw %}
+        </code></pre>
+      </details>
+      <p class="govuk-body"> The code above is for reference for Nunjucks users only – if you do not use Nunjucks in your service please follow the <a class="govuk-link" href="https://github.com/govuk-one-login/service-header/tree/main?tab=readme-ov-file#how-to-start-using-the-header-in-your-service"> instructions to copy the header into your service</a>.</p>
+    </div>
 
     {{ govukOneLoginServiceHeader({ signOutLink: signOutLink, serviceNavigationParams: { navigation: navigation, serviceName: serviceName, navigationLabel: "Test" } }) }}
 
-    <br>
-
-    <h2 class="govuk-heading-m">With new Service Navigation component, but using legacy parameters </h2>
-    <details class="govuk-details">
-      <summary>Nunjucks code</summary>
-      <code>
-      {# This is awful but nothing else is working #}
-      &#10100;&#10100; govukOneLoginServiceHeader(&#10100; 
-          <br>&nbsp; signOutLink: "/test",
-            <br>&nbsp; navigationItems: [
-             <br>&nbsp;&nbsp;&nbsp; {
-                <br>&nbsp;&nbsp;&nbsp;&nbsp;  href: "#example1", 
-                <br>&nbsp;&nbsp;&nbsp;&nbsp;  text: "Example link 1" 
-                <br>&nbsp;&nbsp;&nbsp;&nbsp;  id: 'id3'
-             <br>&nbsp;&nbsp;&nbsp; },
-             <br>&nbsp;&nbsp;&nbsp; { 
-               <br>&nbsp;&nbsp;&nbsp;&nbsp;  href: "#example2",  
-               <br>&nbsp;&nbsp;&nbsp;&nbsp;  text: "Example link 2", 
-               <br>&nbsp;&nbsp;&nbsp;&nbsp;  id: 'id2'
-             <br>&nbsp;&nbsp;&nbsp; }, 
-             <br>&nbsp;&nbsp;&nbsp; { 
-              <br>&nbsp;&nbsp;&nbsp;&nbsp;  href: "#example3",  
-              <br>&nbsp;&nbsp;&nbsp;&nbsp;  text: "Example link 3" 
-              <br>&nbsp;&nbsp;&nbsp;&nbsp;  id: 'id3'
-             <br>&nbsp;&nbsp;&nbsp; } 
-            <br>&nbsp;&nbsp;], 
-            <br>&nbsp; serviceName: "A very useful service with a relatively long name", 
-            <br>&nbsp; activeLinkId: "id3", 
-            <br>&nbsp; navigationLabel: "Test label" &#10101;)  
-      <br>&#10101;&#10101;
-
-      </code>
-    </details>
-    <p class="govuk-body"> The code above is for reference for Nunjucks users only – if you do not use Nunjucks in your service please follow the <a class="govuk-link" href="https://github.com/govuk-one-login/service-header/tree/main?tab=readme-ov-file#how-to-start-using-the-header-in-your-service"> instructions to copy the header into your service</a>.</p>
+    <div class="govuk-!-padding-3 govuk-!-margin-top-8">
+      <h2 class="govuk-heading-m">3. With new Service Navigation component, but using legacy parameters (DEPRECATED: migrate to parameter structure for version 2 above)</h2>
+      <details class="govuk-details">
+        <summary>Nunjucks code</summary>
+        <pre><code>
+        {% raw %}
+          {{ govukOneLoginServiceHeader({ 
+            navigationItems: [
+            {
+              href: "#example1",
+              text: 'Example link 1',
+              id: 'id1'
+            },{
+              href: "#example2",
+              text: 'Example link 2',
+              id: 'id2'
+            },{
+              href: "#example3",
+              text: 'Example link 3',
+              id: 'id3'
+            }], 
+            serviceName: "A very useful service with a relatively long name", 
+            activeLinkId: "id3", 
+            signOutLink: "/test" 
+            }) 
+          }}
+        {% endraw %}
+        </code></pre>
+      </details>
+      <p class="govuk-body"> The code above is for reference for Nunjucks users only – if you do not use Nunjucks in your service please follow the <a class="govuk-link" href="https://github.com/govuk-one-login/service-header/tree/main?tab=readme-ov-file#how-to-start-using-the-header-in-your-service"> instructions to copy the header into your service</a>.</p>
+    </div>
 
     {{ govukOneLoginServiceHeader({ navigationItems: navigationItems, serviceName: serviceName, activeLinkId: activeLinkId, signOutLink: signOutLink }) }}
     
