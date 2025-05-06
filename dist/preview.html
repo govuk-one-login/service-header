@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -24,15 +31,17 @@
     </style>
   </head>
   <body class="govuk-frontend-supported" style="margin:0;">
-    <h2 class="govuk-heading-m">Basic (no secondary navigation) </h2>
-        <details class="govuk-details">
-      <summary>Nunjucks code</summary>
-      <code>
-      &#10100;&#10100; govukOneLoginServiceHeader() &#10101;&#10101;
-      </code>
-    </details>
-    <br>
-<header class="cross-service-header" data-module="one-login-header">
+    <div class="govuk-!-padding-3">
+      <h2 class="govuk-heading-m">1. Basic (no secondary navigation) </h2>
+          <details class="govuk-details">
+        <summary>Nunjucks code</summary>
+        <pre><code>
+         {{ govukOneLoginServiceHeader({ signOutLink: "/test"}) }} 
+        </code></pre>
+      </details>
+    </div>
+
+    <header class="cross-service-header" data-module="one-login-header">
   <div class="one-login-header" data-one-login-header-nav>
     <div class="one-login-header__container govuk-width-container">
       <div class="one-login-header__logo">
@@ -79,8 +88,7 @@
         <circle cx="11" cy="11" r="10" stroke="black" stroke-width="2"/>
       </svg>
     </span>
-  <!--<![endif]-->
-      </button>
+  <!--<![endif]--></button>
       <nav aria-label="GOV.UK One Login" class="one-login-header__nav" data-open-class="one-login-header__nav--open" id="one-login-header__nav">
         <ul class="one-login-header__nav__list">
           <li class="one-login-header__nav__list-item">
@@ -107,12 +115,11 @@
         <circle cx="11" cy="11" r="10" stroke="black" stroke-width="2"/>
       </svg>
     </span>
-  <!--<![endif]-->
-            </a>
+  <!--<![endif]--></a>
           </li>
           <li class="one-login-header__nav__list-item">
             <!-- REPLACE SIGN OUT URL PLACEHOLDER WITH SIGN OUT PAGE FOR YOUR SERVICE -->
-            <a class="one-login-header__nav__link" href="https://home.account.gov.uk/sign-out">
+            <a class="one-login-header__nav__link" href="/test">
               Sign out
             </a>
           </li>
@@ -124,38 +131,44 @@
   <!-- This is a DESIGN SYSTEM component with a dependency on Javascript  -->
   <!-- Javascript is necessary to enable dropdown functionality for the list of links on mobile -->
   <!-- Import the latest version of the script for this component using the instructions here https://frontend.design-system.service.gov.uk/import-javascript/#import-javascript  -->
-  <!-- End of service navigation -->
+    
+    <!-- End of service navigation -->
 </header>
-    <br>
-    <h2 class="govuk-heading-m">With new Service Navigation component, passing in updated parameters </h2>
-    <details class="govuk-details">
-      <summary>Nunjucks code</summary>
-      <code>
-      &#10100;&#10100; govukOneLoginServiceHeader(&#10100; 
-          <br>&nbsp; signOutLink: "/test",
-          <br>&nbsp; serviceNavigationParams: &#10100; 
-            <br>&nbsp;&nbsp; navigation: [
-             <br>&nbsp;&nbsp;&nbsp; {
-                <br>&nbsp;&nbsp;&nbsp;&nbsp;  href: "#navigation1", 
-                <br>&nbsp;&nbsp;&nbsp;&nbsp;  text: "Navigation item 1" 
-             <br>&nbsp;&nbsp;&nbsp; },
-             <br>&nbsp;&nbsp;&nbsp; { 
-               <br>&nbsp;&nbsp;&nbsp;&nbsp;  href: "#navigation2",  
-               <br>&nbsp;&nbsp;&nbsp;&nbsp;  text: "Navigation item 2", 
-               <br>&nbsp;&nbsp;&nbsp;&nbsp;  active: true 
-             <br>&nbsp;&nbsp;&nbsp; }, 
-             <br>&nbsp;&nbsp;&nbsp; { 
-              <br>&nbsp;&nbsp;&nbsp;&nbsp;  href: "#navigation3",  
-              <br>&nbsp;&nbsp;&nbsp;&nbsp;  text: "Navigation item 3" 
-             <br>&nbsp;&nbsp;&nbsp; } 
-            <br>&nbsp;&nbsp;], 
-            <br>&nbsp; serviceName: "A very useful service with a relatively long name", 
-            <br>&nbsp; navigationLabel: "Test label" &#10101;&#10101;)  
-      <br>&#10101;&#10101;
-      </code>
-    </details>
-    <p class="govuk-body"> The code above is for reference for Nunjucks users only – if you do not use Nunjucks in your service please follow the <a class="govuk-link" href="https://github.com/govuk-one-login/service-header/tree/main?tab=readme-ov-file#how-to-start-using-the-header-in-your-service"> instructions to copy the header into your service</a>.</p>
-<header class="cross-service-header" data-module="one-login-header">
+
+
+    <div class="govuk-!-padding-3 govuk-!-margin-top-8">
+      <h2 class="govuk-heading-m">2. With new Service Navigation component, passing in updated parameters </h2>
+
+      <details class="govuk-details">
+        <summary>Nunjucks code</summary>
+        <pre><code>
+        
+          {{ govukOneLoginServiceHeader({
+            signOutLink:  "/test", 
+            serviceNavigationParams: { 
+              navigation: [
+              {
+                href: "#navigation1", 
+                text: "Navigation item 1" 
+              },{
+                href: "#navigation2", 
+                text: "Navigation item 2",
+                active: true
+              },{
+                href: "#navigation3", 
+                text: "Navigation item 3"
+              }], 
+              serviceName: "A very useful service with a relatively long name", 
+              navigationLabel: "Test label" 
+            }
+          })}}
+        
+        </code></pre>
+      </details>
+      <p class="govuk-body"> The code above is for reference for Nunjucks users only – if you do not use Nunjucks in your service please follow the <a class="govuk-link" href="https://github.com/govuk-one-login/service-header/tree/main?tab=readme-ov-file#how-to-start-using-the-header-in-your-service"> instructions to copy the header into your service</a>.</p>
+    </div>
+
+    <header class="cross-service-header" data-module="one-login-header">
   <div class="one-login-header" data-one-login-header-nav>
     <div class="one-login-header__container govuk-width-container">
       <div class="one-login-header__logo">
@@ -202,8 +215,7 @@
         <circle cx="11" cy="11" r="10" stroke="black" stroke-width="2"/>
       </svg>
     </span>
-  <!--<![endif]-->
-      </button>
+  <!--<![endif]--></button>
       <nav aria-label="GOV.UK One Login" class="one-login-header__nav" data-open-class="one-login-header__nav--open" id="one-login-header__nav">
         <ul class="one-login-header__nav__list">
           <li class="one-login-header__nav__list-item">
@@ -230,12 +242,11 @@
         <circle cx="11" cy="11" r="10" stroke="black" stroke-width="2"/>
       </svg>
     </span>
-  <!--<![endif]-->
-            </a>
+  <!--<![endif]--></a>
           </li>
           <li class="one-login-header__nav__list-item">
             <!-- REPLACE SIGN OUT URL PLACEHOLDER WITH SIGN OUT PAGE FOR YOUR SERVICE -->
-            <a class="one-login-header__nav__link" href="#">
+            <a class="one-login-header__nav__link" href="/test">
               Sign out
             </a>
           </li>
@@ -247,74 +258,127 @@
   <!-- This is a DESIGN SYSTEM component with a dependency on Javascript  -->
   <!-- Javascript is necessary to enable dropdown functionality for the list of links on mobile -->
   <!-- Import the latest version of the script for this component using the instructions here https://frontend.design-system.service.gov.uk/import-javascript/#import-javascript  -->
+    
+    
+
   <section aria-label="Service information" 
 class="govuk-service-navigation"
 data-module="govuk-service-navigation"
 >
+    
   <div class="govuk-width-container">
+
     <div class="govuk-service-navigation__container">
+      
+      
         <span class="govuk-service-navigation__service-name">
+          
             <span class="govuk-service-navigation__text">A very useful service with a relatively long name</span>
+          
         </span>
+      
+
+      
+      
         <nav aria-label="Test" class="govuk-service-navigation__wrapper">
           <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden>
             Menu
           </button>
+
           <ul class="govuk-service-navigation__list" id="navigation" >
+
+            
+              
+
+              
               <li class="govuk-service-navigation__item">
+                
                   <a class="govuk-service-navigation__link" href="#navigation1">
+                    
+                
                 Navigation item 1
+              
                   </a>
+                
               </li>
+            
+              
+
+              
               <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+                
                   <a class="govuk-service-navigation__link" href="#navigation2" aria-current="true">
+                    
+                
+                
                   <strong class="govuk-service-navigation__active-fallback">Navigation item 2</strong>
+                
+              
                   </a>
+                
               </li>
+            
+              
+
+              
               <li class="govuk-service-navigation__item">
+                
                   <a class="govuk-service-navigation__link" href="#navigation3">
+                    
+                
                 Navigation item 3
+              
                   </a>
+                
               </li>
+            
+
             </ul>
         </nav>
+      
     </div>
+
     </div>
+
   </section>
-  <!-- End of service navigation -->
+
+<!-- End of service navigation -->
 </header>
-    <br>
-    <h2 class="govuk-heading-m">With new Service Navigation component, but using legacy parameters </h2>
-    <details class="govuk-details">
-      <summary>Nunjucks code</summary>
-      <code>
-      &#10100;&#10100; govukOneLoginServiceHeader(&#10100; 
-          <br>&nbsp; signOutLink: "/test",
-            <br>&nbsp; navigationItems: [
-             <br>&nbsp;&nbsp;&nbsp; {
-                <br>&nbsp;&nbsp;&nbsp;&nbsp;  href: "#example1", 
-                <br>&nbsp;&nbsp;&nbsp;&nbsp;  text: "Example link 1" 
-                <br>&nbsp;&nbsp;&nbsp;&nbsp;  id: 'id3'
-             <br>&nbsp;&nbsp;&nbsp; },
-             <br>&nbsp;&nbsp;&nbsp; { 
-               <br>&nbsp;&nbsp;&nbsp;&nbsp;  href: "#example2",  
-               <br>&nbsp;&nbsp;&nbsp;&nbsp;  text: "Example link 2", 
-               <br>&nbsp;&nbsp;&nbsp;&nbsp;  id: 'id2'
-             <br>&nbsp;&nbsp;&nbsp; }, 
-             <br>&nbsp;&nbsp;&nbsp; { 
-              <br>&nbsp;&nbsp;&nbsp;&nbsp;  href: "#example3",  
-              <br>&nbsp;&nbsp;&nbsp;&nbsp;  text: "Example link 3" 
-              <br>&nbsp;&nbsp;&nbsp;&nbsp;  id: 'id3'
-             <br>&nbsp;&nbsp;&nbsp; } 
-            <br>&nbsp;&nbsp;], 
-            <br>&nbsp; serviceName: "A very useful service with a relatively long name", 
-            <br>&nbsp; activeLinkId: "id3", 
-            <br>&nbsp; navigationLabel: "Test label" &#10101;)  
-      <br>&#10101;&#10101;
-      </code>
-    </details>
-    <p class="govuk-body"> The code above is for reference for Nunjucks users only – if you do not use Nunjucks in your service please follow the <a class="govuk-link" href="https://github.com/govuk-one-login/service-header/tree/main?tab=readme-ov-file#how-to-start-using-the-header-in-your-service"> instructions to copy the header into your service</a>.</p>
-<header class="cross-service-header" data-module="one-login-header">
+
+
+    <div class="govuk-!-padding-3 govuk-!-margin-top-8">
+      <h2 class="govuk-heading-m">3. With new Service Navigation component, but using legacy parameters (DEPRECATED: migrate to parameter structure for version 2 above)</h2>
+      <details class="govuk-details">
+        <summary>Nunjucks code</summary>
+        <pre><code>
+        
+          {{ govukOneLoginServiceHeader({ 
+            navigationItems: [
+            {
+              href: "#example1",
+              text: 'Example link 1',
+              id: 'id1'
+            },{
+              href: "#example2",
+              text: 'Example link 2',
+              id: 'id2'
+            },{
+              href: "#example3",
+              text: 'Example link 3',
+              id: 'id3'
+            }], 
+            serviceName: "A very useful service with a relatively long name", 
+            activeLinkId: "id3", 
+            signOutLink: "/test" 
+            }) 
+          }}
+        
+        </code></pre>
+      </details>
+      <p class="govuk-body"> The code above is for reference for Nunjucks users only – if you do not use Nunjucks in your service please follow the <a class="govuk-link" href="https://github.com/govuk-one-login/service-header/tree/main?tab=readme-ov-file#how-to-start-using-the-header-in-your-service"> instructions to copy the header into your service</a>.</p>
+    </div>
+
+    <header class="cross-service-header" data-module="one-login-header">
   <div class="one-login-header" data-one-login-header-nav>
     <div class="one-login-header__container govuk-width-container">
       <div class="one-login-header__logo">
@@ -361,8 +425,7 @@ data-module="govuk-service-navigation"
         <circle cx="11" cy="11" r="10" stroke="black" stroke-width="2"/>
       </svg>
     </span>
-  <!--<![endif]-->
-      </button>
+  <!--<![endif]--></button>
       <nav aria-label="GOV.UK One Login" class="one-login-header__nav" data-open-class="one-login-header__nav--open" id="one-login-header__nav">
         <ul class="one-login-header__nav__list">
           <li class="one-login-header__nav__list-item">
@@ -389,12 +452,11 @@ data-module="govuk-service-navigation"
         <circle cx="11" cy="11" r="10" stroke="black" stroke-width="2"/>
       </svg>
     </span>
-  <!--<![endif]-->
-            </a>
+  <!--<![endif]--></a>
           </li>
           <li class="one-login-header__nav__list-item">
             <!-- REPLACE SIGN OUT URL PLACEHOLDER WITH SIGN OUT PAGE FOR YOUR SERVICE -->
-            <a class="one-login-header__nav__link" href="#">
+            <a class="one-login-header__nav__link" href="/test">
               Sign out
             </a>
           </li>
@@ -406,48 +468,101 @@ data-module="govuk-service-navigation"
   <!-- This is a DESIGN SYSTEM component with a dependency on Javascript  -->
   <!-- Javascript is necessary to enable dropdown functionality for the list of links on mobile -->
   <!-- Import the latest version of the script for this component using the instructions here https://frontend.design-system.service.gov.uk/import-javascript/#import-javascript  -->
+    
+    
+
   <section aria-label="Service information" 
 class="govuk-service-navigation"
 data-module="govuk-service-navigation"
 >
+    
   <div class="govuk-width-container">
+
     <div class="govuk-service-navigation__container">
+      
+      
         <span class="govuk-service-navigation__service-name">
+          
             <span class="govuk-service-navigation__text">A very useful service with a relatively long name</span>
+          
         </span>
+      
+
+      
+      
         <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
           <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden>
             Menu
           </button>
+
           <ul class="govuk-service-navigation__list" id="navigation" >
+
+            
+              
+
+              
               <li class="govuk-service-navigation__item">
+                
                   <a class="govuk-service-navigation__link" href="#example1">
+                    
+                
                 Example link 1
+              
                   </a>
+                
               </li>
+            
+              
+
+              
               <li class="govuk-service-navigation__item">
+                
                   <a class="govuk-service-navigation__link" href="#example2">
+                    
+                
                 Example link 2
+              
                   </a>
+                
               </li>
+            
+              
+
+              
               <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+                
                   <a class="govuk-service-navigation__link" href="#example3" aria-current="true">
+                    
+                
+                
                   <strong class="govuk-service-navigation__active-fallback">Example link 3</strong>
+                
+              
                   </a>
+                
               </li>
+            
+
             </ul>
         </nav>
+      
     </div>
+
     </div>
+
   </section>
-  <!-- End of service navigation -->
+
+<!-- End of service navigation -->
 </header>
+
+    
     <script type="module" src="./scripts/service-header.js"></script>
     <script type="module" src="../node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.js"></script>
     <script type="module">
       import { initCrossServiceHeader } from './scripts/service-header.js';
       initCrossServiceHeader();
     </script>
+
     <script type="module">
       import { ServiceNavigation, createAll} from '../node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.js';
       createAll(ServiceNavigation);
