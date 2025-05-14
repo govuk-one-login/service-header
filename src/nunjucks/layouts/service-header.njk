@@ -13,10 +13,16 @@
       {%- endfor -%}
       {{ govukOneLoginServiceHeader({
         serviceNavigationParams: {
+          serviceName: serviceName,
+          serviceUrl: serviceUrl,
           menuButtonText: menuButtonText,
           menuButtonLabel: menuButtonLabel,
           navigation: navArr,
-          serviceName: serviceName
+          navigationLabel: navigationLabel,
+          navigationClasses: navigationClasses,
+          attributes: attributes,
+          classes: classes,
+          ariaLabel: ariaLabel
         },
         signOutLink: signOutLink,
         oneLoginLink: oneLoginLink
@@ -27,14 +33,15 @@
         oneLoginLink: oneLoginLink,
         serviceNavigationParams: {
           serviceName: serviceName,
+          serviceUrl: serviceUrl,
           navigation: navigation,
           menuButtonText: menuButtonText,
           menuButtonLabel: menuButtonLabel,
           navigationLabel: navigationLabel,
-          serviceUrl: serviceUrl,
           navigationClasses: navigationClasses,
           attributes: attributes,
-          classes: classes
+          classes: classes,
+          ariaLabel: ariaLabel
         }
       }) if serviceName }}
     {%- else -%}
