@@ -3,6 +3,8 @@
 Use [semver guidelines](https://semver.org/).
 
 ## Unreleased
+- PATCH: OLH-2634: Fix PK plugin issues ([PR #60](https://github.com/govuk-one-login/service-header/pull/60))
+
 
 ## 3.0.0
 - MAJOR: OLH-2591: Bump govuk-frontend to 5.9.0 ([PR #55](https://github.com/govuk-one-login/service-header/pull/55))
