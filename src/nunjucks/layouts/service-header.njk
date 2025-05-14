@@ -1,17 +1,52 @@
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
-
 {% from "../service-header.njk" import govukOneLoginServiceHeader %}
 
 {% block header %}
-  {{ govukOneLoginServiceHeader({ 
-    navigationItems: navigationItems, 
-    serviceName: serviceName, 
-    activeLinkId: activeLinkId,
-    oneLoginLink: oneLoginLink, 
-    homepageLink: homepageLink,
-    signOutLink: signOutLink,
-    serviceNavigationParams: serviceNavigationParams
-  }) }}
+    {%- if navigationItems -%}
+      {%- set navArr = [] -%}
+      {%- for item in navigationItems -%}
+        {{- '' if navArr.push({
+            href: item.href,
+            text: item.text,
+            active: item.id == activeLinkId
+        }) -}}
+      {%- endfor -%}
+      {{ govukOneLoginServiceHeader({
+        serviceNavigationParams: {
+          menuButtonText: menuButtonText,
+          menuButtonLabel: menuButtonLabel,
+          navigation: navArr,
+          serviceName: serviceName
+        },
+        signOutLink: signOutLink,
+        oneLoginLink: oneLoginLink
+      }) if serviceName }}
+    {%- elif navigation -%}
+      {{ govukOneLoginServiceHeader({
+        signOutLink: signOutLink,
+        oneLoginLink: oneLoginLink,
+        serviceNavigationParams: {
+          serviceName: serviceName,
+          navigation: navigation,
+          menuButtonText: menuButtonText,
+          menuButtonLabel: menuButtonLabel,
+          navigationLabel: navigationLabel,
+          serviceUrl: serviceUrl,
+          navigationClasses: navigationClasses,
+          attributes: attributes,
+          classes: classes
+        }
+      }) if serviceName }}
+    {%- else -%}
+      {{ govukOneLoginServiceHeader({ 
+        serviceName: serviceName, 
+        serviceUrl: serviceUrl,
+        signOutLink: signOutLink,
+        oneLoginLink: oneLoginLink,
+        menuButtonText: menuButtonText,
+        menuButtonLabel: menuButtonLabel
+      })}}
+    {%- endif -%}
 {% endblock %}
 
 {% block main %}

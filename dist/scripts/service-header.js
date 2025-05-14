@@ -1,5 +1,6 @@
 /**
 * A modified adaptation of the Design System header script
+* Bundled into dist/scripts/init-service-header.js and dist/scripts/service-header.js
 */
 function CrossServiceHeader ($module) {
   this.$header = $module
@@ -74,5 +75,9 @@ function initCrossServiceHeader () {
     new CrossServiceHeader(oneLoginHeader);
   }
 }
-
+/**
+  * This gets appended to dist/scripts/service-header.js to make it 
+  * import-able as a JS module
+  * 
+*/
 export { CrossServiceHeader, initCrossServiceHeader };
