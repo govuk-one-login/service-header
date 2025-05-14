@@ -1,17 +1,59 @@
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
-
 {% from "../service-header.njk" import govukOneLoginServiceHeader %}
 
 {% block header %}
-  {{ govukOneLoginServiceHeader({ 
-    navigationItems: navigationItems, 
-    serviceName: serviceName, 
-    activeLinkId: activeLinkId,
-    oneLoginLink: oneLoginLink, 
-    homepageLink: homepageLink,
-    signOutLink: signOutLink,
-    serviceNavigationParams: serviceNavigationParams
-  }) }}
+    {%- if navigationItems -%}
+      {%- set navArr = [] -%}
+      {%- for item in navigationItems -%}
+        {{- '' if navArr.push({
+            href: item.href,
+            text: item.text,
+            active: item.id == activeLinkId
+        }) -}}
+      {%- endfor -%}
+      {{ govukOneLoginServiceHeader({
+        serviceNavigationParams: {
+          serviceName: serviceName
+          serviceUrl: serviceUrl,
+          menuButtonText: menuButtonText,
+          menuButtonLabel: menuButtonLabel,
+          navigation: navArr,
+          navigationLabel: navigationLabel,
+          navigationClasses: navigationClasses,
+          attributes: attributes,
+          classes: classes,
+          ariaLabel: ariaLabel
+        },
+        signOutLink: signOutLink,
+        oneLoginLink: oneLoginLink
+      }) if serviceName }}
+    {%- elif navigation -%}
+      {{ govukOneLoginServiceHeader({
+        signOutLink: signOutLink,
+        oneLoginLink: oneLoginLink,
+        serviceNavigationParams: {
+          serviceName: serviceName,
+          serviceUrl: serviceUrl,
+          navigation: navigation,
+          menuButtonText: menuButtonText,
+          menuButtonLabel: menuButtonLabel,
+          navigationLabel: navigationLabel,
+          navigationClasses: navigationClasses,
+          attributes: attributes,
+          classes: classes,
+          ariaLabel: ariaLabel
+        }
+      }) if serviceName }}
+    {%- else -%}
+      {{ govukOneLoginServiceHeader({ 
+        serviceName: serviceName, 
+        serviceUrl: serviceUrl,
+        signOutLink: signOutLink,
+        oneLoginLink: oneLoginLink,
+        menuButtonText: menuButtonText,
+        menuButtonLabel: menuButtonLabel
+      })}}
+    {%- endif -%}
 {% endblock %}
 
 {% block main %}
