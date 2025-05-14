@@ -53,16 +53,27 @@ fs.cp('src/scripts/service-header.js', 'dist/scripts/service-header.js', { recur
   console.log('copied main header script to dist folder');
 })
 
+fs.cp('src/scripts/service-header.js', 'dist/scripts/service-header.js', function (err) {
+  fs.appendFileSync('dist/scripts/service-header.js',fs.readFileSync("src/scripts/export.js").toString(), (err) => {
+    if (err) {
+      throw err;
+    }
+    else {
+      console.log("created service-header.js")
+    }
+  });
+});
+
 fs.cp('src/scripts/service-header.js', 'dist/scripts/init-service-header.js', function (err) {
-  fs.appendFileSync('dist/scripts/init-service-header.js', fs.readFileSync('src/scripts/init-service-header.js').toString(), (err) => {
+  fs.appendFileSync('dist/scripts/init-service-header.js',fs.readFileSync("src/scripts/init-service-header.js").toString(), (err) => {
     if (err) {
       throw err;
     }
     else {
       console.log("created init-service-header.js")
     }
-  }); 
-})
+  });
+});
 
 fs.cp('src/styles', 'dist/styles', { recursive: true } , function (err) {
   if (err) throw err;
