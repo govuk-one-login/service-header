@@ -19,30 +19,36 @@ To create a page in your prototype using a pre-built template containing the hea
 
 To set the service name that is displayed in the header, use the following syntax: <code>&lbrace;&percnt; set serviceName = "My example service name" &percnt;&rbrace;</code>.
 
+As of v3.0.0 of the GOV.UK One Login Service Header, it includes the Design System [service navigation component](https://design-system.service.gov.uk/components/service-navigation/).
+If you are using the latest version of the GOV.UK One Login Service Header, please make sure the GOV.UK Frontend plugin has also been updated to the latest version. You might experience errors otherwise.
+
+The options in the Nunjucks macro options table on the Design System service navigation component page can be defined as Nunjucks template variables.
+
+For example, <code>&lbrace;&percnt; set menuButtonText = "Custom Menu Button" &percnt;&rbrace;</code> will change the text of the service navigation mobile navigation menu toggle.
+
 To set the list of navigation links , use the following syntax:
 <pre><code>
-&lbrace;&percnt; set navigationItems = [
-  {
-    href: "#",
-    text: 'Example link 1',
-    id: 'id1'
-  },{
-    href: "#",
-    text: 'Example link 2',
-    id: 'id2'
-  },{
-    href: "#",
-    text: 'Example link 3',
-    id: 'id3'
-  }]
+&lbrace;&percnt; set navigation = [
+    {
+      href: "#nav1",
+      text: "Navigation item 1"
+    },
+    {
+      href: "#nav2",
+      text: "Navigation item 2",
+      active: true
+    },
+    {
+      href: "#nav3",
+      text: "Navigation item 3"
+    }
+  ]
 &percnt;&rbrace; 
 </code></pre>
 The fields indicate as follows:
 - `href` indicates the link destination, 
 - `text` is the text being displayed, 
-- `id` this should be a unique identifier as it is used to set the active link
-
-To set the currently active link which indicates the page the user is currently on, use the following syntax <code>&lbrace;&percnt; set activeLinkId = "id3" &percnt;&rbrace;</code>. The value of `activeLinkId` must match the id of one of the objects in the `navigationItems` array.
+- `active` this is an optional parameter which indicates that the user is within this group of pages in the navigation hierarchy. It adds an underline to the link.
 
 To overwrite the destination for the GOV.UK link in the header, use <code>&lbrace;&percnt; set homepageLink = "https://example.service.gov.uk/" &percnt;&rbrace;</code>. The link goes to "https://www.gov.uk/" by default.
 
@@ -61,21 +67,24 @@ The component can then be used like so:
 <pre><code>
 &lbrace;&percnt; block header &percnt;&rbrace;
   &lbrace;&lbrace; govukOneLoginServiceHeader({
-    serviceName: "My example service name",
-    navigationItems: [{
-      href: "#",
-      text: 'service link 1',
-      id: 'servicelink1'
-    },{
-      href: "#",
-      text: 'service link 2',
-      id: 'servicelink2'
-    },{
-      href: "#",
-      text: 'service link 3',
-      id: 'servicelink3'
-    }],
-    activeLinkId: 'servicelink3'
+    signOutLink: "/test-signout",
+    oneLoginLink: "/test-one-login",
+    serviceNavigationParams: { 
+      navigation: [
+      {
+        href: "#navigation1", 
+        text: "Navigation item 1" 
+      },{
+        href: "#navigation2", 
+        text: "Navigation item 2",
+        active: true
+      },{
+        href: "#navigation3", 
+        text: "Navigation item 3"
+      }], 
+      serviceName: "Test service name",
+      navigationLabel: "Test label" 
+    }
   }) &rbrace;&rbrace;
 &lbrace;&percnt; endblock &percnt;&rbrace;
 </code></pre>

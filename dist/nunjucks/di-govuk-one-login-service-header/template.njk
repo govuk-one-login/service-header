@@ -26,7 +26,7 @@ Component options:
   - homepageLink (string): Option to overwrite the default GOV.UK link. Defaults to "https://home.account.gov.uk/"
   - serviceNavigationParams (object): Options for the service navigation component. Accepts all the options listed under "Nunjucks macro options" on the Design System [service navigation component page](https://design-system.service.gov.uk/components/service-navigation/). The service nav bar will not render unless serviceName is specified
 #}
-{%- from "../../node_modules/govuk-frontend/dist/govuk/components/service-navigation/macro.njk" import govukServiceNavigation -%}
+{%- from "node_modules/govuk-frontend/dist/govuk/components/service-navigation/macro.njk" import govukServiceNavigation -%}
 {%- set oneLoginLink = params.oneLoginLink if params.oneLoginLink else "https://home.account.gov.uk/" -%}
 {%- set homepageLink = params.homepageLink if params.homepageLink else "https://www.gov.uk/" -%}
 {%- set signOutLink = params.signOutLink if params.signOutLink else "https://home.account.gov.uk/sign-out" -%}
