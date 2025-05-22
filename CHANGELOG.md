@@ -3,6 +3,8 @@
 Use [semver guidelines](https://semver.org/).
 
 ## Unreleased
+
+## 3.0.1
 - PATCH: OLH-2634: Fix PK plugin issues ([PR #60](https://github.com/govuk-one-login/service-header/pull/60))
 
 
