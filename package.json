@@ -11,11 +11,13 @@
     "build-templates": "node build.js",
     "build-sass": "sass --no-source-map --load-path=node_modules/govuk-frontend/dist src/styles/service-header.scss dist/styles/service-header.css && sass --no-source-map --style=compressed --load-path=node_modules/govuk-frontend/dist src/styles/service-header.scss dist/styles/service-header.min.css",
     "watch-sass": "sass --no-source-map --load-path=node_modules/govuk-frontend/dist --watch src/styles/service-header.scss dist/styles/service-header.css",
-    "build-all": "npm run build-sass && npm run build-templates"
+    "build-all": "npm run build-sass && npm run build-templates",
+    "prepare": "husky"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "husky": "^9.1.7",
     "sass": "^1.60.0"
   },
   "dependencies": {
