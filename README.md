@@ -237,3 +237,16 @@ The header degrades gracefully in the absence of Javascript (for example, if a u
 The content for the header is currently only provided in English. A Welsh translation will be available soon.
 
 If you need to translate the header into other languages, please consider sharing your translation with [the GOV.UK One Login team](#contact) so it can be used by other services.
+
+# Developers Guide
+## Prerequisites
+### Gitlint
+
+This repository uses [Gitlint](https://jorisroovers.com/gitlint/latest/) to lint git commit messages.
+
+Install Gitlint by running:
+
+```bash
+pip install gitlint # or `brew install gitlint` if using the brew package manager
+```
+
