@@ -43,7 +43,6 @@ $govuk-header-link-underline-thickness: 3px;
     }
   }
 
-  &.cross-service-header__button--one-login {
     color: govuk-colour("white");
     // apply focus style on :focus for browsers which support :focus but not :focus-visible
     &:focus {
@@ -62,7 +61,6 @@ $govuk-header-link-underline-thickness: 3px;
         @include govuk-focused-text;
       }
     }
-  }
 }
 
 .cross-service-header__button-icon {
@@ -315,3 +313,210 @@ $govuk-header-link-underline-thickness: 3px;
   }
 }
 // end One Login header styles
+
+
+// rebranded header styles start here
+
+$toggle-padding-bottom: 18px;
+$toggle-border-height: 3px;
+
+.cross-service-header--rebranded {
+  .one-login-header__logo {
+    margin-bottom:0;
+    padding-top:16px;
+    padding-bottom:12px;
+  }
+  
+  .one-login-header {
+    border-bottom: none;
+    background: $govuk-brand-colour;
+  }
+  
+  .one-login-header__link {
+    word-spacing:-.375rem;
+  
+    &>* {
+      word-spacing:0;
+    }
+  
+    &:not(:focus){
+      background-color:$govuk-brand-colour;
+    }
+  }
+
+  .one-login-header__nav__list {
+    @include govuk-media-query ($from: tablet) {
+      padding: govuk-spacing(3) 0;
+    }     
+    @include govuk-media-query ($until: tablet) {
+      background-color: govuk-colour("light-grey");
+      color: $govuk-brand-colour;
+      margin-right: -(govuk-spacing(3));
+      margin-left: -(govuk-spacing(3));
+      border-bottom: $toggle-border-height solid $govuk-brand-colour;
+
+    }
+  }
+  
+  .one-login-header__nav__list-item {
+    @include govuk-media-query ($from: tablet) {
+      border-left: none;
+      margin-right: 0;
+      padding: 0 govuk-spacing(3);
+      &:not(:first-of-type) {
+        border-left: 2px solid govuk-colour("white");
+      }
+    }
+  
+    @include govuk-media-query ($until: tablet) {
+      &:not(:last-child) {
+        border-bottom: 1px solid govuk-colour("mid-grey");
+      }
+    }
+  }
+
+  .one-login-header__nav__link {
+    @include govuk-media-query ($until: tablet) {
+      @include govuk-width-container;
+
+      &:link:link,
+      &:link:visited,
+      &:visited:link,
+      &:visited:visited {
+        color: $govuk-brand-colour;
+        &:focus {
+          color: $govuk-focus-text-colour;
+        }
+      }
+    }
+  }
+  
+  .cross-service-header__logo {
+    margin-right: 8px;
+  }
+
+  .cross-service-header__logo--nav {
+    @include govuk-media-query ($until: tablet) {
+      display: none;
+    }
+  }
+}
+
+.cross-service-header__toggle {
+  display: none;
+
+  @include govuk-font($size: 19, $weight: bold);
+  position: relative;
+  cursor: pointer;
+  border: 0;
+  margin: 0;
+  background: none;
+  color: inherit;
+  padding: govuk-spacing(3) govuk-spacing(7) $toggle-padding-bottom govuk-spacing(3);
+  margin-right: -(govuk-spacing(3));
+  align-self: start;
+
+  @mixin toggle-button-focus {
+    color: $govuk-focus-text-colour;
+    background-color: $govuk-focus-colour;
+    outline: none;
+  }
+  &:focus {
+    @include toggle-button-focus;
+    &.cross-service-header__toggle--open {
+      @include toggle-button-focus;
+    }
+    // apply focus style on :focus-visible for browsers which support :focus-visible
+    &-visible {
+      @include toggle-button-focus;
+
+      &.cross-service-header__toggle--open {
+        @include toggle-button-focus;
+      }
+    }
+  }
+
+  &.cross-service-header__toggle--open {
+    background-color: govuk-colour("light-grey");
+    color: $govuk-brand-colour;
+
+    &:before {
+      transform: translateY(-20%) rotate(-45deg);
+    }
+  }
+}
+
+.toggle-enabled .cross-service-header__toggle {
+  display: inline;
+
+  @include govuk-media-query ($from: tablet) {
+    display: none;
+  }
+}
+
+.cross-service-header__toggle-content-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &:before {
+    content: "";
+    position: absolute;
+    right: -(govuk-spacing(4));
+    left: auto;
+    top: 50%;
+    width: 0.6rem;
+    height: 0.6rem;
+    transform: translateY(-75%) rotate(135deg);
+    border-top: 0.15rem solid;
+    border-right: 0.15rem solid;
+    .cross-service-header__toggle--open & {
+      transform: translateY(-20%) rotate(-45deg);
+    }
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: calc(100% + govuk-spacing(4));
+    height: $toggle-border-height;
+    background-color: transparent;
+    bottom: -$toggle-padding-bottom;
+    .cross-service-header__toggle:hover & {
+      background-color: govuk-colour("white");
+    }
+        
+    .cross-service-header__toggle--open &,
+    .cross-service-header__toggle--open:hover & {
+      background-color: $govuk-brand-colour;
+    }
+
+    .cross-service-header__toggle:focus &,
+    .cross-service-header__toggle:focus-visible & {
+      background-color: $govuk-focus-text-colour;
+      &:hover {
+        background-color: $govuk-focus-text-colour;
+      }
+    }
+  }
+}
+
+.one-login-header__logo-dot {
+  fill: #00ffe0;
+  
+    // Override Dot colour when printing
+    @include govuk-media-query($media-type: print) {
+      fill: currentcolor;
+    }
+
+    // Override Dot colour on forced colours mode
+    @media (forced-colors: active) {
+      fill: currentcolor;
+    }
+
+    // Override Dot colour on focus
+    :focus & {
+      fill: currentcolor;
+    }
+}
+// rebranded header styles end
