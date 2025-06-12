@@ -3,7 +3,6 @@
   "version": "3.0.1",
   "description": "A header for services using GOV.UK One Login",
   "main": "dist/scripts/service-header.js",
-  "type": "module",
   "files": [
     "dist",
     "govuk-prototype-kit.config.json"
@@ -25,7 +24,7 @@
     "sass": "^1.60.0"
   },
   "dependencies": {
-    "govuk-frontend": "^5.9.0",
+    "govuk-frontend": "^5.10.2",
     "nunjucks": "^3.2.4"
   }
 }

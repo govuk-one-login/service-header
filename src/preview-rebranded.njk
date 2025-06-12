@@ -1,0 +1,64 @@
+{% from "./nunjucks/service-header.njk" import govukOneLoginServiceHeader %}
+{% set navigation = [
+    {
+      href: "#navigation1",
+      text: "Navigation item 1"
+    },
+    {
+      href: "#navigation2",
+      text: "Navigation item 2",
+      active: true
+    },
+    {
+      href: "#navigation3",
+      text: "Navigation item 3"
+    }
+  ]
+  %}
+{% set serviceName = "My nice service" %}
+{% set signOutLink = "/test" %}
+
+<html lang="en" class="govuk-template--rebranded" style="background-color:white;">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service header – usage example</title>
+    <link rel="stylesheet" href="../node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.css">
+    <link rel="stylesheet" href="./styles/service-header.css">
+    <style>
+      @font-face {
+        font-family: "GDS Transport";
+        font-style: normal;
+        font-weight: bold;
+        src: url("../assets/fonts/light-94a07e06a1-v2.woff2") format("woff2");
+        font-display: fallback;
+      }
+      @font-face {
+        font-family: "GDS Transport";
+        font-style: normal;
+        font-weight: bold;
+        src: url("../assets/fonts/bold-b542beb274-v2.woff2") format("woff2");
+        font-display: fallback;
+      }
+    </style>
+  </head>
+  <body class="govuk-frontend-supported" style="margin:0;">
+    <div class="govuk-!-padding-3 govuk-!-margin-top-8">
+      <h2 class="govuk-heading-m">Rebranded</h2>
+    </div>
+    {{ govukOneLoginServiceHeader({ rebrand: true, signOutLink: signOutLink, serviceNavigationParams: { rebrand: true, navigation: navigation, serviceName: serviceName, navigationLabel: "Test" } }) }}
+    
+    <script type="module" src="./scripts/service-header.js"></script>
+    <script type="module" src="../node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.js"></script>
+    <script type="module">
+      import { initCrossServiceHeader } from './scripts/service-header.js';
+      initCrossServiceHeader();
+    </script>
+
+    <script type="module">
+      import { ServiceNavigation, createAll} from '../node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.js';
+      createAll(ServiceNavigation);
+    </script>
+  </body>
+</html>

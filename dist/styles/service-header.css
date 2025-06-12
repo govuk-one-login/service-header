@@ -609,6 +609,7 @@
   margin: 0;
   padding: 10px 0 5px 20px;
   background: none;
+  color: #ffffff;
 }
 .toggle-enabled .cross-service-header__button {
   display: inline;
@@ -646,10 +647,7 @@
 .cross-service-header__button.cross-service-header__button--open:before {
   transform: translateY(-15%) rotate(-45deg);
 }
-.cross-service-header__button.cross-service-header__button--one-login {
-  color: #ffffff;
-}
-.cross-service-header__button.cross-service-header__button--one-login:focus {
+.cross-service-header__button:focus {
   outline: 3px solid transparent;
   color: #0b0c0c;
   background-color: #ffdd00;
@@ -658,13 +656,13 @@
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
-.cross-service-header__button.cross-service-header__button--one-login:focus:not(:focus-visible) {
+.cross-service-header__button:focus:not(:focus-visible) {
   outline: none;
   color: #ffffff;
   background: none;
   box-shadow: none;
 }
-.cross-service-header__button.cross-service-header__button--one-login:focus-visible {
+.cross-service-header__button:focus-visible {
   outline: 3px solid transparent;
   color: #0b0c0c;
   background-color: #ffdd00;
@@ -933,4 +931,418 @@
   .one-login-header__nav__link.one-login-header__nav__link--one-login .cross-service-header__button-icon {
     display: none;
   }
+}
+
+.rebranded-one-login-header {
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
+  color: #ffffff;
+  position: relative;
+  border-bottom: 1px solid transparent;
+  background: #1d70b8;
+}
+@media print {
+  .rebranded-one-login-header {
+    font-family: sans-serif;
+  }
+}
+@media print {
+  .rebranded-one-login-header {
+    font-size: 14pt;
+    line-height: 1.15;
+  }
+}
+
+.rebranded-one-login-header__container {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.rebranded-one-login-header__logo {
+  min-width: max-content;
+  max-width: 33.33%;
+  padding-top: 16px;
+  padding-bottom: 12px;
+}
+@media (min-width: 48.0625em) {
+  .rebranded-one-login-header__logo {
+    width: 33.33%;
+    padding-right: 15px;
+  }
+}
+
+.rebranded-one-login-header__logotype {
+  display: inline-block;
+  position: relative;
+  top: -3px;
+  margin-right: 5px;
+  fill: currentcolor;
+  vertical-align: top;
+}
+@media (forced-colors: active) {
+  .rebranded-one-login-header__logotype {
+    forced-color-adjust: none;
+    color: linktext;
+  }
+}
+.rebranded-one-login-header__logotype:last-child {
+  margin-right: 0;
+}
+
+.rebranded-one-login-header__link--homepage {
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 30px;
+  line-height: 1;
+}
+@media print {
+  .rebranded-one-login-header__link--homepage {
+    font-family: sans-serif;
+  }
+}
+@media (min-width: 40.0625em) {
+  .rebranded-one-login-header__link--homepage {
+    display: inline;
+  }
+  .rebranded-one-login-header__link--homepage:focus {
+    box-shadow: 0 0 #ffdd00;
+  }
+}
+.rebranded-one-login-header__link--homepage:link, .rebranded-one-login-header__link--homepage:visited {
+  text-decoration: none;
+}
+.rebranded-one-login-header__link--homepage:hover, .rebranded-one-login-header__link--homepage:active {
+  margin-bottom: -3px;
+  border-bottom: 3px solid;
+}
+.rebranded-one-login-header__link--homepage:focus {
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+
+.rebranded-one-login-header__link:link, .rebranded-one-login-header__link:visited,
+.rebranded-one-login-header__nav__link:link,
+.rebranded-one-login-header__nav__link:visited {
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-decoration: none;
+}
+@media print {
+  .rebranded-one-login-header__link:link, .rebranded-one-login-header__link:visited,
+  .rebranded-one-login-header__nav__link:link,
+  .rebranded-one-login-header__nav__link:visited {
+    font-family: sans-serif;
+  }
+}
+.rebranded-one-login-header__link:link:link, .rebranded-one-login-header__link:link:visited, .rebranded-one-login-header__link:visited:link, .rebranded-one-login-header__link:visited:visited,
+.rebranded-one-login-header__nav__link:link:link,
+.rebranded-one-login-header__nav__link:link:visited,
+.rebranded-one-login-header__nav__link:visited:link,
+.rebranded-one-login-header__nav__link:visited:visited {
+  color: #ffffff;
+}
+.rebranded-one-login-header__link:link:hover, .rebranded-one-login-header__link:link:active, .rebranded-one-login-header__link:visited:hover, .rebranded-one-login-header__link:visited:active,
+.rebranded-one-login-header__nav__link:link:hover,
+.rebranded-one-login-header__nav__link:link:active,
+.rebranded-one-login-header__nav__link:visited:hover,
+.rebranded-one-login-header__nav__link:visited:active {
+  color: rgba(255, 255, 255, 0.99);
+}
+.rebranded-one-login-header__link:link:focus, .rebranded-one-login-header__link:visited:focus,
+.rebranded-one-login-header__nav__link:link:focus,
+.rebranded-one-login-header__nav__link:visited:focus {
+  color: #0b0c0c;
+}
+.rebranded-one-login-header__link:link:hover, .rebranded-one-login-header__link:visited:hover,
+.rebranded-one-login-header__nav__link:link:hover,
+.rebranded-one-login-header__nav__link:visited:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 0.1578em;
+}
+.rebranded-one-login-header__link:link:focus, .rebranded-one-login-header__link:visited:focus,
+.rebranded-one-login-header__nav__link:link:focus,
+.rebranded-one-login-header__nav__link:visited:focus {
+  outline: 3px solid transparent;
+  color: #0b0c0c;
+  background-color: #ffdd00;
+  box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+  text-decoration: none;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.rebranded-one-login-header__link {
+  word-spacing: -0.375rem;
+}
+.rebranded-one-login-header__link > * {
+  word-spacing: 0;
+}
+.rebranded-one-login-header__link:not(:focus) {
+  background-color: #1d70b8;
+}
+
+@media (max-width: 40.0525em) {
+  .rebranded-one-login-header__nav {
+    width: 100%;
+  }
+}
+@media (min-width: 40.0625em) {
+  .rebranded-one-login-header__nav {
+    max-width: 66%;
+  }
+}
+
+.rebranded-one-login-header__nav__link {
+  font-weight: bold;
+}
+@media (min-width: 40.0625em) {
+  .rebranded-one-login-header__nav__link {
+    position: relative;
+    padding: 15px 0;
+  }
+  .rebranded-one-login-header__nav__link:after {
+    content: "";
+    display: none;
+    position: absolute;
+    height: 3px;
+    width: calc(100% - 30px);
+    bottom: 0;
+    left: 15px;
+  }
+  .rebranded-one-login-header__nav__link:link:link:hover, .rebranded-one-login-header__nav__link:link:link:active, .rebranded-one-login-header__nav__link:link:visited:hover, .rebranded-one-login-header__nav__link:link:visited:active, .rebranded-one-login-header__nav__link:visited:link:hover, .rebranded-one-login-header__nav__link:visited:link:active, .rebranded-one-login-header__nav__link:visited:visited:hover, .rebranded-one-login-header__nav__link:visited:visited:active {
+    text-decoration: none;
+  }
+  .rebranded-one-login-header__nav__link:link:link:hover:after, .rebranded-one-login-header__nav__link:link:link:active:after, .rebranded-one-login-header__nav__link:link:visited:hover:after, .rebranded-one-login-header__nav__link:link:visited:active:after, .rebranded-one-login-header__nav__link:visited:link:hover:after, .rebranded-one-login-header__nav__link:visited:link:active:after, .rebranded-one-login-header__nav__link:visited:visited:hover:after, .rebranded-one-login-header__nav__link:visited:visited:active:after {
+    display: block;
+    background-color: #ffffff;
+  }
+  .rebranded-one-login-header__nav__link:link:link:focus, .rebranded-one-login-header__nav__link:link:visited:focus, .rebranded-one-login-header__nav__link:visited:link:focus, .rebranded-one-login-header__nav__link:visited:visited:focus {
+    box-shadow: none;
+  }
+  .rebranded-one-login-header__nav__link:link:link:focus:after, .rebranded-one-login-header__nav__link:link:visited:focus:after, .rebranded-one-login-header__nav__link:visited:link:focus:after, .rebranded-one-login-header__nav__link:visited:visited:focus:after {
+    display: block;
+    background-color: #0b0c0c;
+  }
+}
+@media (max-width: 40.0525em) {
+  .rebranded-one-login-header__nav__link:link:link, .rebranded-one-login-header__nav__link:link:visited, .rebranded-one-login-header__nav__link:visited:link, .rebranded-one-login-header__nav__link:visited:visited {
+    color: #1d70b8;
+  }
+  .rebranded-one-login-header__nav__link:link:link:focus, .rebranded-one-login-header__nav__link:link:visited:focus, .rebranded-one-login-header__nav__link:visited:link:focus, .rebranded-one-login-header__nav__link:visited:visited:focus {
+    color: #0b0c0c;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .rebranded-one-login-header__nav__link-content {
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+  }
+  .rebranded-one-login-header__nav__link-content--sign-out {
+    height: 30px;
+    border-left: 2px solid #ffffff;
+  }
+}
+
+.rebranded-one-login-header__nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@media (min-width: 40.0625em) {
+  .rebranded-one-login-header__nav__list {
+    display: flex;
+    align-items: center;
+  }
+}
+@media (max-width: 40.0525em) {
+  .rebranded-one-login-header__nav__list {
+    background-color: #ffffff;
+    color: #1d70b8;
+    margin-right: -15px;
+    margin-left: -15px;
+    padding: 0 15px;
+    border-bottom: 3px solid #1d70b8;
+  }
+}
+
+@media (max-width: 40.0525em) {
+  .toggle-enabled .rebranded-one-login-header__nav__list {
+    display: none;
+  }
+}
+@media (min-width: 40.0625em) {
+  .toggle-enabled .rebranded-one-login-header__nav__list {
+    display: flex;
+  }
+}
+
+@media (max-width: 40.0525em) {
+  .rebranded-one-login-header__nav--open .rebranded-one-login-header__nav__list {
+    display: block;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .rebranded-one-login-header__nav__list-item {
+    border-left: none;
+    margin-right: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+}
+@media (max-width: 40.0525em) {
+  .rebranded-one-login-header__nav__list-item {
+    padding: 15px 0;
+  }
+  .rebranded-one-login-header__nav__list-item:not(:last-child) {
+    border-bottom: 1px solid #b1b4b6;
+  }
+}
+
+.rebranded-cross-service-header__logo {
+  margin-right: 8px;
+}
+
+@media (max-width: 40.0525em) {
+  .rebranded-cross-service-header__logo--nav {
+    display: none;
+  }
+}
+
+.rebranded-cross-service-header__toggle {
+  display: none;
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
+  position: relative;
+  cursor: pointer;
+  border: 0;
+  margin: 0;
+  background: none;
+  color: inherit;
+  padding: 15px 15px 18px 15px;
+  margin-right: -15px;
+  align-self: start;
+}
+@media print {
+  .rebranded-cross-service-header__toggle {
+    font-family: sans-serif;
+  }
+}
+@media print {
+  .rebranded-cross-service-header__toggle {
+    font-size: 14pt;
+    line-height: 1.15;
+  }
+}
+.rebranded-cross-service-header__toggle:focus {
+  color: #0b0c0c;
+  background-color: #ffdd00;
+  outline: 3px solid transparent;
+}
+.rebranded-cross-service-header__toggle:focus.rebranded-cross-service-header__toggle--open {
+  color: #0b0c0c;
+  background-color: #ffdd00;
+  outline: 3px solid transparent;
+}
+.rebranded-cross-service-header__toggle:focus-visible {
+  color: #0b0c0c;
+  background-color: #ffdd00;
+  outline: 3px solid transparent;
+}
+.rebranded-cross-service-header__toggle:focus-visible.rebranded-cross-service-header__toggle--open {
+  color: #0b0c0c;
+  background-color: #ffdd00;
+  outline: 3px solid transparent;
+}
+.rebranded-cross-service-header__toggle.rebranded-cross-service-header__toggle--open {
+  background-color: #ffffff;
+  color: #1d70b8;
+}
+.rebranded-cross-service-header__toggle.rebranded-cross-service-header__toggle--open:before {
+  transform: translateY(-20%) rotate(-45deg);
+}
+
+.toggle-enabled .rebranded-cross-service-header__toggle {
+  display: inline;
+}
+@media (min-width: 40.0625em) {
+  .toggle-enabled .rebranded-cross-service-header__toggle {
+    display: none;
+  }
+}
+
+.rebranded-cross-service-header__toggle-content-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.rebranded-cross-service-header__toggle-content-wrapper:after {
+  content: "";
+  margin-left: 8px;
+  top: 50%;
+  width: 0.6rem;
+  height: 0.6rem;
+  transform: translateY(-20%) rotate(135deg);
+  border-top: 0.15rem solid;
+  border-right: 0.15rem solid;
+}
+.rebranded-cross-service-header__toggle--open .rebranded-cross-service-header__toggle-content-wrapper:after {
+  transform: translateY(30%) rotate(-45deg);
+}
+.rebranded-cross-service-header__toggle-content-wrapper:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: transparent;
+  bottom: -18px;
+}
+.rebranded-cross-service-header__toggle:hover .rebranded-cross-service-header__toggle-content-wrapper:before {
+  background-color: #ffffff;
+}
+.rebranded-cross-service-header__toggle--open .rebranded-cross-service-header__toggle-content-wrapper:before, .rebranded-cross-service-header__toggle--open:hover .rebranded-cross-service-header__toggle-content-wrapper:before {
+  background-color: #1d70b8;
+}
+.rebranded-cross-service-header__toggle:focus .rebranded-cross-service-header__toggle-content-wrapper:before, .rebranded-cross-service-header__toggle:focus-visible .rebranded-cross-service-header__toggle-content-wrapper:before {
+  background-color: #0b0c0c;
+}
+.rebranded-cross-service-header__toggle:focus .rebranded-cross-service-header__toggle-content-wrapper:before:hover, .rebranded-cross-service-header__toggle:focus-visible .rebranded-cross-service-header__toggle-content-wrapper:before:hover {
+  background-color: #0b0c0c;
+}
+
+.rebranded-one-login-header__logo-dot {
+  fill: #00ffe0;
+}
+@media print {
+  .rebranded-one-login-header__logo-dot {
+    fill: currentcolor;
+  }
+}
+@media (forced-colors: active) {
+  .rebranded-one-login-header__logo-dot {
+    fill: currentcolor;
+  }
+}
+:focus .rebranded-one-login-header__logo-dot {
+  fill: currentcolor;
 }
