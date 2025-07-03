@@ -8,7 +8,7 @@ The source code lives in the `/src` folder and consists of sass files, nunjucks 
 
 Dev work should take place in `/src`. The `npm run build-all` script copies and compiles files into `/dist`.
 
-The `npm run build-templates` command compiles the header template code into HTML and generates a header preview page at `/dist/preview.html`. You can open the HTML file in a browser, or start a simple local server to preview the header locally.
+The `npm run dev` command starts a basic server and recompiles `/dist` when files are updated in `/src`.
 
 There is a `watch-sass` script which is fairly self-explanatory. 
 
