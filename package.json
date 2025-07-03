@@ -10,6 +10,7 @@
   ],
   "scripts": {
     "build-templates": "node build.cjs",
+    "dev": "nodemon --watch src -e njk,js,scss --exec \"npm run build-all && http-server\"",
     "build-sass": "sass --no-source-map --load-path=node_modules/govuk-frontend/dist src/styles/service-header.scss dist/styles/service-header.css && sass --no-source-map --style=compressed --load-path=node_modules/govuk-frontend/dist src/styles/service-header.scss dist/styles/service-header.min.css",
     "watch-sass": "sass --no-source-map --load-path=node_modules/govuk-frontend/dist --watch src/styles/service-header.scss dist/styles/service-header.css",
     "build-all": "npm run build-sass && npm run build-templates",
@@ -19,10 +20,12 @@
   "license": "ISC",
   "devDependencies": {
     "husky": "^9.1.7",
+    "nodemon": "^3.1.10",
     "sass": "^1.60.0"
   },
   "dependencies": {
     "govuk-frontend": "^5.9.0",
+    "http-server": "^14.1.1",
     "nunjucks": "^3.2.4"
   }
 }
