@@ -34,35 +34,37 @@
 
 
 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
+ 
+
 
 
 
@@ -143,6 +145,7 @@
 
  
  
+
 
 
 
@@ -314,8 +317,16 @@
 
 
 .govuk-service-navigation {
-  border-bottom: 1px solid #b1b4b6;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #b1b4b6;
   background-color: #f3f2f1;
+}
+.govuk-template--rebranded .govuk-service-navigation {
+  border-bottom-color: #8eb8dc;
+}
+.govuk-template--rebranded .govuk-service-navigation {
+  background-color: #f4f8fb;
 }
 
 .govuk-service-navigation__container {
@@ -343,6 +354,11 @@
     margin-bottom: 0;
     padding: 20px 0;
   }
+  .govuk-template--rebranded .govuk-service-navigation__item,
+  .govuk-template--rebranded .govuk-service-navigation__service-name {
+    padding: 15px 0;
+    line-height: 1.5;
+  }
   .govuk-service-navigation__item:not(:last-child),
   .govuk-service-navigation__service-name:not(:last-child) {
     margin-right: 20px;
@@ -366,6 +382,9 @@
   .govuk-service-navigation__item--active {
     padding-bottom: 15px;
     border-bottom-width: 5px;
+  }
+  .govuk-template--rebranded .govuk-service-navigation__item--active {
+    padding-bottom: 10px;
   }
 }
 
@@ -410,8 +429,12 @@
   background-color: #ffdd00;
   box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
   text-decoration: none;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
+}
+@supports not (text-wrap: balance) {
+  .govuk-service-navigation__link:focus {
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
 }
 .govuk-service-navigation__link:not(:hover):not(:active) {
   text-decoration: none;
@@ -509,8 +532,12 @@
   background-color: #ffdd00;
   box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
   text-decoration: none;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
+}
+@supports not (text-wrap: balance) {
+  .govuk-service-navigation__toggle:focus {
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
 }
 .govuk-service-navigation__toggle::after {
   display: inline-block;
@@ -585,7 +612,7 @@
 
 
 :root {
-  --govuk-frontend-version: "5.9.0";
+  --govuk-frontend-version: "5.10.2";
   --govuk-frontend-breakpoint-mobile: 20rem;
   --govuk-frontend-breakpoint-tablet: 40.0625rem;
   --govuk-frontend-breakpoint-desktop: 48.0625rem;
@@ -653,8 +680,12 @@
   background-color: #ffdd00;
   box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
   text-decoration: none;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
+}
+@supports not (text-wrap: balance) {
+  .cross-service-header__button:focus {
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
 }
 .cross-service-header__button:focus:not(:focus-visible) {
   outline: none;
@@ -668,8 +699,12 @@
   background-color: #ffdd00;
   box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
   text-decoration: none;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
+}
+@supports not (text-wrap: balance) {
+  .cross-service-header__button:focus-visible {
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
 }
 
 .cross-service-header__button-icon {
@@ -792,8 +827,14 @@
   background-color: #ffdd00;
   box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
   text-decoration: none;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
+}
+@supports not (text-wrap: balance) {
+  .one-login-header__link:link:focus, .one-login-header__link:visited:focus,
+  .one-login-header__nav__link:link:focus,
+  .one-login-header__nav__link:visited:focus {
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
 }
 
 .one-login-header__logotype {
@@ -938,8 +979,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1.1875rem;
-  line-height: 1.3157894737;
+  font-size: 1rem;
+  line-height: 1.25;
   color: #ffffff;
   position: relative;
   border-bottom: 1px solid transparent;
@@ -953,7 +994,7 @@
 @media print {
   .rebranded-one-login-header {
     font-size: 14pt;
-    line-height: 1.15;
+    line-height: 1.2;
   }
 }
 
@@ -1012,9 +1053,6 @@
   }
 }
 @media (min-width: 40.0625em) {
-  .rebranded-one-login-header__link--homepage {
-    display: inline;
-  }
   .rebranded-one-login-header__link--homepage:focus {
     box-shadow: 0 0 #ffdd00;
   }
@@ -1080,8 +1118,14 @@
   background-color: #ffdd00;
   box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
   text-decoration: none;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
+}
+@supports not (text-wrap: balance) {
+  .rebranded-one-login-header__link:link:focus, .rebranded-one-login-header__link:visited:focus,
+  .rebranded-one-login-header__nav__link:link:focus,
+  .rebranded-one-login-header__nav__link:visited:focus {
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
 }
 
 .rebranded-one-login-header__link {
@@ -1154,7 +1198,7 @@
   }
   .rebranded-one-login-header__nav__link-content--sign-out {
     height: 30px;
-    border-left: 2px solid #ffffff;
+    border-left: 1px solid #ffffff;
   }
 }
 
@@ -1176,7 +1220,7 @@
     margin-right: -15px;
     margin-left: -15px;
     padding: 0 15px;
-    border-bottom: 3px solid #1d70b8;
+    border-bottom: 1px solid #1d70b8;
   }
 }
 
@@ -1231,8 +1275,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 700;
-  font-size: 1.1875rem;
-  line-height: 1.3157894737;
+  font-size: 1rem;
+  line-height: 1.25;
   position: relative;
   cursor: pointer;
   border: 0;
@@ -1251,7 +1295,7 @@
 @media print {
   .rebranded-cross-service-header__toggle {
     font-size: 14pt;
-    line-height: 1.15;
+    line-height: 1.2;
   }
 }
 .rebranded-cross-service-header__toggle:focus {

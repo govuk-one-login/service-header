@@ -324,7 +324,7 @@ $logo-height: 30px;
 $toggle-border-height: 3px;
 
 .rebranded-one-login-header {
-  @include govuk-font($size: 19);
+  @include govuk-font($size: 16);
   color: govuk-colour("white");
   position: relative;
   border-bottom: 1px solid transparent;
@@ -381,15 +381,12 @@ $toggle-border-height: 3px;
     // Font size needs to be set on the link so that the box sizing is correct
     // in Firefox
     @include govuk-font($size: false, $weight: bold);
-  
     display: inline-block;
     margin-right: govuk-spacing(2);
     font-size: 30px; // We don't have a mixin that produces 30px font size
     line-height: 1;
   
-    @include govuk-media-query($from: tablet) {
-      display: inline;
-  
+    @include govuk-media-query($from: tablet) {  
       &:focus {
         // Replicate the focus box shadow but without the -2px y-offset of the first yellow shadow
         // This is to stop the logo getting cut off by the box shadow when focused on above a product name
@@ -527,7 +524,7 @@ $toggle-border-height: 3px;
 
       &--sign-out {
         height: $logo-height;
-        border-left: 2px solid govuk-colour("white");
+        border-left: 1px solid govuk-colour("white");
       }
     }
   }
@@ -548,7 +545,7 @@ $toggle-border-height: 3px;
       margin-right: -(govuk-spacing(3));
       margin-left: -(govuk-spacing(3));
       padding: 0 govuk-spacing(3);
-      border-bottom: $toggle-border-height solid $govuk-brand-colour;
+      border-bottom: 1px solid $govuk-brand-colour;
     }
   }
 
@@ -598,7 +595,7 @@ $toggle-border-height: 3px;
 
 .rebranded-cross-service-header__toggle {
   display: none;
-  @include govuk-font($size: 19, $weight: bold);
+  @include govuk-font($size: 16, $weight: bold);
   position: relative;
   cursor: pointer;
   border: 0;
