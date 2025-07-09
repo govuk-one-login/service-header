@@ -1023,7 +1023,7 @@
   display: inline-block;
   position: relative;
   top: -3px;
-  margin-right: 5px;
+  max-width: 80vw;
   fill: currentcolor;
   vertical-align: top;
 }
@@ -1032,9 +1032,6 @@
     forced-color-adjust: none;
     color: linktext;
   }
-}
-.rebranded-one-login-header__logotype:last-child {
-  margin-right: 0;
 }
 
 .rebranded-one-login-header__link--homepage {
@@ -1342,10 +1339,12 @@
 }
 .rebranded-cross-service-header__toggle-content-wrapper:after {
   content: "";
+  display: inline-block;
   margin-left: 8px;
   top: 50%;
   width: 0.6rem;
   height: 0.6rem;
+  min-width: 0.6rem;
   transform: translateY(-20%) rotate(135deg);
   border-top: 0.15rem solid;
   border-right: 0.15rem solid;
@@ -1355,6 +1354,7 @@
 }
 .rebranded-cross-service-header__toggle-content-wrapper:before {
   content: "";
+  display: inline-block;
   position: absolute;
   width: 100%;
   height: 3px;
