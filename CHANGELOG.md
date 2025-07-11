@@ -3,6 +3,8 @@
 Use [semver guidelines](https://semver.org/).
 
 ## Unreleased
+
+## 3.1.0
 - OLH-2604: Add rebranded header ([PR #67](https://github.com/govuk-one-login/service-header/pull/67))
 
 ## 3.0.1
