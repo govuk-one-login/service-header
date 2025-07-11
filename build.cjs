@@ -56,30 +56,34 @@ fs.mkdirSync(__dirname + '/dist/scripts', { recursive: true });
 fs.writeFile(__dirname + '/dist/preview.html', previewHtml, err => {
   if (err) {
     console.error(err);
+  } else {
+    console.log('header preview generated');
   }
-  console.log('header preview generated');
 });
 
 fs.writeFile(__dirname + '/dist/preview-rebranded.html', rebrandedPreviewHtml, err => {
   if (err) {
     console.error(err);
+  } else {
+    console.log('rebranded header preview generated');
   }
-  console.log('rebranded header preview generated');
 });
 
 fs.writeFile(__dirname + '/dist/html/header.html', headerHtml, err => {
   if (err) {
     console.error(err);
+  } else {
+    console.log('header HTML generated');
   }
-  console.log('header HTML copied to dist folder');
 });
 
 
 fs.writeFile(__dirname + '/dist/html/header-rebranded.html', rebrandedHeaderHtml, err => {
   if (err) {
     console.error(err);
+  } else {
+    console.log('rebranded header HTML generated');
   }
-  console.log('rebranded header HTML copied to dist folder');
 });
 
 fs.cp('src/nunjucks', 'dist/nunjucks/di-govuk-one-login-service-header', { recursive: true } , function (err) {
