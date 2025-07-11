@@ -3,6 +3,7 @@
 Use [semver guidelines](https://semver.org/).
 
 ## Unreleased
+- OLH-2604: Add rebranded header ([PR #67](https://github.com/govuk-one-login/service-header/pull/67))
 
 ## 3.0.1
 - PATCH: OLH-2634: Fix PK plugin issues ([PR #60](https://github.com/govuk-one-login/service-header/pull/60))
