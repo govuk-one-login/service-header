@@ -3,6 +3,7 @@
 Use [semver guidelines](https://semver.org/).
 
 ## Unreleased
+- OLH-2934: Enable rebrand flag for PK layout ([PR #69](https://github.com/govuk-one-login/service-header/pull/69))
 
 ## 3.1.0
 - OLH-2604: Add rebranded header ([PR #67](https://github.com/govuk-one-login/service-header/pull/67))
