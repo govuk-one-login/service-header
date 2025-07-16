@@ -56,6 +56,8 @@ To overwrite the destination for the One Login link in the header, use <code>&lb
 
 To overwrite the destination for the sign out link in the header, use <code>&lbrace;&percnt; set signOutLink = "https://example.service.gov.uk/sign-out" &percnt;&rbrace;</code>. The link goes to "https://home.account.gov.uk/sign-out" by default.
 
+To enable the rebranded version of the header, with a blue background and an updated logo, use <code>&lbrace;&percnt; set govukRebrand = true &percnt;&rbrace;</code>.
+
 Add the `set` statements listed above after the `extends` line at the top of the file.
 
 ## Use the header component in an existing page or template
@@ -69,7 +71,9 @@ The component can then be used like so:
   &lbrace;&lbrace; govukOneLoginServiceHeader({
     signOutLink: "/test-signout",
     oneLoginLink: "/test-one-login",
+    rebrand: true,
     serviceNavigationParams: { 
+      rebrand: true,
       navigation: [
       {
         href: "#navigation1", 
