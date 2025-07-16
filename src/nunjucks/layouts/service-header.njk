@@ -22,15 +22,18 @@
           navigationClasses: navigationClasses,
           attributes: attributes,
           classes: classes,
-          ariaLabel: ariaLabel
+          ariaLabel: ariaLabel,
+          rebrand: govukRebrand
         },
         signOutLink: signOutLink,
-        oneLoginLink: oneLoginLink
+        oneLoginLink: oneLoginLink,
+        rebrand: govukRebrand
       }) if serviceName }}
     {%- elif navigation -%}
       {{ govukOneLoginServiceHeader({
         signOutLink: signOutLink,
         oneLoginLink: oneLoginLink,
+        rebrand: govukRebrand,
         serviceNavigationParams: {
           serviceName: serviceName,
           serviceUrl: serviceUrl,
@@ -41,7 +44,8 @@
           navigationClasses: navigationClasses,
           attributes: attributes,
           classes: classes,
-          ariaLabel: ariaLabel
+          ariaLabel: ariaLabel,
+          rebrand: govukRebrand
         }
       }) if serviceName }}
     {%- else -%}
@@ -51,7 +55,8 @@
         signOutLink: signOutLink,
         oneLoginLink: oneLoginLink,
         menuButtonText: menuButtonText,
-        menuButtonLabel: menuButtonLabel
+        menuButtonLabel: menuButtonLabel,
+        rebrand: govukRebrand
       })}}
     {%- endif -%}
 {% endblock %}
