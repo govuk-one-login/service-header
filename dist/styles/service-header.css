@@ -983,7 +983,6 @@
   line-height: 1.25;
   color: #ffffff;
   position: relative;
-  border-bottom: 1px solid transparent;
   background: #1d70b8;
 }
 @media print {
@@ -995,6 +994,11 @@
   .rebranded-one-login-header {
     font-size: 14pt;
     line-height: 1.2;
+  }
+}
+@media (forced-colors: active) {
+  .rebranded-one-login-header {
+    border-bottom: 1px solid transparent;
   }
 }
 

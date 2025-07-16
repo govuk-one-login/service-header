@@ -327,8 +327,11 @@ $toggle-border-height: 3px;
   @include govuk-font($size: 16);
   color: govuk-colour("white");
   position: relative;
-  border-bottom: 1px solid transparent;
   background: $govuk-brand-colour;
+
+  @media (forced-colors: active) {
+    border-bottom: 1px solid transparent;
+  }
 }
 
 .rebranded-one-login-header__container {
