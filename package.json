@@ -25,7 +25,7 @@
     "sass": "^1.60.0"
   },
   "dependencies": {
-    "govuk-frontend": "^5.10.2",
+    "govuk-frontend": "^5.11.1",
     "nunjucks": "^3.2.4"
   }
 }
