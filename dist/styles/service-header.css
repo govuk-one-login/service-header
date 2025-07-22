@@ -1039,11 +1039,6 @@
     line-height: 1.2;
   }
 }
-@media (forced-colors: active) {
-  .rebranded-one-login-header {
-    border-bottom: 1px solid transparent;
-  }
-}
 
 .rebranded-one-login-header__container {
   display: flex;
@@ -1051,6 +1046,7 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  border-bottom: 1px solid transparent;
 }
 
 .rebranded-one-login-header__logo {
@@ -1058,6 +1054,7 @@
   max-width: 33.33%;
   padding-top: 16px;
   padding-bottom: 12px;
+  box-sizing: border-box;
 }
 @media (min-width: 48.0625em) {
   .rebranded-one-login-header__logo {
@@ -1070,9 +1067,10 @@
   display: inline-block;
   position: relative;
   top: -3px;
+  margin-bottom: 2px;
   max-width: 80vw;
   fill: currentcolor;
-  vertical-align: top;
+  vertical-align: sub;
 }
 @media (forced-colors: active) {
   .rebranded-one-login-header__logotype {
@@ -1086,7 +1084,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 700;
-  display: inline-block;
+  display: inline;
   margin-right: 10px;
   font-size: 30px;
   line-height: 1;
@@ -1186,6 +1184,9 @@
   .rebranded-one-login-header__nav {
     width: 100%;
   }
+  .rebranded-one-login-header__nav.rebranded-one-login-header__nav--open {
+    border-top: 1px solid transparent;
+  }
 }
 @media (min-width: 40.0625em) {
   .rebranded-one-login-header__nav {
@@ -1264,7 +1265,6 @@
     margin-right: -15px;
     margin-left: -15px;
     padding: 0 15px;
-    border-bottom: 1px solid #1d70b8;
   }
 }
 
@@ -1321,15 +1321,16 @@
   font-weight: 700;
   font-size: 1rem;
   line-height: 1.25;
-  position: relative;
+  position: absolute;
+  right: 0;
+  top: 0;
   cursor: pointer;
   border: 0;
   margin: 0;
   background: none;
   color: inherit;
-  padding: 15px 15px 18px 15px;
+  padding: 15px 15px 16px 15px;
   margin-right: -15px;
-  align-self: start;
 }
 @media print {
   .rebranded-cross-service-header__toggle {
@@ -1365,9 +1366,6 @@
 .rebranded-cross-service-header__toggle.rebranded-cross-service-header__toggle--open {
   background-color: #ffffff;
   color: #1d70b8;
-}
-.rebranded-cross-service-header__toggle.rebranded-cross-service-header__toggle--open:before {
-  transform: translateY(-20%) rotate(-45deg);
 }
 
 .toggle-enabled .rebranded-cross-service-header__toggle {
@@ -1406,7 +1404,7 @@
   width: 100%;
   height: 3px;
   background-color: transparent;
-  bottom: -18px;
+  bottom: -14px;
 }
 .rebranded-cross-service-header__toggle:hover .rebranded-cross-service-header__toggle-content-wrapper:before {
   background-color: #ffffff;
