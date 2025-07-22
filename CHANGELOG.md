@@ -3,6 +3,8 @@
 Use [semver guidelines](https://semver.org/).
 
 ## Unreleased
+
+## 3.1.1
 - OLH-2934: Enable rebrand flag for PK layout ([PR #69](https://github.com/govuk-one-login/service-header/pull/69))
 - BAU: forced colours border tweak ([PR #70](https://github.com/govuk-one-login/service-header/pull/70))
 - BAU: bump govuk-frontend to 5.11.1 ([PR #72](https://github.com/govuk-one-login/service-header/pull/72))
