@@ -1,6 +1,6 @@
 {
   "name": "govuk-one-login-service-header",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "A header for services using GOV.UK One Login",
   "main": "dist/scripts/service-header.js",
   "type": "module",
