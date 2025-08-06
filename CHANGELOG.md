@@ -3,6 +3,7 @@
 Use [semver guidelines](https://semver.org/).
 
 ## Unreleased
+- BAU: Hide GOVUK OL icon SVG from screen readers ([PR #80](https://github.com/govuk-one-login/service-header/pull/80))
 
 ## 3.1.1
 - OLH-2934: Enable rebrand flag for PK layout ([PR #69](https://github.com/govuk-one-login/service-header/pull/69))
