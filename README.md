@@ -62,6 +62,11 @@ Instructions on how the header can be installed in your Prototype Kit project ar
 > NOTE: If your service uses Nunjucks, you can use NPM to install the header direct from GitHub by running
 >
 > ```sh
+> npm install github:govuk-one-login/service-header
+> ```
+>
+>or to install a specific version from the tag
+> ```sh
 > npm install github:govuk-one-login/service-header@3.1.1
 > ```
 >
