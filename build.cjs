@@ -21,33 +21,10 @@ var params =  {
   ] 
 }}
 
-var paramsRebranded =  {
-  rebrand: true,
-  serviceNavigationParams: {
-  rebrand: true,
-  serviceName: "Name of example service", 
-  navigation: [
-    {
-      href: "#navigation1",
-      text: "Navigation item 1"
-    },
-    {
-      href: "#navigation2",
-      text: "Navigation item 2",
-      active: true
-    },
-    {
-      href: "#navigation3",
-      text: "Navigation item 3"
-    }
-  ] 
-}}
 // generate header HTML preview from nunjucks
 const previewHtml = nunjucks.render("src/preview.njk");
-const rebrandedPreviewHtml = nunjucks.render("src/preview-rebranded.njk");
 // generate header HTML from the nunjucks template
 const headerHtml = nunjucks.render("src/nunjucks/template.njk", { params: params });
-const rebrandedHeaderHtml = nunjucks.render("src/nunjucks/template.njk", { params: paramsRebranded });
 
 fs.mkdirSync(__dirname + '/dist', { recursive: true });
 fs.mkdirSync(__dirname + '/dist/html', { recursive: true });
@@ -61,28 +38,11 @@ fs.writeFile(__dirname + '/dist/preview.html', previewHtml, err => {
   }
 });
 
-fs.writeFile(__dirname + '/dist/preview-rebranded.html', rebrandedPreviewHtml, err => {
-  if (err) {
-    console.error(err);
-  } else {
-    console.log('rebranded header preview generated');
-  }
-});
-
 fs.writeFile(__dirname + '/dist/html/header.html', headerHtml, err => {
   if (err) {
     console.error(err);
   } else {
     console.log('header HTML generated');
-  }
-});
-
-
-fs.writeFile(__dirname + '/dist/html/header-rebranded.html', rebrandedHeaderHtml, err => {
-  if (err) {
-    console.error(err);
-  } else {
-    console.log('rebranded header HTML generated');
   }
 });
 
