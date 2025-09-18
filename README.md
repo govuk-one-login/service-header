@@ -16,13 +16,10 @@ The header works best if your service uses [GOV.UK Frontend](https://frontend.de
 
 You can [preview the header in your browser](https://govuk-one-login.github.io/service-header/dist/preview.html).
 
-![A screenshot of the GOV.UK One Login header. It has 2 sections: a black section at the top showing the GOV.UK crown logo, a link saying "GOV.UK One Login", which takes you into your account, and a "Sign out" button. Below this section is a grey section, displaying the name of a government service and internal links within that service. Those just have placeholder text, so read "Service name" and "Service link 1" and so on. The black and grey sections are divided by a blue bar, like on the GOV.UK homepage.](docs/assets/service-header-larger-screen.png)
+![A screenshot of the GOV.UK One Login header. It has 2 sections: a blue section at the top showing the GOV.UK crown logo, a link saying "GOV.UK One Login", which takes you into your account, and a "Sign out" button. Below this section is a grey section, displaying the name of a government service and internal links within that service. Those just have placeholder text, so read "Service name" and "Service link 1" and so on. The black and grey sections are divided by a blue bar, like on the GOV.UK homepage.](docs/assets/service-header.png)
 
-As of [v3.1.0](https://github.com/govuk-one-login/service-header/releases/tag/v3.1.0), a rebranded service header was added, in line with the wider GOV.UK brand refresh initiative. The target launch date for the rebranded service header is **31st July**.
+Note: As of [v3.1.0](https://github.com/govuk-one-login/service-header/releases/tag/v3.1.0), the design of the service header was updated, in line with the wider GOV.UK brand refresh initiative.
 
-You can also [preview the rebranded header in your browser](https://govuk-one-login.github.io/service-header/dist/preview-rebranded.html).
-
-![A screenshot of the rebranded GOV.UK One Login header](docs/assets/service-header-rebranded.png)
 
 ## How to contribute to the service header
 
