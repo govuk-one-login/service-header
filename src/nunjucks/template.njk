@@ -1,26 +1,5 @@
 {# 
 Component options:
-  - serviceName (string, DEPRECATED: pass it as an option on serviceNavigationParams instead): The name of the service. The service navigation bar will not render unless serviceName is specified
-  - navigationItems (array, DEPRECATED: pass it as the navigation option on serviceNavigationParams instead): An array of objects representing service navigation links. 
-    Each link object contains the following fields: 
-      - href (string – indicates the link destination), 
-      - text (string, is the text being displayed), 
-      - id (string – this should be a unique identifier as it is used to set the active link)
-    Example of navigationItems structure: 
-    [{
-      href: "#",
-      text: 'service link 1',
-      id: 'servicelink1'
-    },{
-      href: "#",
-      text: 'service link 2',
-      id: 'servicelink2'
-    },{
-      href: "#",
-      text: 'service link 3',
-      id: 'servicelink3'
-    }] 
-  - activeLinkId (string, DEPRECATED: replaced by navigation option on serviceNavigationParams): The id of the link that is currently active 
   - oneLoginLink (string): Option to overwrite the default One Login Home link. Defaults to "https://home.account.gov.uk/"
   - signOutLink (string): Option to overwrite the default signed out page. Defaults to "https://home.account.gov.uk/sign-out"
   - homepageLink (string): Option to overwrite the default GOV.UK link. Defaults to "https://home.account.gov.uk/"
@@ -102,31 +81,12 @@ Component options:
         </ul>
       </nav>
     </div>
-
   </div>
   <!-- Start of service navigation -->
   <!-- This is a DESIGN SYSTEM component with a dependency on Javascript  -->
   <!-- Javascript is necessary to enable dropdown functionality for the list of links on mobile -->
   <!-- Import the latest version of the script for this component using the instructions here https://frontend.design-system.service.gov.uk/import-javascript/#import-javascript  -->
-    {# navigationItems is a legacy parameter #}
-    {# please migrate to the Design System style parameters for Secondary Navigation as soon as you can #}
-    {%- if params.navigationItems -%}
-      {%- set navArr = [] -%}
-      {%- for item in params.navigationItems -%}
-        {{- '' if navArr.push({
-            href: item.href,
-            text: item.text,
-            active: item.id == params.activeLinkId
-        }) -}}
-      {%- endfor -%}
-      {{ govukServiceNavigation({
-        rebrand: true,
-        menuButtonText: params.menuButtonText,
-        menuButtonLabel: params.menuButtonLabel,
-        serviceName: params.serviceName,
-        navigation: navArr
-      }) if params.serviceName }}
-    {%- elif params.serviceNavigationParams -%}
+    {%- if params.serviceNavigationParams -%}
        {{ govukServiceNavigation(params.serviceNavigationParams) if params.serviceNavigationParams.serviceName }}
     {%- endif -%}
   <!-- End of service navigation -->
