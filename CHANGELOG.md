@@ -5,6 +5,7 @@ Use [semver guidelines](https://semver.org/).
 ## Unreleased
 - BAU: Hide GOVUK OL icon SVG from screen readers ([PR #80](https://github.com/govuk-one-login/service-header/pull/80))
 - MAJOR: OLH-3183: Remove support for old (black bar) header [PR #82](https://github.com/govuk-one-login/service-header/pull/82)
+- MAJOR: BAU: Remove support for deprecated parameters [PR #83](https://github.com/govuk-one-login/service-header/pull/83)
 
 
 ## 3.1.1
