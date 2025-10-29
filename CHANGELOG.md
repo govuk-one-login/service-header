@@ -4,6 +4,8 @@ Use [semver guidelines](https://semver.org/).
 
 ## Unreleased
 
+- MINOR: OLH-3288: Add Welsh language translation for Sign out link ([PR #86](https://github.com/govuk-one-login/service-header/pull/86))
+
 ## 4.0.0
 - BAU: Hide GOVUK OL icon SVG from screen readers ([PR #80](https://github.com/govuk-one-login/service-header/pull/80))
 - MAJOR: OLH-3183: Remove support for old (black bar) header [PR #82](https://github.com/govuk-one-login/service-header/pull/82)
