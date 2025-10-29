@@ -14,6 +14,7 @@
       {{ govukOneLoginServiceHeader({
         serviceNavigationParams: {
           serviceName: serviceName,
+          lng: lng,
           serviceUrl: serviceUrl,
           menuButtonText: menuButtonText,
           menuButtonLabel: menuButtonLabel,
@@ -31,6 +32,7 @@
     {%- elif navigation -%}
       {{ govukOneLoginServiceHeader({
         signOutLink: signOutLink,
+        lng: lng,
         oneLoginLink: oneLoginLink,
         serviceNavigationParams: {
           serviceName: serviceName,
@@ -49,6 +51,7 @@
     {%- else -%}
       {{ govukOneLoginServiceHeader({ 
         serviceName: serviceName, 
+        lng: lng,
         serviceUrl: serviceUrl,
         signOutLink: signOutLink,
         oneLoginLink: oneLoginLink,
