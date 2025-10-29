@@ -91,6 +91,25 @@
 
     {{ govukOneLoginServiceHeader({ signOutLink: signOutLink, serviceNavigationParams: { navigation: navigation, serviceName: serviceName, navigationLabel: "Test" } }) }}
 
+
+    <div class="govuk-!-padding-3 govuk-!-margin-top-8">
+      <h2 class="govuk-heading-m">3. With Welsh translation for the "Sign out" link</h2>
+
+      <details class="govuk-details">
+        <summary>Nunjucks code</summary>
+        <pre><code>
+        {% raw %}
+          {{ govukOneLoginServiceHeader({
+            lng: "cy"
+          })}}
+        {% endraw %}
+        </code></pre>
+      </details>
+      <p class="govuk-body"> The code above is for reference for Nunjucks users only – if you do not use Nunjucks in your service please follow the <a class="govuk-link" href="https://github.com/govuk-one-login/service-header/tree/main?tab=readme-ov-file#how-to-start-using-the-header-in-your-service"> instructions to copy the header into your service</a>.</p>
+    </div>
+
+    {{ govukOneLoginServiceHeader({ lng: "cy" }) }}
+
     <script type="module" src="./scripts/service-header.js"></script>
     <script type="module" src="../node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.js"></script>
     <script type="module">

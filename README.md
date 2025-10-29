@@ -248,7 +248,7 @@ The header degrades gracefully in the absence of Javascript (for example, if a u
 
 ## Translating the header content into other languages
 
-The content for the header is currently only provided in English. A Welsh translation will be available soon.
+Nunjucks users should be able to implement the Welsh version of the header by specifying `lng: cy` in the component options. The Welsh version of the "Sign out" link should then read "Allgofnodi", and the links leading to the GOV.UK One Login Home area should have a `?lng=cy` query string parameter.
 
-If you need to translate the header into other languages, please consider sharing your translation with [the GOV.UK One Login team](#contact) so it can be used by other services.
+Users who rely on copying the header HTML into their service should implement logic to update the sign out link to "Allgofnodi" in the Welsh version of their service. 
 
