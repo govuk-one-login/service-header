@@ -56,7 +56,7 @@ To overwrite the destination for the One Login link in the header, use <code>&lb
 
 To overwrite the destination for the sign out link in the header, use <code>&lbrace;&percnt; set signOutLink = "https://example.service.gov.uk/sign-out" &percnt;&rbrace;</code>. The link goes to "https://home.account.gov.uk/sign-out" by default.
 
-To set header language to Welsh, use {% set lng = "cy" %}. 
+To set header language to Welsh, use &lbrace;&percnt; set lng = "cy" &percnt;&rbrace;. 
 
 Add the `set` statements listed above after the `extends` line at the top of the file.
 
