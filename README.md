@@ -176,10 +176,12 @@ This is to indicate the user’s position in the navigation if they can’t perc
 
 The One Login header contains a ‘Sign out’ link. You’ll need to update this so that it calls the endpoint your service uses to sign users out.
 
-There’s documentation about how to sign users out in the main [GOV.UK One Login technical documentation](https://docs.sign-in.service.gov.uk/integrate-with-integration-environment/log-your-users-out/). It covers how to:
+There’s documentation about how to sign users out in the main [GOV.UK One Login technical documentation](https://docs.sign-in.service.gov.uk/integrate-with-integration-environment/managing-your-users-sessions/#log-your-user-out-of-gov-uk-one-login). It covers how to:
 
 + request a redirect back to your service after your user has been signed out of One Login
 + subscribe to ‘backchannel log out’ notifications
+
+If your service uses a form with a POST request to sign users out, an example of the service header using a sign out form instead of a link can be seen on the [header preview page](https://github.com/govuk-one-login/service-header/blob/main/dist/preview.html) ([source code](https://github.com/govuk-one-login/service-header/blob/main/dist/preview.html)). 
 
 
 ## Using the styles for the header in your service
