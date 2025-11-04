@@ -110,6 +110,28 @@
 
     {{ govukOneLoginServiceHeader({ lng: "cy" }) }}
 
+    <div class="govuk-!-padding-3 govuk-!-margin-top-8">
+      <h2 class="govuk-heading-m">4. With "Sign out" form</h2>
+
+      <details class="govuk-details">
+        <summary>Nunjucks code</summary>
+        <pre><code>
+        {% raw %}
+          {{ govukOneLoginServiceHeader({
+            signOutFormAction: "/test-form-action",
+            signOutFormHiddenInputsHtml: '<input type="hidden" name="csrfToken" value="exampleCsrfToken12345">'
+          })}}
+        {% endraw %}
+        </code></pre>
+      </details>
+      <p class="govuk-body"> The code above is for reference for Nunjucks users only – if you do not use Nunjucks in your service please follow the <a class="govuk-link" href="https://github.com/govuk-one-login/service-header/tree/main?tab=readme-ov-file#how-to-start-using-the-header-in-your-service"> instructions to copy the header into your service</a>.</p>
+    </div>
+
+    {{ govukOneLoginServiceHeader({
+      signOutFormAction: "/test-form-action",
+      signOutFormHiddenInputsHtml: '<input type="hidden" name="csrfToken" value="exampleCsrfToken12345">'
+    })}}
+
     <script type="module" src="./scripts/service-header.js"></script>
     <script type="module" src="../node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.js"></script>
     <script type="module">

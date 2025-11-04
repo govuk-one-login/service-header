@@ -5,6 +5,9 @@ Component options:
   - lng (string): Option to overwrite the default language. Defaults to English unless "cy" is specified for Welsh.
   - homepageLink (string): Option to overwrite the default GOV.UK link. Defaults to "https://home.account.gov.uk/"
   - serviceNavigationParams (object): Options for the service navigation component. Accepts all the options listed under "Nunjucks macro options" on the Design System [service navigation component page](https://design-system.service.gov.uk/components/service-navigation/). The service nav bar will not render unless serviceName is specified
+  - signOutFormAction (string): For services that require a POST request to sign out, this option allows you to set the form action URL for the sign out form. If this option is provided, the "Sign out" link will be rendered as a form that submits a POST request to the specified URL. Overrules `signOutLink` option if both are provided.
+  - signOutFormHiddenInputsHtml (html string): Option to add hidden input fields to the sign out form. This is useful for including CSRF tokens or other necessary hidden data when using a POST request for signing out.
+
 #}
 {%- from "node_modules/govuk-frontend/dist/govuk/components/service-navigation/macro.njk" import govukServiceNavigation -%}
 {%- set lngQueryString = "?lng=cy" if (params.lng === "cy") else "" -%}
@@ -69,17 +72,26 @@ Component options:
         <ul class="rebranded-one-login-header__nav__list">
           <li class="rebranded-one-login-header__nav__list-item">
             <a class="rebranded-one-login-header__nav__link" href="{{ oneLoginLink }}">
-              <span class="rebranded-one-login-header__nav__link-content">
+              <span class="rebranded-one-login-header__nav__text">
                 {{- oneLoginIcon("nav") }}
                 GOV.UK One Login
               </span>
             </a>
           </li>
           <li class="rebranded-one-login-header__nav__list-item">
+            {% if params.signOutFormAction %}
+              <form method="post" class="rebranded-one-login-header__nav__form" action="{{ params.signOutFormAction }}">
+                {{ params.signOutFormHiddenInputsHtml | safe }}
+                <button type="submit" class="rebranded-one-login-header__nav__button">
+                  <span class="rebranded-one-login-header__nav__text rebranded-one-login-header__nav__text--sign-out">{{ signOutLinkText }}</span>
+                </button>
+              </form>
+            {% else %}
             <!-- REPLACE SIGN OUT URL PLACEHOLDER WITH SIGN OUT PAGE FOR YOUR SERVICE -->
             <a class="rebranded-one-login-header__nav__link" href="{{ signOutLink }}">
-              <span class="rebranded-one-login-header__nav__link-content rebranded-one-login-header__nav__link-content--sign-out">{{ signOutLinkText }}</span>
+              <span class="rebranded-one-login-header__nav__text rebranded-one-login-header__nav__text--sign-out">{{ signOutLinkText }}</span>
             </a>
+            {% endif %}
           </li>
         </ul>
       </nav>

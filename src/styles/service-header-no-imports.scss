@@ -6,6 +6,32 @@ $block-link-spacing: govuk-spacing(3);
 $logo-height: 30px;
 $toggle-border-height: 3px;
 
+@mixin underline-hover-focus($type) {
+  display: block;
+   @if $type == 'focus' {
+      background-color: $govuk-focus-text-colour;
+      @media (forced-colors: active) {
+        background-color: linktext;
+      }
+   } @else if $type == 'hover' {
+      background-color: govuk-colour("white");
+      @media (forced-colors: active) {
+        background-color: linktext;
+      }
+   }
+}
+
+@mixin link-underline-hover {
+  &:hover {
+    text-decoration: underline;
+    text-decoration-thickness: $govuk-header-link-underline-thickness;
+
+    @if $govuk-link-underline-offset {
+      text-underline-offset: $govuk-link-underline-offset;
+    }
+  }
+}
+ 
 .rebranded-one-login-header {
   @include govuk-font($size: 16);
   color: govuk-colour("white");
@@ -99,16 +125,8 @@ $toggle-border-height: 3px;
     @include govuk-typography-common;
     @include govuk-link-style-inverse;
     text-decoration: none;
-  
-    &:hover {
-      text-decoration: underline;
-      text-decoration-thickness: $govuk-header-link-underline-thickness;
-  
-      @if $govuk-link-underline-offset {
-        text-underline-offset: $govuk-link-underline-offset;
-      }
-    }
-  
+    @include link-underline-hover;
+
     &:focus {
       @include govuk-focused-text;
     }
@@ -123,7 +141,7 @@ $toggle-border-height: 3px;
   }
 
   &:not(:focus){
-    background-color:$govuk-brand-colour;
+    background-color: $govuk-brand-colour;
   }
 }
 
@@ -141,7 +159,54 @@ $toggle-border-height: 3px;
   } 
 }
 
-.rebranded-one-login-header__nav__link {
+.rebranded-one-login-header__nav__button {
+  border: 0 none;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  @include govuk-font($size: 16);
+  color: $govuk-link-colour;
+
+  @include govuk-media-query ($until: tablet) {
+    @include link-underline-hover;
+  }
+
+  &:focus {
+    @include govuk-focused-text;
+    outline: none;
+
+    @media (forced-colors: active) {
+      outline: 3px solid transparent;
+    }
+  }
+
+  @include govuk-media-query ($from: tablet) {
+    color: govuk-colour("white");
+    position: relative;
+    padding: $block-link-spacing 0;
+
+    &:focus {
+      box-shadow: none;
+
+      &:after,
+      &:hover:after {
+        @include underline-hover-focus('focus');
+      }
+    }
+
+    &:hover {
+      text-decoration: none;
+
+      &:after {
+        @include underline-hover-focus('hover');
+      }
+    }
+  }
+}
+
+.rebranded-one-login-header__nav__link,
+.rebranded-one-login-header__nav__button {
   font-weight: bold;
 
   @include govuk-media-query ($from: tablet) {
@@ -157,7 +222,11 @@ $toggle-border-height: 3px;
       bottom: 0;
       left: $block-link-spacing;
     }
+  }
+}
 
+.rebranded-one-login-header__nav__link {
+  @include govuk-media-query ($from: tablet) {
     // this degree of specificity is only needed in order to overrule DS rules
     &:link:link,
     &:link:visited,
@@ -168,8 +237,7 @@ $toggle-border-height: 3px;
         text-decoration: none;
 
         &:after {
-          display: block;
-          background-color: govuk-colour("white");
+          @include underline-hover-focus('hover');
         }
       }
 
@@ -177,8 +245,7 @@ $toggle-border-height: 3px;
         box-shadow: none;
 
         &:after {
-          display: block;
-          background-color: $govuk-focus-text-colour;
+          @include underline-hover-focus('focus');
         }
       }
     }
@@ -197,7 +264,13 @@ $toggle-border-height: 3px;
   }
 }
 
-.rebranded-one-login-header__nav__link-content {
+.rebranded-one-login-header__nav__form {
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
+.rebranded-one-login-header__nav__text {
   @include govuk-media-query ($from: tablet) {
     padding: 0 $block-link-spacing;
     display: flex;
