@@ -4,6 +4,8 @@ Use [semver guidelines](https://semver.org/).
 
 ## Unreleased
 
+## 4.1.0
+
 - MINOR: OLH-3288: Add Welsh language translation for Sign out link ([PR #86](https://github.com/govuk-one-login/service-header/pull/86))
 - MINOR: OLH-3349: Support Sign out as POST request and minor a11y tweak ([PR #88](https://github.com/govuk-one-login/service-header/pull/88))
 
