@@ -29,21 +29,14 @@ There is a `watch-sass` script which is fairly self-explanatory.
 If you're not sure which label is most appropriate, please read the guidance on [semver guidelines](https://semver.org/).
 You don't need to document any change that would be irrelevant for an external consumer of the component (e.g. changes to internal documentation).
 
-## Updating the version of the header package
+## Publishing a new version to NPM
 
-On a new branch:
+The package is automatically published to NPM when a new release is created on GitHub.
 
-- run `npm version major | minor | patch` (depending on the nature of the unreleased changes)
-- update the version in the CHANGELOG
+To publish a new version:
 
-Create a new PR with the changes above.
-
-### Why is this needed
-
-The original intention was to eventually publish the header to npm, but this hasn't taken place yet.
-Therefore the current recommendation for consumers of the service header is to copy the assets from the `/dist` folder into their own applications.
-
-However, the `npm install` command allows installation direct from a GitHub repo, so long as the repo has the correct format.
-Some may opt to install the header using `npm` in favour of copying the files manually. 
-
-For these users in particular (but all users, in general), it is useful to maintain a versioned change log on the header component.
+1. On a new branch, run `npm version major | minor | patch` (depending on the nature of the unreleased changes)
+2. Update the version in the CHANGELOG
+3. Create a PR with the changes above and merge it
+4. Create a new release in the GitHub interface with a tag matching the version (e.g., `v5.0.1`)
+5. The GitHub Action will automatically build and publish the package to NPM
