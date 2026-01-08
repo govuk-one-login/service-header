@@ -11,14 +11,14 @@
   "templates": [
     {
       "name": "Page with GOVUK One Login header",
-      "path": "/dist/nunjucks/di-govuk-one-login-service-header/templates/service-header.njk",
+      "path": "/dist/nunjucks/service-header/templates/service-header.njk",
       "type": "nunjucks"
     }
   ],
   "nunjucksMacros": [
     {
       "macroName": "govukOneLoginServiceHeader",
-      "importFrom": "di-govuk-one-login-service-header/service-header.njk"
+      "importFrom": "service-header/service-header.njk"
     }
   ],
   "pluginDependencies": [{
