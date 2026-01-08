@@ -63,7 +63,7 @@ Add the `set` statements listed above after the `extends` line at the top of the
 ## Use the header component in an existing page or template
 
 If instead of using the template installation described above, you want to include the header component into one of your existing layouts or templates, the component can be imported using the syntax: 
-<code>&lbrace;&percnt; from "ervice-header/service-header.njk" import govukOneLoginServiceHeader &percnt;&rbrace;</code>
+<code>&lbrace;&percnt; from "service-header/service-header.njk" import govukOneLoginServiceHeader &percnt;&rbrace;</code>
 
 The component can then be used like so: 
 <pre><code>

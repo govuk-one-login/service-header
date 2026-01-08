@@ -56,15 +56,15 @@ Instructions on how the header can be installed in your Prototype Kit project ar
 
 ## How to start using the header in your service
 
-> NOTE: If your service uses Nunjucks, you can use NPM to install the header direct from GitHub by running
+> NOTE: If your service uses Nunjucks, you can use NPM to install the header
 >
 > ```sh
-> npm install github:govuk-one-login/service-header
+> npm install @govuk-one-login/service-header
 > ```
 >
 >or to install a specific version from the tag
 > ```sh
-> npm install github:govuk-one-login/service-header@3.1.1
+> npm install @govuk-one-login/service-header@5.0.0
 > ```
 >
 > Then import the Nunjucks macro directly from `/service-header/service-header.njk`. Some of the instructions below will seem redundant in your case.
