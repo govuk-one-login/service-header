@@ -67,7 +67,7 @@ Instructions on how the header can be installed in your Prototype Kit project ar
 > npm install github:govuk-one-login/service-header@3.1.1
 > ```
 >
-> Then import the Nunjucks macro directly from `/di-govuk-one-login-service-header/service-header.njk`. Some of the instructions below will seem redundant in your case.
+> Then import the Nunjucks macro directly from `/service-header/service-header.njk`. Some of the instructions below will seem redundant in your case.
 
 This repository contains:
 
