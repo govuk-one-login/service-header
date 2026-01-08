@@ -11,7 +11,7 @@ npm uninstall govuk-one-login-service-header
 npm install @govuk-one-login/service-header
 ```
 
-You'll need to update the componenent import path from
+You'll need to update the component import path from
 
 ```
 {% from "di-govuk-one-login-service-header/service-header.njk" import govukOneLoginServiceHeader %}
