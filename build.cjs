@@ -46,7 +46,7 @@ fs.writeFile(__dirname + '/dist/html/header.html', headerHtml, err => {
   }
 });
 
-fs.cp('src/nunjucks', 'dist/nunjucks/di-govuk-one-login-service-header', { recursive: true } , function (err) {
+fs.cp('src/nunjucks', 'dist/nunjucks/service-header', { recursive: true } , function (err) {
   if (err) throw err;
   console.log('copied njk templates to dist folder');
 })

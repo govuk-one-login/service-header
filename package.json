@@ -1,6 +1,6 @@
 {
-  "name": "govuk-one-login-service-header",
-  "version": "4.1.0",
+  "name": "@govuk-one-login/service-header",
+  "version": "5.0.0",
   "description": "A header for services using GOV.UK One Login",
   "main": "dist/scripts/service-header.js",
   "type": "module",
@@ -27,5 +27,8 @@
   "dependencies": {
     "govuk-frontend": "^5.13.0",
     "nunjucks": "^3.2.4"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
