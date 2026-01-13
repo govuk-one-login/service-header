@@ -14,7 +14,7 @@ It's a 'beta' component and we're interested to hear from service teams about ho
 
 The header works best if your service uses [GOV.UK Frontend](https://frontend.design-system.service.gov.uk/).
 
-You can [preview the header in your browser](https://govuk-one-login.github.io/service-header/dist/preview.html).
+You can [preview the header in your browser](https://govuk-one-login.github.io/service-header/preview.html).
 
 ![A screenshot of the GOV.UK One Login header. It has 2 sections: a blue section at the top showing the GOV.UK crown logo, a link saying "GOV.UK One Login", which takes you into your account, and a "Sign out" button. Below this section is a grey section, displaying the name of a government service and internal links within that service. Those just have placeholder text, so read "Service name" and "Service link 1" and so on. The black and grey sections are divided by a blue bar, like on the GOV.UK homepage.](docs/assets/service-header.png)
 
