@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Service header – usage example</title>
-    <link rel="stylesheet" href="../node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.css">
+    <link rel="stylesheet" href="./govuk/govuk-frontend.min.css">
     <link rel="stylesheet" href="./styles/service-header.css">
     <style>
       @font-face {
@@ -516,14 +516,14 @@ data-module="govuk-service-navigation"
 
 
     <script type="module" src="./scripts/service-header.js"></script>
-    <script type="module" src="../node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.js"></script>
+    <script type="module" src="./govuk/govuk-frontend.min.js"></script>
     <script type="module">
       import { initCrossServiceHeader } from './scripts/service-header.js';
       initCrossServiceHeader();
     </script>
 
     <script type="module">
-      import { ServiceNavigation, createAll } from '../node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.js';
+      import { ServiceNavigation, createAll } from './govuk/govuk-frontend.min.js';
       createAll(ServiceNavigation);
     </script>
   </body>

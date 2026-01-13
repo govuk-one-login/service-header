@@ -14,7 +14,8 @@
     "dev": "nodemon --watch src -e njk,js,scss --exec \"npm run build-all && http-server\"",
     "build-sass": "sass --no-source-map --load-path=node_modules/govuk-frontend/dist src/styles/service-header.scss dist/styles/service-header.css && sass --no-source-map --style=compressed --load-path=node_modules/govuk-frontend/dist src/styles/service-header.scss dist/styles/service-header.min.css",
     "watch-sass": "sass --no-source-map --load-path=node_modules/govuk-frontend/dist --watch src/styles/service-header.scss dist/styles/service-header.css",
-    "build-all": "npm run build-sass && npm run build-templates",
+    "copy-govuk-assets": "cp -a node_modules/govuk-frontend/dist/govuk dist/",
+    "build-all": "npm run build-sass && npm run build-templates && npm run copy-govuk-assets",
     "prepare": "husky"
   },
   "author": "",
