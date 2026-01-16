@@ -13,15 +13,11 @@ npm install @govuk-one-login/service-header
 
 You'll need to update the import path from
 
-```
-{% from "di-govuk-one-login-service-header/service-header.njk" import govukOneLoginServiceHeader %}
-```
+<code>&lbrace;&percnt; from "di-govuk-one-login-service-header/service-header.njk" import govukOneLoginServiceHeader &percnt;&rbrace;</code>
 
 To
 
-```
-{% from "service-header/service-header.njk" import govukOneLoginServiceHeader %}
-```
+<code>&lbrace;&percnt; from "service-header/service-header.njk" import govukOneLoginServiceHeader &percnt;&rbrace;</code>
 
 in all your templates that import the header component.
 
