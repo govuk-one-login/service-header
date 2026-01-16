@@ -51,11 +51,6 @@ fs.cp('src/nunjucks', 'dist/nunjucks/service-header', { recursive: true } , func
   console.log('copied njk templates to dist folder');
 })
 
-fs.cp('src/scripts/service-header.js', 'dist/scripts/service-header.js', { recursive: true } , function (err) {
-  if (err) throw err;
-  console.log('copied main header script to dist folder');
-})
-
 fs.cp('src/scripts/service-header.js', 'dist/scripts/service-header.js', function (err) {
   fs.appendFileSync('dist/scripts/service-header.js',fs.readFileSync("src/scripts/export.js").toString(), (err) => {
     if (err) {
