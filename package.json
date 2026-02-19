@@ -27,7 +27,7 @@
     "sass": "^1.97.1"
   },
   "dependencies": {
-    "govuk-frontend": "^5.13.0",
+    "govuk-frontend": "^6.0.0",
     "nunjucks": "^3.2.4"
   },
   "publishConfig": {
