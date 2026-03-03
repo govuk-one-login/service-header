@@ -54,8 +54,10 @@
         </code></pre>
       </details>
     </div>
+    <header>
 
     {{ govukOneLoginServiceHeader({ signOutLink: "/test"}) }}
+    </header>
 
     <div class="govuk-!-padding-3 govuk-!-margin-top-8">
       <h2 class="govuk-heading-m">2. With Service Navigation component </h2>
@@ -88,8 +90,10 @@
       </details>
       <p class="govuk-body"> The code above is for reference for Nunjucks users only – if you do not use Nunjucks in your service please follow the <a class="govuk-link" href="https://github.com/govuk-one-login/service-header/tree/main?tab=readme-ov-file#how-to-start-using-the-header-in-your-service"> instructions to copy the header into your service</a>.</p>
     </div>
+    <header>
 
     {{ govukOneLoginServiceHeader({ signOutLink: signOutLink, serviceNavigationParams: { navigation: navigation, serviceName: serviceName, navigationLabel: "Test" } }) }}
+    </header>
 
 
     <div class="govuk-!-padding-3 govuk-!-margin-top-8">
@@ -107,8 +111,9 @@
       </details>
       <p class="govuk-body"> The code above is for reference for Nunjucks users only – if you do not use Nunjucks in your service please follow the <a class="govuk-link" href="https://github.com/govuk-one-login/service-header/tree/main?tab=readme-ov-file#how-to-start-using-the-header-in-your-service"> instructions to copy the header into your service</a>.</p>
     </div>
-
-    {{ govukOneLoginServiceHeader({ lng: "cy" }) }}
+    <header>
+      {{ govukOneLoginServiceHeader({ lng: "cy" }) }}
+    </header>
 
     <div class="govuk-!-padding-3 govuk-!-margin-top-8">
       <h2 class="govuk-heading-m">4. With "Sign out" form</h2>
@@ -126,11 +131,13 @@
       </details>
       <p class="govuk-body"> The code above is for reference for Nunjucks users only – if you do not use Nunjucks in your service please follow the <a class="govuk-link" href="https://github.com/govuk-one-login/service-header/tree/main?tab=readme-ov-file#how-to-start-using-the-header-in-your-service"> instructions to copy the header into your service</a>.</p>
     </div>
+    <header>
 
     {{ govukOneLoginServiceHeader({
       signOutFormAction: "/test-form-action",
       signOutFormHiddenInputsHtml: '<input type="hidden" name="csrfToken" value="exampleCsrfToken12345">'
     })}}
+    </header>
 
     <script type="module" src="./scripts/service-header.js"></script>
     <script type="module" src="./govuk/govuk-frontend.min.js"></script>
