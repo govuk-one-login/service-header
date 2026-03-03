@@ -4,6 +4,8 @@ Use [semver guidelines](https://semver.org/).
 
 ## Unreleased
 
+- Update govuk-frontend to v6.1.0 ([PR #114](https://github.com/govuk-one-login/service-header/pull/114))
+
 ## 5.0.0
 
 - MAJOR: Rename the package to `@govuk-one-login/service-header` to publish to NPM. See the [upgrade notes](docs/v5-upgrade-notes.md) for more information. ([PR #100](https://github.com/govuk-one-login/service-header/pull/100))
