@@ -27,10 +27,12 @@
     "sass": "^1.97.1"
   },
   "dependencies": {
-    "govuk-frontend": "^6.1.0",
     "nunjucks": "^3.2.4"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "peerDependencies": {
+    "govuk-frontend": "^6.1.0"
   }
 }
