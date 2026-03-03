@@ -1,7 +1,7 @@
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 {% from "../service-header.njk" import govukOneLoginServiceHeader %}
 
-{% block header %}
+{% block govukHeader %}
     {%- if navigationItems -%}
       {%- set navArr = [] -%}
       {%- for item in navigationItems -%}

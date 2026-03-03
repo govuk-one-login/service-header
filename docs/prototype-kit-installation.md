@@ -67,7 +67,7 @@ If instead of using the template installation described above, you want to inclu
 
 The component can then be used like so: 
 <pre><code>
-&lbrace;&percnt; block header &percnt;&rbrace;
+&lbrace;&percnt; block govukHeader &percnt;&rbrace;
   &lbrace;&lbrace; govukOneLoginServiceHeader({
     signOutLink: "/test-signout",
     oneLoginLink: "/test-one-login",
