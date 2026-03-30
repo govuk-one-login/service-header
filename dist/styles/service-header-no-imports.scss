@@ -9,7 +9,7 @@ $toggle-border-height: 3px;
 @mixin underline-hover-focus($type) {
   display: block;
    @if $type == 'focus' {
-      background-color: $govuk-focus-text-colour;
+      background-color: govuk-functional-colour(focus-text);
       @media (forced-colors: active) {
         background-color: linktext;
       }
@@ -36,7 +36,7 @@ $toggle-border-height: 3px;
   @include govuk-font($size: 16);
   color: govuk-colour("white");
   position: relative;
-  background: $govuk-brand-colour;
+  background: govuk-functional-colour(brand);
 }
 
 .rebranded-one-login-header__container {
@@ -93,7 +93,7 @@ $toggle-border-height: 3px;
     &:focus {
       // Replicate the focus box shadow but without the -2px y-offset of the first yellow shadow
       // This is to stop the logo getting cut off by the box shadow when focused on above a product name
-      box-shadow: 0 0 $govuk-focus-colour;
+      box-shadow: 0 0 govuk-functional-colour(focus);
     }
   }
 
@@ -141,7 +141,7 @@ $toggle-border-height: 3px;
   }
 
   &:not(:focus){
-    background-color: $govuk-brand-colour;
+    background-color: govuk-functional-colour(brand);
   }
 }
 
@@ -166,7 +166,7 @@ $toggle-border-height: 3px;
   padding: 0;
   margin: 0;
   @include govuk-font($size: 16);
-  color: $govuk-link-colour;
+  color: govuk-functional-colour(link);
 
   @include govuk-media-query ($until: tablet) {
     @include link-underline-hover;
@@ -256,9 +256,9 @@ $toggle-border-height: 3px;
     &:link:visited,
     &:visited:link,
     &:visited:visited {
-      color: $govuk-brand-colour;
+      color: govuk-functional-colour(brand);
       &:focus {
-        color: $govuk-focus-text-colour;
+        color: govuk-functional-colour(focus-text);
       }
     }
   }
@@ -295,7 +295,7 @@ $toggle-border-height: 3px;
 
   @include govuk-media-query ($until: tablet) {
     background-color: govuk-colour("white");
-    color: $govuk-brand-colour;
+    color: govuk-functional-colour(brand);
     margin-right: -(govuk-spacing(3));
     margin-left: -(govuk-spacing(3));
     padding: 0 govuk-spacing(3);
@@ -331,7 +331,7 @@ $toggle-border-height: 3px;
     padding: govuk-spacing(3) 0;
 
     &:not(:last-child) {
-      border-bottom: 1px solid govuk-colour("mid-grey");
+      border-bottom: 1px solid govuk-colour("black", $variant: 'tint-80');
     }
   }
 }
@@ -361,8 +361,8 @@ $toggle-border-height: 3px;
   margin-right: -(govuk-spacing(3));
 
   @mixin toggle-button-focus {
-    color: $govuk-focus-text-colour;
-    background-color: $govuk-focus-colour;
+    color: govuk-functional-colour(focus-text);
+    background-color: govuk-functional-colour(focus);
     outline: 3px solid transparent;
   }
 
@@ -385,7 +385,7 @@ $toggle-border-height: 3px;
 
   &.rebranded-cross-service-header__toggle--open {
     background-color: govuk-colour("white");
-    color: $govuk-brand-colour;
+    color: govuk-functional-colour(brand);
   }
 }
 
@@ -435,14 +435,14 @@ $toggle-border-height: 3px;
         
     .rebranded-cross-service-header__toggle--open &,
     .rebranded-cross-service-header__toggle--open:hover & {
-      background-color: $govuk-brand-colour;
+      background-color: govuk-functional-colour(brand);
     }
 
     .rebranded-cross-service-header__toggle:focus &,
     .rebranded-cross-service-header__toggle:focus-visible & {
-      background-color: $govuk-focus-text-colour;
+      background-color: govuk-functional-colour(focus-text);
       &:hover {
-        background-color: $govuk-focus-text-colour;
+        background-color: govuk-functional-colour(focus-text);
       }
     }
   }

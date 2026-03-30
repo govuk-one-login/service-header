@@ -23,6 +23,6 @@
   ],
   "pluginDependencies": [{
     "packageName": "govuk-frontend",
-    "minVersion": "5.9.0"
+    "minVersion": "6.1.0"
   }]
 }
