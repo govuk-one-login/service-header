@@ -56,7 +56,11 @@ Instructions on how the header can be installed in your Prototype Kit project ar
 
 ## How to start using the header in your service
 
-1. If your service uses Nunjucks
+### If your service does not use Nunjucks
+
+If your service does not use Nunjucks, download and unzip the source code attached to the most recent [release](https://github.com/govuk-one-login/service-header/releases). The relevant files are found in the `dist` folder. 
+
+### If your service uses Nunjucks
 
 > If your service uses Nunjucks, you can use NPM to install the header
 >
@@ -71,9 +75,7 @@ Instructions on how the header can be installed in your Prototype Kit project ar
 >
 > Then import the Nunjucks macro directly from `/service-header/service-header.njk`. Some of the instructions below will seem redundant in your case.
 
-2. If your service does not use Nunjucks
-
-If your service does not use Nunjucks, download and unzip the source code attached to the most recent [release](https://github.com/govuk-one-login/service-header/releases). The relevant files are found in the `dist` folder. 
+### Technical overview
 
 The package contains:
 
