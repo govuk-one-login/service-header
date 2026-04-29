@@ -56,7 +56,9 @@ Instructions on how the header can be installed in your Prototype Kit project ar
 
 ## How to start using the header in your service
 
-> NOTE: If your service uses Nunjucks, you can use NPM to install the header
+1. If your service uses Nunjucks
+
+> If your service uses Nunjucks, you can use NPM to install the header
 >
 > ```sh
 > npm install @govuk-one-login/service-header
@@ -69,10 +71,14 @@ Instructions on how the header can be installed in your Prototype Kit project ar
 >
 > Then import the Nunjucks macro directly from `/service-header/service-header.njk`. Some of the instructions below will seem redundant in your case.
 
-This repository contains:
+2. If your service does not use Nunjucks
+
+If your service does not use Nunjucks, download and unzip the source code attached to the most recent [release](https://github.com/govuk-one-login/service-header/releases). The relevant files are found in the `dist` folder. 
+
+The package contains:
 
 + Nunjucks for the GOV.UK One Login service header component 
-+ plain HTML for the header - this is compiled from the Nunjucks into the `/dist/html` directory
++ plain HTML for the header - this is compiled from the Nunjucks into the `dist/html` directory
 + Sass files for compiling CSS files to style the header (this covers both navigation bars)
 + plain CSS, for services who are not using Sass
 + a Javascript file which enables 'drop down' behaviour for the GOV.UK One Login and Sign out links on small screens
@@ -181,7 +187,7 @@ There’s documentation about how to sign users out in the main [GOV.UK One Logi
 + request a redirect back to your service after your user has been signed out of One Login
 + subscribe to ‘backchannel log out’ notifications
 
-If your service uses a form with a POST request to sign users out, an example of the service header using a sign out form instead of a link can be seen on the [header preview page](https://github.com/govuk-one-login/service-header/blob/main/dist/preview.html) ([source code](https://github.com/govuk-one-login/service-header/blob/main/dist/preview.html)). 
+If your service uses a form with a POST request to sign users out, an example of the service header using a sign out form instead of a link can be seen on the [header preview page](https://govuk-one-login.github.io/service-header/preview.html). 
 
 
 ## Using the styles for the header in your service
@@ -202,13 +208,13 @@ Alternatively, you can edit the header’s Sass import paths to specify `node_mo
 
 ### If you use the GOV.UK Frontend pre-compiled CSS files
 
-Copy the [pre-compiled CSS files](https://github.com/govuk-one-login/service-header/blob/main/dist/styles/service-header.css) from this repository into your service's pre-compiled CSS.
+Copy the pre-compiled CSS files(`dist/styles/service-header.css`) from the package into your service's pre-compiled CSS.
 
-The pre-compiled CSS files in this repository duplicate some code from the GOV.UK Frontend CSS files. The header will still be styled correctly but your CSS files will be slightly larger than they need to be.
+The pre-compiled CSS files duplicate some code from the GOV.UK Frontend CSS files. The header will still be styled correctly but your CSS files will be slightly larger than they need to be.
 
 ### If you do not use GOV.UK Frontend
 
-Copy the [pre-compiled CSS files](https://github.com/govuk-one-login/service-header/blob/main/dist/styles/service-header.css) from this repository into your service's CSS.
+Copy the pre-compiled CSS files(`dist/styles/service-header.css`) from this repository into your service's CSS.
 
 The pre-compiled CSS files contain all the CSS you need to style the header.
 
@@ -224,7 +230,7 @@ There’s [more information about using GDS Transport](https://design-system.ser
 
 The GOV.UK One Login service header uses Javascript to enable 'drop down' behaviour for the header on small screen sizes. The header doesn't rely on Javascript to do anything else.
 
-Copy the code from one of this repository's [Javascript files](https://github.com/govuk-one-login/service-header/blob/main/dist/scripts) into your service's Javascript implementation. 
+Copy the code from one of this package's Javascript files(`dist/scripts`) into your service's Javascript implementation. 
 
 You will only need one of the files:
 
@@ -239,7 +245,7 @@ The recommendation is to import `service-header.js` and run the initialisation f
 
 If you choose to use `service-header.js`, you will need to initialise the header by importing the `initCrossServiceHeader` function from the file and running `initCrossServiceHeader()` in your code.
 
-A basic working example using `service-header.js` can be seen on the [header preview page](https://github.com/govuk-one-login/service-header/blob/main/dist/preview.html).
+A basic working example using `service-header.js` can be seen on the [header preview page](https://govuk-one-login.github.io/service-header/preview.html).
 
 ### If you don’t use the header’s Javascript
 
