@@ -60,44 +60,7 @@
     </header>
 
     <div class="govuk-!-padding-3 govuk-!-margin-top-8">
-      <h2 class="govuk-heading-m">2. With Service Navigation component </h2>
-
-      <details class="govuk-details">
-        <summary>Nunjucks code</summary>
-        <pre><code>
-        {% raw %}
-          {{ govukOneLoginServiceHeader({
-            signOutLink:  "/test", 
-            serviceNavigationParams: { 
-              navigation: [
-              {
-                href: "#navigation1", 
-                text: "Navigation item 1" 
-              },{
-                href: "#navigation2", 
-                text: "Navigation item 2",
-                active: true
-              },{
-                href: "#navigation3", 
-                text: "Navigation item 3"
-              }], 
-              serviceName: "A very useful service with a relatively long name", 
-              navigationLabel: "Test label" 
-            }
-          })}}
-        {% endraw %}
-        </code></pre>
-      </details>
-      <p class="govuk-body"> The code above is for reference for Nunjucks users only – if you do not use Nunjucks in your service please follow the <a class="govuk-link" href="https://github.com/govuk-one-login/service-header/tree/main?tab=readme-ov-file#how-to-start-using-the-header-in-your-service"> instructions to copy the header into your service</a>.</p>
-    </div>
-    <header>
-
-    {{ govukOneLoginServiceHeader({ signOutLink: signOutLink, serviceNavigationParams: { navigation: navigation, serviceName: serviceName, navigationLabel: "Test" } }) }}
-    </header>
-
-
-    <div class="govuk-!-padding-3 govuk-!-margin-top-8">
-      <h2 class="govuk-heading-m">3. With Welsh translation for the "Sign out" link</h2>
+      <h2 class="govuk-heading-m">2. With Welsh translation for the "Sign out" link</h2>
 
       <details class="govuk-details">
         <summary>Nunjucks code</summary>
@@ -124,7 +87,7 @@
         {% raw %}
           {{ govukOneLoginServiceHeader({
             signOutFormAction: "/test-form-action",
-            signOutFormHiddenInputsHtml: '<input type="hidden" name="csrfToken" value="exampleCsrfToken12345">'
+            signOutFormHiddenInputsHtml: '&lt;input type="hidden" name="csrfToken" value="exampleCsrfToken12345"&gt;'
           })}}
         {% endraw %}
         </code></pre>

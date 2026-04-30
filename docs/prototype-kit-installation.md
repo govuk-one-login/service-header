@@ -71,24 +71,44 @@ The component can then be used like so:
   &lbrace;&lbrace; govukOneLoginServiceHeader({
     signOutLink: "/test-signout",
     oneLoginLink: "/test-one-login",
-    lng: "cy",
-    serviceNavigationParams: { 
-      navigation: [
-      {
-        href: "#navigation1", 
-        text: "Navigation item 1" 
-      },{
-        href: "#navigation2", 
-        text: "Navigation item 2",
-        active: true
-      },{
-        href: "#navigation3", 
-        text: "Navigation item 3"
-      }], 
-      serviceName: "Test service name",
-      navigationLabel: "Test label" 
-    }
+    lng: "cy"
   }) &rbrace;&rbrace;
+&lbrace;&percnt; endblock &percnt;&rbrace;
+</code></pre>
+
+As of service header version 6.0.0, the service navigation component has been decoupled from the GOV.UK One Login service header.
+
+If your service requires a service navigation, please import the [service navigation component](https://design-system.service.gov.uk/components/service-navigation/) from the Design System.
+
+Add it separately, after the `govukOneLoginServiceHeader`, as follows:
+
+<pre><code>
+&lbrace;&percnt; block govukHeader &percnt;&rbrace;
+  &lbrace;&lbrace; govukOneLoginServiceHeader({
+    signOutLink: "/test-signout",
+    oneLoginLink: "/test-one-login",
+    lng: "cy"
+  }) &rbrace;&rbrace;
+
+  &lbrace;&lbrace; govukServiceNavigation({
+  serviceName: "Service name",
+  serviceUrl: "#",
+  navigation: [
+    {
+      href: "#",
+      text: "Navigation item 1"
+    },
+    {
+      href: "#",
+      text: "Navigation item 2",
+      active: true
+    },
+    {
+      href: "#",
+      text: "Navigation item 3"
+    }
+  ]
+}) &rbrace;&rbrace;
 &lbrace;&percnt; endblock &percnt;&rbrace;
 </code></pre>
 
