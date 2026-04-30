@@ -1,30 +1,10 @@
 const fs = require('fs');
 const nunjucks = require('nunjucks');
 
-var params =  { 
-  serviceNavigationParams: {
-  serviceName: "Name of example service", 
-  navigation: [
-    {
-      href: "#navigation1",
-      text: "Navigation item 1"
-    },
-    {
-      href: "#navigation2",
-      text: "Navigation item 2",
-      active: true
-    },
-    {
-      href: "#navigation3",
-      text: "Navigation item 3"
-    }
-  ] 
-}}
-
 // generate header HTML preview from nunjucks
 const previewHtml = nunjucks.render("src/preview.njk");
 // generate header HTML from the nunjucks template
-const headerHtml = nunjucks.render("src/nunjucks/template.njk", { params: params });
+const headerHtml = nunjucks.render("src/nunjucks/template.njk");
 
 fs.mkdirSync(__dirname + '/dist', { recursive: true });
 fs.mkdirSync(__dirname + '/dist/html', { recursive: true });

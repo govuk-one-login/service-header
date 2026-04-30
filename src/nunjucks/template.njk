@@ -4,12 +4,10 @@ Component options:
   - signOutLink (string): Option to overwrite the default signed out page. Defaults to "https://home.account.gov.uk/sign-out"
   - lng (string): Option to overwrite the default language. Defaults to English unless "cy" is specified for Welsh.
   - homepageLink (string): Option to overwrite the default GOV.UK link. Defaults to "https://home.account.gov.uk/"
-  - serviceNavigationParams (object): Options for the service navigation component. Accepts all the options listed under "Nunjucks macro options" on the Design System [service navigation component page](https://design-system.service.gov.uk/components/service-navigation/). The service nav bar will not render unless serviceName is specified
   - signOutFormAction (string): For services that require a POST request to sign out, this option allows you to set the form action URL for the sign out form. If this option is provided, the "Sign out" link will be rendered as a form that submits a POST request to the specified URL. Overrules `signOutLink` option if both are provided.
   - signOutFormHiddenInputsHtml (html string): Option to add hidden input fields to the sign out form. This is useful for including CSRF tokens or other necessary hidden data when using a POST request for signing out.
 
 #}
-{%- from "node_modules/govuk-frontend/dist/govuk/components/service-navigation/macro.njk" import govukServiceNavigation -%}
 {%- set lngQueryString = "?lng=cy" if (params.lng === "cy") else "" -%}
 {%- set signOutLinkText = "Allgofnodi" if (params.lng === "cy") else "Sign out" -%}
 {%- set oneLoginLink = params.oneLoginLink if params.oneLoginLink else (["https://home.account.gov.uk", lngQueryString] | join) -%}
@@ -97,12 +95,4 @@ Component options:
       </nav>
     </div>
   </div>
-  <!-- Start of service navigation -->
-  <!-- This is a DESIGN SYSTEM component with a dependency on Javascript  -->
-  <!-- Javascript is necessary to enable dropdown functionality for the list of links on mobile -->
-  <!-- Import the latest version of the script for this component using the instructions here https://frontend.design-system.service.gov.uk/import-javascript/#import-javascript  -->
-    {%- if params.serviceNavigationParams -%}
-       {{ govukServiceNavigation(params.serviceNavigationParams) if params.serviceNavigationParams.serviceName }}
-    {%- endif -%}
-  <!-- End of service navigation -->
 </div>
