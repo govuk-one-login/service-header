@@ -66,7 +66,7 @@ If your service does not use Nunjucks, download and unzip the source code attach
 >
 >or to install a specific version from the tag
 > ```sh
-> npm install @govuk-one-login/service-header@5.0.0
+> npm install @govuk-one-login/service-header@6.0.0
 > ```
 >
 > Then import the Nunjucks macro directly from `/service-header/service-header.njk`. Some of the instructions below will seem redundant in your case.
