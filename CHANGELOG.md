@@ -2,7 +2,7 @@
 
 Use [semver guidelines](https://semver.org/).
 
-## Unreleased
+## 6.0.0
 
 - Update govuk-frontend to v6.1.0 ([PR #114](https://github.com/govuk-one-login/service-header/pull/114))
 - OLH-4063: Remove service nav component from service header ([PR #130](https://github.com/govuk-one-login/service-header/pull/130))
