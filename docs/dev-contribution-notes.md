@@ -24,14 +24,15 @@ There is a `watch-sass` script which is fairly self-explanatory.
 
 ## Before you open a PR
 
-1. Ensure you've `npm run build-all` and committed the outputs. This generates the contents of the `/dist` folder.
-2. Ensure your change is documented in the `CHANGELOG`, following the preexisting format. Please label your entry with BUG/MAJOR/MINOR.
+Ensure your change is documented in the `CHANGELOG`, following the preexisting format. Please label your entry with BUG/MAJOR/MINOR.
 If you're not sure which label is most appropriate, please read the guidance on [semver guidelines](https://semver.org/).
 You don't need to document any change that would be irrelevant for an external consumer of the component (e.g. changes to internal documentation).
 
 ## Publishing a new version to NPM
 
-The package is automatically published to NPM when a new release is created on GitHub.
+When a new release is created on GitHub, two things happen:
+1. The package is automatically published to NPM
+2. A zipped version of the build output (`dist` folder) is created and attached to the GitHub Release
 
 To publish a new version:
 
