@@ -14,7 +14,6 @@
 ### Checklists
 - [ ] design changes have been reviewed by a member of the UCD team
 - [ ] the CHANGELOG.md file has been updated with a log of the changes in this PR
-- [ ] the `npm run build-all` task was run and the outputs were committed
 
 ### Testing
 
