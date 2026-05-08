@@ -20,8 +20,6 @@ jobs:
       - name: Zip dist
         run: |
           FILENAME="govuk-one-login-service-header-${{ github.event.release.tag_name || github.ref_name }}.zip"
-          VERSION="${{ github.event.release.tag_name || github.ref_name }}"
-          PROJECT_NAME="govuk-one-login-service-header"
           # theoretically this should zip dist without dist/govuk
           zip -r "$FILENAME" dist -x "dist/govuk/*"
           echo "ASSET_NAME=$FILENAME" >> $GITHUB_ENV
