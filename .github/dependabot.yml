@@ -42,3 +42,19 @@ updates:
       - dependencies
     commit-message:
       prefix: BAU
+
+  - package-ecosystem: pip
+    directories:
+      - "/**"
+    exclude-paths:
+      - "submodules/**"
+    schedule:
+      interval: "cron"
+      cronjob: "0 3 1,15 * *"
+      time: "03:00"
+      timezone: "Europe/London"
+    cooldown:
+      default-days: 7
+    labels:
+      - dependabot
+      - dependencies
