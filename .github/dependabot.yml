@@ -42,6 +42,11 @@ updates:
       - dependencies
     commit-message:
       prefix: BAU
+    groups:
+      github-actions-minor-patch:
+        update-types:
+          - "minor"
+          - "patch"
 
   - package-ecosystem: pip
     directories:
