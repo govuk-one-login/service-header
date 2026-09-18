@@ -5,6 +5,7 @@ Use [semver guidelines](https://semver.org/).
 ## Unreleased
 
 - PATCH: BAU: Fix alignment issue in prototype kit layout template
+- OLH-5263: Remove 'rebranded' prefix from service header markup and CSS ([PR #165](https://github.com/govuk-one-login/service-header/pull/165))
 
 ## 6.0.0
 
