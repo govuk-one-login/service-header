@@ -104,14 +104,19 @@
 
     <script type="module" src="./scripts/service-header.js"></script>
     <script type="module" src="./govuk/govuk-frontend.min.js"></script>
-    <script type="module">
-      import { initCrossServiceHeader } from './scripts/service-header.js';
-      initCrossServiceHeader();
-    </script>
+    <!-- 
+      Below, headers are initialised individually due to this page having several headers for preview purposes
+      In your service, you should use initCrossServiceHeader() to initialise the header instead:
 
+      <script type="module">
+        import { initCrossServiceHeader } from './scripts/service-header.js';
+        initCrossServiceHeader();
+      </script>
+    -->
     <script type="module">
-      import { ServiceNavigation, createAll } from './govuk/govuk-frontend.min.js';
-      createAll(ServiceNavigation);
+      import { CrossServiceHeader } from './scripts/service-header.js';
+      const headers = document.querySelectorAll("[data-module='one-login-header']");
+      headers.forEach((header) => new CrossServiceHeader(header));
     </script>
   </body>
 </html>
