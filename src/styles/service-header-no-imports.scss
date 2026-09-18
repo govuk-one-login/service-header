@@ -32,14 +32,14 @@ $toggle-border-height: 3px;
   }
 }
  
-.rebranded-one-login-header {
+.one-login-header {
   @include govuk-font($size: 16);
   color: govuk-colour("white");
   position: relative;
   background: govuk-functional-colour(brand);
 }
 
-.rebranded-one-login-header__container {
+.one-login-header__container {
   display: flex;
   position: relative;
   justify-content: space-between;
@@ -48,7 +48,7 @@ $toggle-border-height: 3px;
   border-bottom: 1px solid transparent;
 }
 
-.rebranded-one-login-header__logo {
+.one-login-header__logo {
   min-width: max-content;
   max-width: 33.33%;
   // this strange non-standard spacing came from the Design System
@@ -62,7 +62,7 @@ $toggle-border-height: 3px;
   }
 }
 
-.rebranded-one-login-header__logotype {
+.one-login-header__logotype {
   display: inline-block;
   position: relative;
   top: -3px;
@@ -80,7 +80,7 @@ $toggle-border-height: 3px;
   }
 }
 
-.rebranded-one-login-header__link--homepage {
+.one-login-header__link--homepage {
   // Font size needs to be set on the link so that the box sizing is correct
   // in Firefox
   @include govuk-font($size: false, $weight: bold);
@@ -118,8 +118,8 @@ $toggle-border-height: 3px;
   }
 }
 
-.rebranded-one-login-header__link,
-.rebranded-one-login-header__nav__link {
+.one-login-header__link,
+.one-login-header__nav__link {
   &:link,
   &:visited {
     @include govuk-typography-common;
@@ -133,7 +133,7 @@ $toggle-border-height: 3px;
   }
 }
 
-.rebranded-one-login-header__link {
+.one-login-header__link {
   word-spacing:-.375rem;
 
   &>* {
@@ -145,11 +145,11 @@ $toggle-border-height: 3px;
   }
 }
 
-.rebranded-one-login-header__nav {
+.one-login-header__nav {
   @include govuk-media-query ($until: tablet) {
     width: 100%;
 
-    &.rebranded-one-login-header__nav--open {
+    &.one-login-header__nav--open {
       border-top: 1px solid transparent;
     }
   }
@@ -159,7 +159,7 @@ $toggle-border-height: 3px;
   } 
 }
 
-.rebranded-one-login-header__nav__button {
+.one-login-header__nav__button {
   border: 0 none;
   cursor: pointer;
   background-color: transparent;
@@ -205,8 +205,8 @@ $toggle-border-height: 3px;
   }
 }
 
-.rebranded-one-login-header__nav__link,
-.rebranded-one-login-header__nav__button {
+.one-login-header__nav__link,
+.one-login-header__nav__button {
   font-weight: bold;
 
   @include govuk-media-query ($from: tablet) {
@@ -225,7 +225,7 @@ $toggle-border-height: 3px;
   }
 }
 
-.rebranded-one-login-header__nav__link {
+.one-login-header__nav__link {
   @include govuk-media-query ($from: tablet) {
     // this degree of specificity is only needed in order to overrule DS rules
     &:link:link,
@@ -264,13 +264,13 @@ $toggle-border-height: 3px;
   }
 }
 
-.rebranded-one-login-header__nav__form {
+.one-login-header__nav__form {
   margin: 0;
   padding: 0;
   display: inline;
 }
 
-.rebranded-one-login-header__nav__text {
+.one-login-header__nav__text {
   @include govuk-media-query ($from: tablet) {
     padding: 0 $block-link-spacing;
     display: flex;
@@ -283,7 +283,7 @@ $toggle-border-height: 3px;
   }
 }
 
-.rebranded-one-login-header__nav__list {
+.one-login-header__nav__list {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -303,7 +303,7 @@ $toggle-border-height: 3px;
 }
 
 // if JS is unavailable, the nav links are expanded and the toggle button is hidden
-.toggle-enabled .rebranded-one-login-header__nav__list {
+.toggle-enabled .one-login-header__nav__list {
   @include govuk-media-query ($until: tablet) {
     display: none;
   }
@@ -312,13 +312,13 @@ $toggle-border-height: 3px;
     display: flex;
   } 
 }
-.rebranded-one-login-header__nav--open .rebranded-one-login-header__nav__list {
+.one-login-header__nav--open .one-login-header__nav__list {
   @include govuk-media-query ($until: tablet) {
     display: block;
   }
 }
 
-.rebranded-one-login-header__nav__list-item {
+.one-login-header__nav__list-item {
   @include govuk-media-query ($from: tablet) {
     border-left: none;
     margin-right: 0;
@@ -336,17 +336,17 @@ $toggle-border-height: 3px;
   }
 }
 
-.rebranded-cross-service-header__logo {
+.cross-service-header__logo {
   margin-right: $toggle-content-spacing;
 }
 
-.rebranded-cross-service-header__logo--nav {
+.cross-service-header__logo--nav {
   @include govuk-media-query ($until: tablet) {
     display: none;
   }
 }
 
-.rebranded-cross-service-header__toggle {
+.cross-service-header__toggle {
   display: none;
   @include govuk-font($size: 16, $weight: bold);
   position: absolute;
@@ -369,7 +369,7 @@ $toggle-border-height: 3px;
   &:focus {
     @include toggle-button-focus;
 
-    &.rebranded-cross-service-header__toggle--open {
+    &.cross-service-header__toggle--open {
       @include toggle-button-focus;
     }
 
@@ -377,19 +377,19 @@ $toggle-border-height: 3px;
     &-visible {
       @include toggle-button-focus;
 
-      &.rebranded-cross-service-header__toggle--open {
+      &.cross-service-header__toggle--open {
         @include toggle-button-focus;
       }
     }
   }
 
-  &.rebranded-cross-service-header__toggle--open {
+  &.cross-service-header__toggle--open {
     background-color: govuk-colour("white");
     color: govuk-functional-colour(brand);
   }
 }
 
-.toggle-enabled .rebranded-cross-service-header__toggle {
+.toggle-enabled .cross-service-header__toggle {
   display: inline;
 
   @include govuk-media-query ($from: tablet) {
@@ -397,7 +397,7 @@ $toggle-border-height: 3px;
   }
 }
 
-.rebranded-cross-service-header__toggle-content-wrapper {
+.cross-service-header__toggle-content-wrapper {
   position: relative;
   display: flex;
   align-items: center;
@@ -414,7 +414,7 @@ $toggle-border-height: 3px;
     transform: translateY(-20%) rotate(135deg);
     border-top: 0.15rem solid;
     border-right: 0.15rem solid;
-    .rebranded-cross-service-header__toggle--open & {
+    .cross-service-header__toggle--open & {
       transform: translateY(30%) rotate(-45deg);
     }
   }
@@ -429,17 +429,17 @@ $toggle-border-height: 3px;
     // the underline that appears on hover/focus should be 1px from the bottom of the container
     bottom: calc(1px - $toggle-padding);
   
-    .rebranded-cross-service-header__toggle:hover & {
+    .cross-service-header__toggle:hover & {
       background-color: govuk-colour("white");
     }
         
-    .rebranded-cross-service-header__toggle--open &,
-    .rebranded-cross-service-header__toggle--open:hover & {
+    .cross-service-header__toggle--open &,
+    .cross-service-header__toggle--open:hover & {
       background-color: govuk-functional-colour(brand);
     }
 
-    .rebranded-cross-service-header__toggle:focus &,
-    .rebranded-cross-service-header__toggle:focus-visible & {
+    .cross-service-header__toggle:focus &,
+    .cross-service-header__toggle:focus-visible & {
       background-color: govuk-functional-colour(focus-text);
       &:hover {
         background-color: govuk-functional-colour(focus-text);
@@ -448,7 +448,7 @@ $toggle-border-height: 3px;
   }
 }
 
-.rebranded-one-login-header__logo-dot {
+.one-login-header__logo-dot {
   fill: #00ffe0;
   
     // Override Dot colour when printing
