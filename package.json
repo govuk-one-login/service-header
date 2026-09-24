@@ -5,6 +5,14 @@
   "main": "dist/scripts/service-header.js",
   "repository": "github:govuk-one-login/service-header",
   "type": "module",
+  "exports": {
+    ".": {
+      "sass": "./src/styles/service-header.scss",
+      "import": "./dist/styles/service-header.css",
+      "require": "./dist/styles/service-header.css",
+      "default": "./dist/styles/service-header.css"
+    }
+  },
   "files": [
     "dist",
     "!dist/govuk",

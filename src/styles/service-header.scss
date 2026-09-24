@@ -1,10 +1,1 @@
-// dependencies from GOVUK frontend
-// if this is throwing errors, check that you have govuk-frontend installed and that the load paths are correct
-
-@use "govuk/base" as *;
-@use "govuk/objects/width-container" as *;
-@use "govuk/objects/grid" as *;
-
-// end dependencies from GOVUK frontend
-
-@use "service-header-no-imports"
+@forward "service-header-no-imports"

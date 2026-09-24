@@ -1,24 +1,23 @@
-@use "govuk/base" as *;
-@use "govuk/objects/grid" as *;
-@use "govuk/objects/width-container" as *;
+@use "govuk/base";
+@use "govuk/objects/width-container";
 
 $govuk-header-link-underline-thickness: 3px;
 
 $toggle-content-spacing: 8px;
 $toggle-padding: 15px;
-$block-link-spacing: govuk-spacing(3);
+$block-link-spacing: base.govuk-spacing(3);
 $logo-height: 30px;
 $toggle-border-height: 3px;
 
 @mixin underline-hover-focus($type) {
   display: block;
    @if $type == 'focus' {
-      background-color: govuk-functional-colour(focus-text);
+      background-color: base.govuk-functional-colour(focus-text);
       @media (forced-colors: active) {
         background-color: linktext;
       }
    } @else if $type == 'hover' {
-      background-color: govuk-colour("white");
+      background-color: base.govuk-colour("white");
       @media (forced-colors: active) {
         background-color: linktext;
       }
@@ -30,17 +29,17 @@ $toggle-border-height: 3px;
     text-decoration: underline;
     text-decoration-thickness: $govuk-header-link-underline-thickness;
 
-    @if $govuk-link-underline-offset {
-      text-underline-offset: $govuk-link-underline-offset;
+    @if base.$govuk-link-underline-offset {
+      text-underline-offset: base.$govuk-link-underline-offset;
     }
   }
 }
  
 .one-login-header {
-  @include govuk-font($size: 16);
-  color: govuk-functional-colour(inverse-text);
+  @include base.govuk-font($size: 16);
+  color: base.govuk-functional-colour(inverse-text);
   position: relative;
-  background: govuk-functional-colour(brand);
+  background: base.govuk-functional-colour(brand);
 }
 
 .one-login-header__container {
@@ -60,7 +59,7 @@ $toggle-border-height: 3px;
   padding-bottom:12px;
   box-sizing: border-box;
 
-  @include govuk-media-query ($from: desktop) {
+  @include base.govuk-media-query ($from: desktop) {
     width: 33.33%;
     padding-right: $toggle-padding;
   }
@@ -87,17 +86,17 @@ $toggle-border-height: 3px;
 .one-login-header__link--homepage {
   // Font size needs to be set on the link so that the box sizing is correct
   // in Firefox
-  @include govuk-font($size: false, $weight: bold);
+  @include base.govuk-font($size: false, $weight: bold);
   display: inline;
-  margin-right: govuk-spacing(2);
+  margin-right: base.govuk-spacing(2);
   font-size: 30px; // We don't have a mixin that produces 30px font size
   line-height: 1;
 
-  @include govuk-media-query($from: tablet) {  
+  @include base.govuk-media-query($from: tablet) {  
     &:focus {
       // Replicate the focus box shadow but without the -2px y-offset of the first yellow shadow
       // This is to stop the logo getting cut off by the box shadow when focused on above a product name
-      box-shadow: 0 0 govuk-functional-colour(focus);
+      box-shadow: 0 0 base.govuk-functional-colour(focus);
     }
   }
 
@@ -124,13 +123,13 @@ $toggle-border-height: 3px;
 .one-login-header__nav__link {
   &:link,
   &:visited {
-    @include govuk-typography-common;
-    @include govuk-link-style-inverse;
+    @include base.govuk-typography-common;
+    @include base.govuk-link-style-inverse;
     text-decoration: none;
     @include link-underline-hover;
 
     &:focus {
-      @include govuk-focused-text;
+      @include base.govuk-focused-text;
     }
   }
 }
@@ -143,12 +142,12 @@ $toggle-border-height: 3px;
   }
 
   &:not(:focus){
-    background-color: govuk-functional-colour(brand);
+    background-color: base.govuk-functional-colour(brand);
   }
 }
 
 .one-login-header__nav {
-  @include govuk-media-query ($until: tablet) {
+  @include base.govuk-media-query ($until: tablet) {
     width: 100%;
 
     &.one-login-header__nav--open {
@@ -156,7 +155,7 @@ $toggle-border-height: 3px;
     }
   }
 
-  @include govuk-media-query ($from: tablet) {
+  @include base.govuk-media-query ($from: tablet) {
     max-width: 66%;
   } 
 }
@@ -167,15 +166,15 @@ $toggle-border-height: 3px;
   background-color: transparent;
   padding: 0;
   margin: 0;
-  @include govuk-font($size: 16);
-  color: govuk-functional-colour(link);
+  @include base.govuk-font($size: 16);
+  color: base.govuk-functional-colour(link);
 
-  @include govuk-media-query ($until: tablet) {
+  @include base.govuk-media-query ($until: tablet) {
     @include link-underline-hover;
   }
 
   &:focus {
-    @include govuk-focused-text;
+    @include base.govuk-focused-text;
     outline: none;
 
     @media (forced-colors: active) {
@@ -183,8 +182,8 @@ $toggle-border-height: 3px;
     }
   }
 
-  @include govuk-media-query ($from: tablet) {
-    color: govuk-functional-colour(inverse-text);
+  @include base.govuk-media-query ($from: tablet) {
+    color: base.govuk-functional-colour(inverse-text);
     position: relative;
     padding: $block-link-spacing 0;
 
@@ -211,7 +210,7 @@ $toggle-border-height: 3px;
 .one-login-header__nav__button {
   font-weight: bold;
 
-  @include govuk-media-query ($from: tablet) {
+  @include base.govuk-media-query ($from: tablet) {
     position: relative;
     padding: $block-link-spacing 0;
 
@@ -228,7 +227,7 @@ $toggle-border-height: 3px;
 }
 
 .one-login-header__nav__link {
-  @include govuk-media-query ($from: tablet) {
+  @include base.govuk-media-query ($from: tablet) {
     // this degree of specificity is only needed in order to overrule DS rules
     &:link:link,
     &:link:visited,
@@ -253,14 +252,14 @@ $toggle-border-height: 3px;
     }
   }
 
-  @include govuk-media-query ($until: tablet) {
+  @include base.govuk-media-query ($until: tablet) {
     &:link:link,
     &:link:visited,
     &:visited:link,
     &:visited:visited {
-      color: govuk-functional-colour(brand);
+      color: base.govuk-functional-colour(brand);
       &:focus {
-        color: govuk-functional-colour(focus-text);
+        color: base.govuk-functional-colour(focus-text);
       }
     }
   }
@@ -273,14 +272,14 @@ $toggle-border-height: 3px;
 }
 
 .one-login-header__nav__text {
-  @include govuk-media-query ($from: tablet) {
+  @include base.govuk-media-query ($from: tablet) {
     display: flex;
     align-items: center;
     padding: 0 $block-link-spacing;
 
     &--sign-out {
       height: $logo-height;
-      border-left: 1px solid govuk-colour("white");
+      border-left: 1px solid base.govuk-colour("white");
     }
   }
 }
@@ -290,38 +289,38 @@ $toggle-border-height: 3px;
   padding: 0;
   list-style: none;
 
-  @include govuk-media-query ($from: tablet) {
+  @include base.govuk-media-query ($from: tablet) {
     display: flex;
     align-items: center;
   }
 
-  @include govuk-media-query ($until: tablet) {
-    background-color: govuk-colour("white");
-    color: govuk-functional-colour(brand);
-    margin-right: -(govuk-spacing(3));
-    margin-left: -(govuk-spacing(3));
-    padding: 0 govuk-spacing(3);
+  @include base.govuk-media-query ($until: tablet) {
+    background-color: base.govuk-colour("white");
+    color: base.govuk-functional-colour(brand);
+    margin-right: -(base.govuk-spacing(3));
+    margin-left: -(base.govuk-spacing(3));
+    padding: 0 base.govuk-spacing(3);
   }
 }
 
 // if JS is unavailable, the nav links are expanded and the toggle button is hidden
 .toggle-enabled .one-login-header__nav__list {
-  @include govuk-media-query ($until: tablet) {
+  @include base.govuk-media-query ($until: tablet) {
     display: none;
   }
 
-  @include govuk-media-query ($from: tablet) {
+  @include base.govuk-media-query ($from: tablet) {
     display: flex;
   } 
 }
 .one-login-header__nav--open .one-login-header__nav__list {
-  @include govuk-media-query ($until: tablet) {
+  @include base.govuk-media-query ($until: tablet) {
     display: block;
   }
 }
 
 .one-login-header__nav__list-item {
-  @include govuk-media-query ($from: tablet) {
+  @include base.govuk-media-query ($from: tablet) {
     border-left: none;
     margin-right: 0;
     padding: 0;
@@ -329,11 +328,11 @@ $toggle-border-height: 3px;
     align-items: center;
   }
 
-  @include govuk-media-query ($until: tablet) {
-    padding: govuk-spacing(3) 0;
+  @include base.govuk-media-query ($until: tablet) {
+    padding: base.govuk-spacing(3) 0;
 
     &:not(:last-child) {
-      border-bottom: 1px solid govuk-colour("black", $variant: 'tint-80');
+      border-bottom: 1px solid base.govuk-colour("black", $variant: 'tint-80');
     }
   }
 }
@@ -343,14 +342,14 @@ $toggle-border-height: 3px;
 }
 
 .cross-service-header__logo--nav {
-  @include govuk-media-query ($until: tablet) {
+  @include base.govuk-media-query ($until: tablet) {
     display: none;
   }
 }
 
 .cross-service-header__toggle {
   display: none;
-  @include govuk-font($size: 16, $weight: bold);
+  @include base.govuk-font($size: 16, $weight: bold);
   position: absolute;
   right: 0;
   top: 0;
@@ -360,11 +359,11 @@ $toggle-border-height: 3px;
   background: none;
   color: inherit;
   padding: $toggle-padding $toggle-padding calc($toggle-padding + 1px) $toggle-padding;
-  margin-right: -(govuk-spacing(3));
+  margin-right: -(base.govuk-spacing(3));
 
   @mixin toggle-button-focus {
-    color: govuk-functional-colour(focus-text);
-    background-color: govuk-functional-colour(focus);
+    color: base.govuk-functional-colour(focus-text);
+    background-color: base.govuk-functional-colour(focus);
     outline: 3px solid transparent;
   }
 
@@ -386,15 +385,15 @@ $toggle-border-height: 3px;
   }
 
   &.cross-service-header__toggle--open {
-    background-color: govuk-functional-colour(inverse-text);
-    color: govuk-functional-colour(brand);
+    background-color: base.govuk-functional-colour(inverse-text);
+    color: base.govuk-functional-colour(brand);
   }
 }
 
 .toggle-enabled .cross-service-header__toggle {
   display: inline;
 
-  @include govuk-media-query ($from: tablet) {
+  @include base.govuk-media-query ($from: tablet) {
     display: none;
   }
 }
@@ -432,19 +431,19 @@ $toggle-border-height: 3px;
     bottom: calc(1px - $toggle-padding);
   
     .cross-service-header__toggle:hover & {
-      background-color: govuk-colour("white");
+      background-color: base.govuk-colour("white");
     }
         
     .cross-service-header__toggle--open &,
     .cross-service-header__toggle--open:hover & {
-      background-color: govuk-functional-colour(brand);
+      background-color: base.govuk-functional-colour(brand);
     }
 
     .cross-service-header__toggle:focus &,
     .cross-service-header__toggle:focus-visible & {
-      background-color: govuk-functional-colour(focus-text);
+      background-color: base.govuk-functional-colour(focus-text);
       &:hover {
-        background-color: govuk-functional-colour(focus-text);
+        background-color: base.govuk-functional-colour(focus-text);
       }
     }
   }
@@ -454,7 +453,7 @@ $toggle-border-height: 3px;
   fill: #00ffe0;
   
     // Override Dot colour when printing
-    @include govuk-media-query($media-type: print) {
+    @include base.govuk-media-query($media-type: print) {
       fill: currentcolor;
     }
 
