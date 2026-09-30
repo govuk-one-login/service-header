@@ -1,5 +1,5 @@
-@use "govuk/base";
-@use "govuk/objects/width-container";
+@use "../../node_modules/govuk-frontend/dist/govuk/base";
+@use "../../node_modules/govuk-frontend/dist/govuk/objects/width-container";
 
 $govuk-header-link-underline-thickness: 3px;
 

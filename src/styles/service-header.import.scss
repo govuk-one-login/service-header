@@ -1,1 +1,4 @@
-@forward "service-header";
+@import "../../node_modules/govuk-frontend/dist/govuk/base";
+@import "../../node_modules/govuk-frontend/dist/govuk/objects/width-container";
+
+@import "index";
