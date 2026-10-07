@@ -3,7 +3,10 @@
   "version": "7.0.0-beta.0",
   "description": "A header for services using GOV.UK One Login",
   "main": "dist/scripts/service-header.js",
-  "repository": "github:govuk-one-login/service-header",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/govuk-one-login/service-header.git"
+  },
   "type": "module",
   "exports": {
     ".": {
