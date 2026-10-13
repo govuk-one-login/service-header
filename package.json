@@ -8,6 +8,8 @@
     "url": "git+https://github.com/govuk-one-login/service-header.git"
   },
   "type": "module",
+  "import": "./dist/scripts/service-header.js",
+  "require": "./dist/scripts/service-header.js",
   "sass": "./dist/styles/service-header.scss",
   "style": "./dist/styles/service-header.css",
   "exports": {
