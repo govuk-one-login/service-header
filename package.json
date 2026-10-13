@@ -8,11 +8,16 @@
     "url": "git+https://github.com/govuk-one-login/service-header.git"
   },
   "type": "module",
+  "sass": "./dist/styles/service-header.scss",
+  "style": "./dist/styles/service-header.css",
   "exports": {
     ".": {
-      "sass": "./dist/styles/service-header.scss",
-      "style": "./dist/styles/service-header.scss",
-      "default": "./dist/styles/service-header.scss"
+      "sass": {
+        "import": "./dist/styles/service-header.import.scss",
+        "default": "./dist/styles/service-header.scss"
+      },
+      "style": "./dist/styles/service-header.css",
+      "default": "./dist/styles/service-header.css"
     },
     "./govuk-prototype-kit.config.json": "./govuk-prototype-kit.config.json"
   },
@@ -24,8 +29,9 @@
   "scripts": {
     "build-templates": "node build.cjs",
     "dev": "nodemon --watch src -e njk,js,scss --exec \"npm run build-all && http-server\"",
-    "build-sass": "sass --no-source-map src/styles/service-header.scss dist/styles/service-header.css && sass --no-source-map --style=compressed src/styles/service-header.scss dist/styles/service-header.min.css",
-    "watch-sass": "sass --no-source-map --watch src/styles/service-header.scss dist/styles/service-header.css",
+    "build-sass": "sass --no-source-map --load-path=node_modules src/styles/service-header.scss dist/styles/service-header.css && sass --no-source-map --style=compressed --load-path=node_modules src/styles/service-header.scss dist/styles/service-header.min.css && npm run copy-sass-sources",
+    "watch-sass": "sass --no-source-map --watch --load-path=node_modules src/styles/service-header.scss dist/styles/service-header.css",
+    "copy-sass-sources": "cp src/styles/_index.scss dist/styles/_index.scss && cp src/styles/service-header.scss dist/styles/service-header.scss && cp src/styles/service-header.import.scss dist/styles/service-header.import.scss",
     "copy-govuk-assets": "cp -a node_modules/govuk-frontend/dist/govuk dist/",
     "build-all": "npm run build-sass && npm run build-templates && npm run copy-govuk-assets",
     "prepare": "husky"
