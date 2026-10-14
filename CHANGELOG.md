@@ -2,6 +2,9 @@
 
 Use [semver guidelines](https://semver.org/).
 
+## Unreleased
+- PATCH: OLH-5361: import paths fix ([PR #176](https://github.com/govuk-one-login/service-header/pull/176))
+
 ## 7.0.0-beta.0
 
 - PATCH: BAU: Fix alignment issue in prototype kit layout template
