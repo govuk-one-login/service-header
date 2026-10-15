@@ -15,6 +15,7 @@
   "exports": {
     ".": {
       "sass": {
+        "style": "./dist/styles/service-header.scss",
         "import": "./dist/styles/service-header.import.scss",
         "default": "./dist/styles/service-header.scss"
       },
