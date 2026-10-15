@@ -204,9 +204,13 @@ How you use the styles for the header will be different depending on whether you
 
 Copy the Sass files from this repository into your service's Sass implementation.
 
-Make sure you have added `node_modules/govuk-frontend/dist` to your Sass loadpath. The header code uses this to [simplify its Sass import paths](https://frontend.design-system.service.gov.uk/importing-css-assets-and-javascript/#simplify-sass-import-paths).
+Make sure you have added `node_modules` to your Sass loadpath. The header code uses this to [simplify its Sass import paths](https://frontend.design-system.service.gov.uk/importing-css-assets-and-javascript/#simplify-sass-import-paths).
 
-Alternatively, you can edit the header’s Sass import paths to specify `node_modules/govuk-frontend/dist` for each import.
+If you import the service header styles directly from the service header npm package, starting from service header v7, you should be able to use `pkg:` URLs to shorten the SASS url like so `@use "pkg:@govuk-one-login/service-header"`. 
+
+You will need to add [NodePackageImporter](https://sass-lang.com/documentation/js-api/classes/nodepackageimporter/#md:writing-sass-packages) to the list of importers in your Sass configuration, or specify `--pkg-importer=node` if you are using Sass CLI to compile your styles.
+
+If you cannot use `pkg:` URLs, you can import the service header styles as `@use "@govuk-one-login/service-header"` (if you use a bundler) or `@use "@govuk-one-login/service-header/dist/styles/service-header"` (if you do not use a bundler – note you should add `node_modules` to your Sass load path).
 
 ### If you use the GOV.UK Frontend pre-compiled CSS files
 
