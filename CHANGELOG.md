@@ -2,6 +2,10 @@
 
 Use [semver guidelines](https://semver.org/).
 
+## Unreleased
+- OLH-5361: Update sass style exports config ([PR #180](https://github.com/govuk-one-login/service-header/pull/180))
+
+
 ## 7.0.0-beta.1
 - PATCH: OLH-5361: import paths fix ([PR #176](https://github.com/govuk-one-login/service-header/pull/176))
 
