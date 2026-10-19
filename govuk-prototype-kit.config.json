@@ -1,6 +1,6 @@
 {
-  "sass": [
-    "/dist/styles/service-header.scss"
+  "stylesheets": [
+    "/dist/styles/service-header.css"
   ],
   "scripts": [
     "/dist/scripts/init-service-header.js"
@@ -23,6 +23,6 @@
   ],
   "pluginDependencies": [{
     "packageName": "govuk-frontend",
-    "minVersion": "6.1.0"
+    "minVersion": "6.5.1"
   }]
 }
