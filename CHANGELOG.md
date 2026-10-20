@@ -3,6 +3,7 @@
 Use [semver guidelines](https://semver.org/).
 
 ## Unreleased
+- PATCH: BAU: Fix JS export configuration ([PR #184](https://github.com/govuk-one-login/service-header/pull/184))
 
 ## 7.0.0
 - OLH-5361: Update prototype kit config ([PR #181](https://github.com/govuk-one-login/service-header/pull/181))
