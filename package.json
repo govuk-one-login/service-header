@@ -8,8 +8,6 @@
     "url": "git+https://github.com/govuk-one-login/service-header.git"
   },
   "type": "module",
-  "import": "./dist/scripts/service-header.js",
-  "require": "./dist/scripts/service-header.js",
   "sass": "./dist/styles/service-header.scss",
   "style": "./dist/styles/service-header.css",
   "exports": {
@@ -20,8 +18,11 @@
         "default": "./dist/styles/service-header.scss"
       },
       "style": "./dist/styles/service-header.css",
+      "import": "./dist/scripts/service-header.js",
+      "require": "./dist/scripts/service-header.js",
       "default": "./dist/styles/service-header.css"
     },
+    "./dist/scripts/*": "./dist/scripts/*",
     "./govuk-prototype-kit.config.json": "./govuk-prototype-kit.config.json"
   },
   "files": [
