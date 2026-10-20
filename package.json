@@ -22,6 +22,7 @@
       "require": "./dist/scripts/service-header.js",
       "default": "./dist/styles/service-header.css"
     },
+    "./dist/scripts/*": "./dist/scripts/*",
     "./govuk-prototype-kit.config.json": "./govuk-prototype-kit.config.json"
   },
   "files": [
