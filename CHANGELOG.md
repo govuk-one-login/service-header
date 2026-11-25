@@ -2,6 +2,9 @@
 
 Use [semver guidelines](https://semver.org/).
 
+## Unreleased
+- PATCH: BAU: Script and documentation tweaks ([PR #195](https://github.com/govuk-one-login/service-header/pull/195))
+
 ## 7.0.1
 - PATCH: BAU: Fix JS export configuration ([PR #184](https://github.com/govuk-one-login/service-header/pull/184))
 
