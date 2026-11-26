@@ -18,9 +18,6 @@ You can [preview the header in your browser](https://govuk-one-login.github.io/s
 
 ![A screenshot of the GOV.UK One Login header. It has 2 sections: a blue section at the top showing the GOV.UK crown logo, a link saying "GOV.UK One Login", which takes you into your account, and a "Sign out" button. Below this section is a grey section, displaying the name of a government service and internal links within that service. Those just have placeholder text, so read "Service name" and "Service link 1" and so on. The black and grey sections are divided by a blue bar, like on the GOV.UK homepage.](docs/assets/service-header.png)
 
-Note: As of [v3.1.0](https://github.com/govuk-one-login/service-header/releases/tag/v3.1.0), the design of the service header was updated, in line with the wider GOV.UK brand refresh initiative.
-
-
 ## How to contribute to the service header
 
 If you are a developer working on this project, familiarise yourself with the notes on [this page](docs/dev-contribution-notes.md).
@@ -234,7 +231,9 @@ There’s [more information about using GDS Transport](https://design-system.ser
 
 ## Using the header's Javascript file
 
-The GOV.UK One Login service header uses Javascript to enable 'drop down' behaviour for the header on small screen sizes. The header doesn't rely on Javascript to do anything else.
+The GOV.UK One Login service header uses Javascript to enable 'drop down' behaviour for the header on small screen sizes, as shown in the image below. The header doesn't rely on Javascript to do anything else.
+
+![A screenshot of the mobile version of the GOV.UK One Login header where the menu has become a drop down](docs/assets/service-header-mobile.png)
 
 Copy the code from one of this package's Javascript files(`dist/scripts`) into your service's Javascript implementation. 
 
@@ -259,6 +258,8 @@ The header degrades gracefully in the absence of Javascript (for example, if a u
 
 + the navigation menu will be in its ‘dropped down’ state
 + the menu toggle button will not display (it wouldn't be functional without Javascript)
+
+![A screenshot of the mobile version of the GOV.UK One Login header without Javascript](docs/assets/service-header-mobile-nojs.png)
 
 ## Translating the header content into other languages
 
