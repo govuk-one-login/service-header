@@ -3,9 +3,9 @@
 * Bundled into dist/scripts/init-service-header.js and dist/scripts/service-header.js
 */
 function CrossServiceHeader ($module) {
-  this.$header = $module
-  this.$navigation = $module && $module.querySelectorAll("[data-one-login-header-nav]")
-  this.$numberOfNavs = this.$navigation && this.$navigation.length
+  this.$header = $module;
+  this.$navigation = $module && $module.querySelector("[data-one-login-header-nav]");
+  this.$numberOfNavs = this.$navigation && this.$navigation.length;
 
   /**
   * Handle menu button click
@@ -13,7 +13,8 @@ function CrossServiceHeader ($module) {
   * When the menu button is clicked, change the visibility of the menu and then
   * sync the accessibility state and menu button state
   */
-   this.handleMenuButtonClick = function() {
+
+  this.handleMenuButtonClick = function() {
     this.isOpen = !this.isOpen;
     this.$menuOpenClass && this.$menu.classList.toggle(this.$menuOpenClass, this.isOpen);
     this.$menuButtonOpenClass && this.$menuButton.classList.toggle(this.$menuButtonOpenClass, this.isOpen);
@@ -33,40 +34,39 @@ function CrossServiceHeader ($module) {
   * missing then there's nothing to do so return early.
   */
   
-  if (!this.$header && !this.$numberOfNavs) {
-    return
+  if (!this.$header && !this.$navigation) {
+    return;
   }
   
   /**
-  * The header navigation elements collapse into dropdowns on the mobile variation. 
+  * The header menu collapses into a dropdown on the mobile variation. 
   * This initialises the dropdown functionality for all navs that have a menu button which has: 
   * 1. a class of .js-x-header-toggle   
   * 2. an aria-controls attribute which can be mapped to the ID of the element
   * that should be hidden on mobile
   */ 
-  for (var i = 0; i < this.$numberOfNavs; i++) {
-    var $nav = this.$navigation[i];
-    $nav.$menuButton = $nav.querySelector('.js-x-header-toggle');
-    
-    $nav.$menu = $nav.$menuButton && $nav.querySelector(
-      '#' + $nav.$menuButton.getAttribute('aria-controls')
-    );
-    $nav.menuItems = $nav.$menu && $nav.$menu.querySelectorAll('li');
-    if (!$nav.$menuButton || !$nav.$menu || $nav.menuItems.length < 2) {
-      return;
-    }
 
-    $nav.classList.add("toggle-enabled");
-    $nav.$menuOpenClass = $nav.$menu && $nav.$menu.dataset.openClass;
-    $nav.$menuButtonOpenClass = $nav.$menuButton && $nav.$menuButton.dataset.openClass;
-    $nav.$menuButtonOpenLabel = $nav.$menuButton && $nav.$menuButton.dataset.labelForShow;
-    $nav.$menuButtonCloseLabel = $nav.$menuButton && $nav.$menuButton.dataset.labelForHide;
-    $nav.$menuButtonOpenText = $nav.$menuButton && $nav.$menuButton.dataset.textForShow;
-    $nav.$menuButtonCloseText = $nav.$menuButton && $nav.$menuButton.dataset.textForHide;
-    $nav.isOpen = false;
-
-    $nav.$menuButton.addEventListener('click', this.handleMenuButtonClick.bind($nav));
+  var $nav = this.$navigation;
+  $nav.$menuButton = $nav.querySelector('.js-x-header-toggle');
+  
+  $nav.$menu = $nav.$menuButton && $nav.querySelector(
+    '#' + $nav.$menuButton.getAttribute('aria-controls')
+  );
+  $nav.menuItems = $nav.$menu && $nav.$menu.querySelectorAll('li');
+  if (!$nav.$menuButton || !$nav.$menu || $nav.menuItems.length < 2) {
+    return;
   }
+
+  $nav.classList.add("toggle-enabled");
+  $nav.$menuOpenClass = $nav.$menu && $nav.$menu.dataset.openClass;
+  $nav.$menuButtonOpenClass = $nav.$menuButton && $nav.$menuButton.dataset.openClass;
+  $nav.$menuButtonOpenLabel = $nav.$menuButton && $nav.$menuButton.dataset.labelForShow;
+  $nav.$menuButtonCloseLabel = $nav.$menuButton && $nav.$menuButton.dataset.labelForHide;
+  $nav.$menuButtonOpenText = $nav.$menuButton && $nav.$menuButton.dataset.textForShow;
+  $nav.$menuButtonCloseText = $nav.$menuButton && $nav.$menuButton.dataset.textForHide;
+  $nav.isOpen = false;
+
+  $nav.$menuButton.addEventListener('click', this.handleMenuButtonClick.bind($nav));
 }
 
 function initCrossServiceHeader () {

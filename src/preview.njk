@@ -1,23 +1,4 @@
 {% from "./nunjucks/service-header.njk" import govukOneLoginServiceHeader %}
-{% set navigation = [
-    {
-      href: "#navigation1",
-      text: "Navigation item 1"
-    },
-    {
-      href: "#navigation2",
-      text: "Navigation item 2",
-      active: true
-    },
-    {
-      href: "#navigation3",
-      text: "Navigation item 3"
-    }
-  ]
-  %}
-{% set activeLinkId = "id3" %}
-{% set serviceName = "A very useful service with a relatively long name" %}
-{% set signOutLink = "/test" %}
 
 <html lang="en" class="govuk-template">
   <head>
@@ -46,17 +27,17 @@
   </head>
   <body class="govuk-frontend-supported" style="margin:0;">
     <div class="govuk-!-padding-3">
-      <h2 class="govuk-heading-m">1. Basic (no secondary navigation) </h2>
+      <h2 class="govuk-heading-m">1. Basic</h2>
           <details class="govuk-details">
         <summary>Nunjucks code</summary>
         <pre><code>
-        {% raw %} {{ govukOneLoginServiceHeader({ signOutLink: "/test"}) }} {% endraw %}
+{% raw %} {{ govukOneLoginServiceHeader() }} {% endraw %}
         </code></pre>
       </details>
     </div>
     <header>
 
-    {{ govukOneLoginServiceHeader({ signOutLink: "/test"}) }}
+    {{ govukOneLoginServiceHeader() }}
     </header>
 
     <div class="govuk-!-padding-3 govuk-!-margin-top-8">
@@ -66,9 +47,9 @@
         <summary>Nunjucks code</summary>
         <pre><code>
         {% raw %}
-          {{ govukOneLoginServiceHeader({
-            lng: "cy"
-          })}}
+{{ govukOneLoginServiceHeader({
+  lng: "cy"
+})}}
         {% endraw %}
         </code></pre>
       </details>
@@ -85,10 +66,10 @@
         <summary>Nunjucks code</summary>
         <pre><code>
         {% raw %}
-          {{ govukOneLoginServiceHeader({
-            signOutFormAction: "/test-form-action",
-            signOutFormHiddenInputsHtml: '&lt;input type="hidden" name="csrfToken" value="exampleCsrfToken12345"&gt;'
-          })}}
+{{ govukOneLoginServiceHeader({
+  signOutFormAction: "/test-form-action",
+  signOutFormHiddenInputsHtml: '&lt;input type="hidden" name="csrfToken" value="exampleCsrfToken12345"&gt;'
+})}}
         {% endraw %}
         </code></pre>
       </details>
@@ -100,6 +81,25 @@
       signOutFormAction: "/test-form-action",
       signOutFormHiddenInputsHtml: '<input type="hidden" name="csrfToken" value="exampleCsrfToken12345">'
     })}}
+    </header>
+
+    <div class="govuk-!-padding-3 govuk-!-margin-top-8">
+      <h2 class="govuk-heading-m">5. With custom GOV.UK link URL</h2>
+
+      <details class="govuk-details">
+        <summary>Nunjucks code</summary>
+        <pre><code>
+        {% raw %}
+{{ govukOneLoginServiceHeader({
+  homepageLink: "https://something.else.gov.uk/"
+})}}
+        {% endraw %}
+        </code></pre>
+      </details>
+      <p class="govuk-body"> The code above is for reference for Nunjucks users only – if you do not use Nunjucks in your service please follow the <a class="govuk-link" href="https://github.com/govuk-one-login/service-header/tree/main?tab=readme-ov-file#how-to-start-using-the-header-in-your-service"> instructions to copy the header into your service</a>.</p>
+    </div>
+    <header>
+      {{ govukOneLoginServiceHeader({ homepageLink: "https://something.else.gov.uk/" }) }}
     </header>
 
     <script type="module" src="./scripts/service-header.js"></script>
